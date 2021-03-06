@@ -31,12 +31,12 @@
 </template>
 
 <script> 
-import BlogArticlesList from '@/components/BlogArticlesList';
-import Notes from '@/components/Notes';
-import GoTop from '@/components/GoTop'; 
-import SideMenu from '@/components/SideMenu';
-import Tag from '@/components/Tag';
-import NavHeader from '@/components/NavHeader';
+import BlogArticlesList from '@blog/components/BlogArticlesList';
+import Notes from '@blog/components/Notes';
+import GoTop from '@blog/components/GoTop'; 
+import SideMenu from '@blog/components/SideMenu';
+import Tag from '@blog/components/Tag';
+import NavHeader from '@blog/components/NavHeader';
 export default {
   components: {
     NavHeader,
