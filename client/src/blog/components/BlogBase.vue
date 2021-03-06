@@ -36,7 +36,7 @@ import Notes from '@blog/components/Notes';
 import GoTop from '@blog/components/GoTop'; 
 import SideMenu from '@blog/components/SideMenu';
 import Tag from '@blog/components/Tag';
-import NavHeader from '@blog/components/NavHeader';
+import NavHeader from '@components/NavHeader';
 export default {
   components: {
     NavHeader,

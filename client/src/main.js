@@ -1,7 +1,12 @@
 import Vue from "vue";
 import App from "./App.vue"; 
-import router from "./blog/router";
-import store from "./blog/store";
+import VueRouter from "vue-router";  
+import BlogRouter from "@blog/router";
+import DevelopRouter from "@develop/router";
+import AdminRouter from "@admin/router";
+import BlogSettingRouter from "@setting/router";
+import PublicRouter from "@router";
+import store from "@blog/store";
 import "../public/css/main.css"; 
 import {
   Container,
@@ -11,7 +16,8 @@ import {
   Button,
   Tree,
   Backtop,
-  Icon
+  Icon,
+  Menu
 } from 'element-ui';
 
 Vue.config.productionTip = false;
@@ -24,6 +30,19 @@ Vue.use(Button);
 Vue.use(Tree);
 Vue.use(Backtop);
 Vue.use(Icon);
+Vue.use(VueRouter);
+Vue.use(Menu);
+
+const router = new VueRouter({
+  routes: [
+    ...BlogRouter,
+    ...DevelopRouter,
+    ...AdminRouter,
+    ...PublicRouter,
+    ...BlogSettingRouter
+  ],
+  mode: "history"
+}) 
 
 new Vue({
   router,
