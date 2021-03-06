@@ -1,0 +1,13 @@
+/* 全局初始化 */
+@import "reset-old.css";
+@import "reset-new.css";
+
+/* 字体 */
+@import "font.css";
+
+/* 工具类 */
+@import "util.css";
+
+/* 以下是公共的组件样式 */
+@import "article.css";
+@import "blog-base.css";
