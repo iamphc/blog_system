@@ -1,6 +1,6 @@
 <template>
-  <div class="develop-home-wrapper">
-    <nav-header />
+  <div class="develop-setting-wrapper">
+    <nav-header :navTitle="navTitle"></nav-header>
   </div>
 </template>
 
@@ -9,6 +9,13 @@ import NavHeader from '@components/NavHeader';
 export default {
   components: {
     NavHeader
+  },
+  data() {
+    return {
+      navTitle: {
+        type: "blog-setting"
+      }
+    }
   }
 }
 </script>

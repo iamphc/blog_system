@@ -1,24 +1,24 @@
 <template> 
   <el-row class="nav-header-wrapper">
     <el-col :span="6" class="header-title-wrapper">
-      <router-link to="/">
-        <span>{{userName}}的技术博客</span>
+      <router-link to="/"> 
+        <span>{{getNavTitle}}</span>
       </router-link>
     </el-col>
     <el-col :span="3" class="header-btn-wrapper">
-      <el-button type="primary" round>
-        <router-link to="/setting">后台设置</router-link>
-      </el-button>
+      <router-link to="/setting">
+        <el-button type="primary" round>后台设置</el-button>
+      </router-link>
     </el-col>
     <el-col :span="3" class="header-btn-wrapper">
-      <el-button type="primary" round>
-        <router-link to="/admin">控制面板</router-link>
-      </el-button>
+      <router-link to="/admin">
+        <el-button type="primary" round>控制面板</el-button>
+      </router-link>
     </el-col>
     <el-col :span="3" class="header-btn-wrapper">
-      <el-button type="primary" round>
-        <router-link to="/develop">开发者模式</router-link>
-      </el-button>
+      <router-link to="/develop">
+        <el-button type="primary" round>开发者模式</el-button>
+      </router-link>
     </el-col>
   </el-row> 
 </template>
@@ -26,9 +26,14 @@
 <script>
   export default {
     props: {
-      userName: {
-        type: String,
-        default: "庞海川",
+      navTitle: {
+        type: Object,
+        default() {
+          return {
+            type: "blog",
+            name: "庞海川"
+          }
+        },
       },
       theme: {
         type: Object,
@@ -49,29 +54,26 @@
         wrapper.style.backgroundColor = this.theme.backgroundColor
         wrapper.style.color = this.theme.fontColor
       }
+    },
+    computed: {
+      getNavTitle() {
+        let title = ""
+        switch(this.navTitle.type) {
+          case "blog":
+            title = this.navTitle.name + "的技术博客"
+            break;
+          case "blog-setting":
+            title = "博客页面设置"
+            break;
+          case "admin":
+            title = "后台统计"
+            break;
+          case "develop":
+            title = "开发者模式"
+            break;
+        }
+        return title
+      }
     }
   }
-</script>
-
-<style scoped>
-  .nav-header-wrapper {
-    text-align: center;
-    padding: 15px 15%;
-    font-size: 3rem;
-    position: fixed;
-    z-index: 999;
-    left: 0;
-    top: 0;
-    right: 0;
-  }
-
-  .header-title-wrapper {
-    line-height: 40px;
-    text-align: left;
-  }
-
-  .header-btn-wrapper {
-    float: right;
-    text-align: right;
-  }
-</style>
+</script> 
