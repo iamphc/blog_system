@@ -1,7 +1,7 @@
 /* 默认字体 */
 @font-face {
   font-family: "default-font";
-  src: url("../fonts/default-font.ttf");
+  src: url("../../fonts/default-font.ttf");
 }
 
 html {

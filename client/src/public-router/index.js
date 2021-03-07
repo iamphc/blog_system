@@ -12,7 +12,7 @@ const routes = [
   {
     path: "/setting",
     name: "blogSettingHome",
-    component: () => import("@admin/views/Homepage")
+    component: () => import("@setting/views/Homepage")
   }
 ]
 
