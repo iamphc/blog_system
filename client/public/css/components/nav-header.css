@@ -1,12 +1,14 @@
-.nav-header-wrapper {
+/* main header */
+.main-header-content {
+  position: fixed;
   text-align: center;
   padding: 15px 15%;
   font-size: 3rem;
-  position: fixed;
   z-index: 999;
   left: 0;
   top: 0;
   right: 0;
+  z-index: 999;
 }
 
 .header-title-wrapper {
@@ -17,4 +19,17 @@
 .header-btn-wrapper {
   float: right;
   text-align: right;
+}
+
+.hide-auto {
+  
+}
+
+/* sub header */
+.sub-header-content {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 1;
 }
