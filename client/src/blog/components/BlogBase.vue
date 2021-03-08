@@ -1,6 +1,6 @@
 <template>
   <div class="blog-wrapper">
-    <nav-header /> 
+    <nav-header />  
     <el-row type="flex" class="blog-body">
       <!-- 插槽左部分 -->
       <slot name="section-left">

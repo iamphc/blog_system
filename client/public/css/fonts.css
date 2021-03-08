@@ -1,1 +1,6 @@
 @import "fonts/default.css";
+
+html {
+  font-family: "song-ti";
+  font-size: 10px;
+}

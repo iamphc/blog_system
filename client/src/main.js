@@ -17,7 +17,9 @@ import {
   Tree,
   Backtop,
   Icon,
-  Menu
+  Menu,
+  MenuItem,
+  Submenu
 } from 'element-ui';
 
 Vue.config.productionTip = false;
@@ -32,6 +34,8 @@ Vue.use(Backtop);
 Vue.use(Icon);
 Vue.use(VueRouter);
 Vue.use(Menu);
+Vue.use(MenuItem);
+Vue.use(Submenu);
 
 const router = new VueRouter({
   routes: [

@@ -4,7 +4,7 @@
   src: url("../../fonts/default-font.ttf");
 }
 
-html {
-  font-family: "default-font";
-  font-size: 10px;
+@font-face {
+  font-family: "song-ti";
+  src: url("../../fonts/songti.TTF");
 }
