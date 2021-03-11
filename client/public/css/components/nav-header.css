@@ -4,11 +4,10 @@
   text-align: center;
   padding: 15px 15%;
   font-size: 3rem;
-  z-index: 999;
+  z-index: 1;
   left: 0;
   top: 0;
-  right: 0;
-  z-index: 999;
+  right: 0; 
 }
 
 .header-title-wrapper {
@@ -19,17 +18,41 @@
 .header-btn-wrapper {
   float: right;
   text-align: right;
-}
+} 
 
-.hide-auto {
-  
+.header__nowrap {
+  white-space: nowrap; 
+} 
+
+.home-title {
+  color: #fff;
 }
 
 /* sub header */
-.sub-header-content {
-  position: fixed;
-  left: 0;
-  top: 0;
+.sub-header-content {   
+  position: relative;
+  background-color: #545c64; 
+  padding: 0 15%;
+  cursor: pointer;
+}
+
+.sub-header-item {
+  font-size: 2rem;
+} 
+
+.sub-title {
+  line-height: 60px;
+  font-size: 3rem;
+  color: #fff;
+}
+
+.show-auto {
+  position: absolute;
   right: 0;
-  z-index: 1;
+  top: 0;
+  background-color: #fff;
+  opacity: 0.5;
+  height: 60px;
+  width: 10px;
+  cursor: pointer;
 }
