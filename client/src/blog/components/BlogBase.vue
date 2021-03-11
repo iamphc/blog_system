@@ -6,7 +6,7 @@
       <slot name="section-left">
         <div class="section-side-wrapper">
           <el-col class="blog-body-section blog-body-section__left" :span="6">
-            <side-menu />
+            <category-menu />
           </el-col>
         </div>
       </slot>
@@ -34,14 +34,14 @@
 import BlogArticlesList from '@blog/components/BlogArticlesList';
 import Notes from '@blog/components/Notes';
 import GoTop from '@blog/components/GoTop'; 
-import SideMenu from '@blog/components/SideMenu';
+import CategoryMenu from '@/blog/components/CategoryMenu';
 import Tag from '@blog/components/Tag';
 import NavHeader from '@components/NavHeader';
 export default {
   components: {
     NavHeader,
     Tag,
-    SideMenu,
+    CategoryMenu,
     BlogArticlesList,
     GoTop,
     Notes
