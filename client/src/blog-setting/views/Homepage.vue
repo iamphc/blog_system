@@ -2,7 +2,8 @@
   <div class="develop-setting-wrapper">
     <nav-header 
       :navTitle="navTitle" 
-      :subHeader="subHeader" />
+      :subHeaderMenu="subHeaderMenu"
+      :isSub="true" />
   </div>
 </template>
 
@@ -17,9 +18,7 @@
         navTitle: {
           type: "blog-setting"
         },
-        subHeader: {
-          hasSub: true,
-          menu: [{
+        subHeaderMenu: [{
             index: "themes",
             name: "主题"
           },{
@@ -27,10 +26,8 @@
             name: "功能区"
           },{
             index: "other",
-            name: "其他",
-            menu: []
-          }]
-        }
+            name: "其他"
+        }] 
       }
     }
   }

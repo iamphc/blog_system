@@ -2,11 +2,12 @@
   <div class="nav-header-wrapper">
     <!-- 主标题 -->
     <el-row 
-      class="main-header-content"
-      :class="{'hide-auto': subHeader.hasSub}">
+      class="main-header-content" 
+      v-show="isShowHome" 
+      v-on:mouseover="test">
       <el-col :span="6" class="header-title-wrapper">
         <router-link to="/">
-          <span>{{getNavTitle}}</span>
+          <span class="home-title header__nowrap">{{getNavTitle}}</span>
         </router-link>
       </el-col>
       <el-col :span="3" class="header-btn-wrapper">
@@ -26,33 +27,44 @@
       </el-col>
     </el-row>
     <!-- 副标题 -->
-    <el-menu 
-      class="sub-header-content" 
-      v-if="subHeader.hasSub"
-      :default-active="activeIndex2" 
-      mode="horizontal"  
-      background-color="#545c64" 
-      text-color="#fff" 
-      active-text-color="#ffd04b">
-      <el-menu-item 
-        v-for="(item, index) in subHeader.menu" :key="index">
-        <!-- 有子菜单 -->
-        <el-submenu v-if="item.menu" index="item.index">
-          <template slot="title">{{item.name}}</template>
+    <el-row 
+      v-if="isShowSub"
+      class="sub-header-content">
+      <el-col :span="12">
+        <span class="header__nowrap sub-title">{{getNavTitle}}</span>
+      </el-col>
+      <el-col 
+        :span="6" 
+        :offset="6">
+        <el-menu  
+          :default-active="defaultActive" 
+          mode="horizontal" 
+          background-color="#545c64"
+          text-color="#fff" 
+          active-text-color="#ffd04b">
           <el-menu-item 
-            v-for="(subItem, subIndex) in item.menu" 
-            :key="subIndex"
-            index="subItem.index">{{subItem.name}}</el-menu-item>
-        </el-submenu>
-        <!-- 无子菜单 -->
-        <el-menu-item v-else index="item.index">{{item.name}}</el-menu-item>
-      </el-menu-item>
-      <!-- <el-menu-item index="theme">主题</el-menu-item>
-      <el-menu-item index="function-area">功能区</el-menu-item>
-      <el-submenu index="other">
-        <template slot="title">其他</template>
-      </el-submenu> -->
-    </el-menu>
+            class="sub-header-item" 
+            v-for="(item, index) in subHeaderMenu" 
+            :key="index"
+            :index="item.index">
+              {{item.name}}
+            <!-- 有子菜单 -->
+            <el-submenu v-if="item.menu">
+              <template slot="title">{{item.name}}</template>
+              <el-menu-item 
+                v-for="(subItem, subIndex) in item.menu" 
+                :key="subIndex" 
+                index="subItem.index">
+                {{subItem.name}}
+              </el-menu-item>
+            </el-submenu>
+          </el-menu-item>
+        </el-menu>
+      </el-col>
+      <div 
+        class="show-auto" 
+        v-on:mouseover="showHomeHeader"></div>
+    </el-row>
   </div>
 </template>
 
@@ -60,7 +72,9 @@
   export default {
     data() {
       return {
-        activeIndex2: "1"
+        defaultActive: "themes",
+        changeShowHome: false,
+        initShow: true
       }
     },
     props: {
@@ -82,20 +96,32 @@
           }
         }
       },
-      subHeader: {
-        type: Object,
-        default() {
-          return {
-            hasSub: false,
-            menu: []  // 最多两层
-          }
+      subHeaderMenu: {
+        type: Array,
+        default () {
+          return [] // 最多两层 
         }
+      },
+      isSub: {
+        type: Boolean,
+        default: false
       }
     },
     mounted() {
       this.setTheme()
     },
     methods: {
+      test() {
+        alert("enter")
+      },
+      showHomeHeader() {
+        this.changeShowHome = true
+      },
+      hideHomeHeader() {
+        if(this.isSub) {
+          this.changeShowHome = false
+        }
+      },
       setTheme() {
         let wrapper = document.querySelector(".main-header-content")
         wrapper.style.backgroundColor = this.theme.backgroundColor
@@ -103,6 +129,22 @@
       }
     },
     computed: {
+      isShowHome() {
+        if(this.changeShowHome) {
+          this.initShow = false
+        }
+        if(!this.isSub) {
+          return true;
+        }
+        if(this.initShow) {
+          return false;
+        } else {
+          return this.changeShowHome;
+        }
+      },
+      isShowSub() {
+        return this.subHeaderMenu.length;
+      },
       getNavTitle() {
         let title = ""
         switch (this.navTitle.type) {
