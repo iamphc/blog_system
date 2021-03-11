@@ -1,5 +1,10 @@
-/* 以下是公共的组件样式 */
-@import "components/article.css";
-@import "components/blog-base.css";
-@import "components/nav-header.css";
-@import "components/preview.css";
+/* 公共组件 */
+@import "components/public/nav-header.css";
+
+/* 博客主页 */
+@import "components/blog/article.css";
+@import "components/blog/blog-base.css";
+
+/* 博客设置 */
+/* 博客管理 */
+/* 开发者 */    
