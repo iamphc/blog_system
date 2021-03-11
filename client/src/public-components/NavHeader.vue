@@ -7,7 +7,7 @@
       v-on:mouseleave.native="hideHomeHeader">
       <el-col :span="6" class="header-title-wrapper">
         <router-link to="/">
-          <span class="home-title header__nowrap">{{getNavTitle}}</span>
+          <span class="home-title header__nowrap">{{this.blogUser + "的技术博客"}}</span>
         </router-link>
       </el-col>
       <el-col :span="3" class="header-btn-wrapper">
@@ -69,7 +69,9 @@
 </template>
 
 <script>
+  import globalMixins from "@mixins/global"
   export default {
+    mixins: [globalMixins],
     data() {
       return {
         defaultActive: "themes",
@@ -78,14 +80,9 @@
       }
     },
     props: {
-      navTitle: {
-        type: Object,
-        default () {
-          return {
-            type: "blog",
-            name: "Lvanzn"
-          }
-        },
+      navTitleType: {
+        type: String,
+        default: "blog" 
       },
       theme: {
         type: Object,
@@ -144,10 +141,7 @@
       },
       getNavTitle() {
         let title = ""
-        switch (this.navTitle.type) {
-          case "blog":
-            title = this.navTitle.name + "的技术博客"
-            break;
+        switch (this.navTitleType) { 
           case "blog-setting":
             title = "博客页面设置"
             break;
@@ -157,7 +151,7 @@
           case "develop":
             title = "开发者模式"
             break;
-        }
+        } 
         return title
       }
     }

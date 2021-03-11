@@ -1,7 +1,7 @@
 <template>
   <div class="develop-setting-wrapper">
     <nav-header 
-      :navTitle="navTitle" 
+      :navTitleType="navTitleType" 
       :subHeaderMenu="subHeaderMenu"
       :isSub="true" />
   </div>
@@ -15,9 +15,7 @@
     },
     data() {
       return {
-        navTitle: {
-          type: "blog-setting"
-        },
+        navTitleType: "blog-setting",
         subHeaderMenu: [{
             index: "themes",
             name: "主题"
