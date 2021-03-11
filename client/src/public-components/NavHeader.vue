@@ -4,7 +4,7 @@
     <el-row 
       class="main-header-content" 
       v-show="isShowHome" 
-      v-on:mouseover="test">
+      v-on:mouseleave.native="hideHomeHeader">
       <el-col :span="6" class="header-title-wrapper">
         <router-link to="/">
           <span class="home-title header__nowrap">{{getNavTitle}}</span>
@@ -110,10 +110,7 @@
     mounted() {
       this.setTheme()
     },
-    methods: {
-      test() {
-        alert("enter")
-      },
+    methods: { 
       showHomeHeader() {
         this.changeShowHome = true
       },
