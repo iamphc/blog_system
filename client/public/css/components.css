@@ -1,10 +1,13 @@
 /* 公共组件 */
-@import "components/public/nav-header.css";
+@import "components/public/nav-header.css";     /*/nav-header*/
+@import "components/public/side-menu.css";      /*side-menu*/
 
 /* 博客主页 */
-@import "components/blog/article.css";
-@import "components/blog/blog-base.css";
+@import "components/blog/article.css";          /*article*/
+@import "components/blog/blog-base.css";        /*blog-base*/
 
 /* 博客设置 */
+@import "components/blog-setting/homepage.css"; /*homepage*/
+
 /* 博客管理 */
 /* 开发者 */    

@@ -1,13 +1,9 @@
 /* main header */
-.main-header-content {
-  position: fixed;
+.main-header-content { 
   text-align: center;
   padding: 15px 15%;
   font-size: 3rem;
   z-index: 1;
-  left: 0;
-  top: 0;
-  right: 0; 
 }
 
 .header-title-wrapper {
@@ -29,11 +25,11 @@
 }
 
 /* sub header */
-.sub-header-content {   
-  position: relative;
+.sub-header-content {    
   background-color: #545c64; 
   padding: 0 15%;
   cursor: pointer;
+  z-index: 999; 
 }
 
 .sub-header-item {

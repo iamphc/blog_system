@@ -2,7 +2,7 @@
   <div class="nav-header-wrapper">
     <!-- 主标题 -->
     <el-row 
-      class="main-header-content" 
+      class="main-header-content top-fixed" 
       v-show="isShowHome" 
       v-on:mouseleave.native="hideHomeHeader">
       <el-col :span="6" class="header-title-wrapper">
@@ -29,7 +29,7 @@
     <!-- 副标题 -->
     <el-row 
       v-if="isShowSub"
-      class="sub-header-content">
+      class="sub-header-content top-fixed">
       <el-col :span="12">
         <span class="header__nowrap sub-title">{{getNavTitle}}</span>
       </el-col>
