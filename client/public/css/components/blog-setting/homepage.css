@@ -3,11 +3,14 @@
   position: relative;
 }
 
-.blog-setting-body {
+.blog-setting-body__left {
   position: relative;
   border-top: 5px #ccc solid; 
+  border-bottom: 5px #ccc solid;
   height: calc(100% - 60px);
   top: 60px;
+  z-index: 500;
+  width: 15%;
 }
 
 .left-placeholder {
@@ -15,7 +18,23 @@
   top: 0;
   left: 0;
   bottom: 0; 
-  border-right: 5px solid #ccc;
+  border-right: 5px solid #ccc;  
   background: #545C64;
 }
 
+.side-menu-wrapper {   
+  height: 100%;
+  background: #545C64;
+}
+
+.blog-setting-body__center {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  bottom: 0;
+  width: 85%;
+  border: 5px solid #ccc; 
+  background: #545C64;
+}
+
+.center-display {}

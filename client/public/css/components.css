@@ -1,6 +1,6 @@
 /* 公共组件 */
 @import "components/public/nav-header.css";     /*/nav-header*/
-@import "components/public/side-menu.css";      /*side-menu*/
+@import "components/public/side-menu.css";      /*side-menu*/ 
 
 /* 博客主页 */
 @import "components/blog/article.css";          /*article*/
