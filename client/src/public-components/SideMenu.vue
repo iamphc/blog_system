@@ -1,10 +1,12 @@
 <template>
   <el-menu 
+    class="side-menu"
     :default-active="sideMenu[0].index"  
     background-color="#545c64" 
     text-color="#fff" 
     active-text-color="#ffd04b"> 
     <el-menu-item 
+      class="side-menu-item"
       v-for="(item, index) in sideMenu"
       :key="index"
       :index="item.index">

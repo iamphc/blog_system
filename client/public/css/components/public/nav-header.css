@@ -3,7 +3,7 @@
   text-align: center;
   padding: 15px 15%;
   font-size: 3rem;
-  z-index: 1;
+  z-index: 1000;
 }
 
 .header-title-wrapper {

@@ -4,12 +4,14 @@
       :navTitleType="navTitleType" 
       :subHeaderMenu="subHeaderMenu"
       :isSub="true" />
-    <el-row class="blog-setting-body">
-      <el-col :span="1" class="left-placeholder"></el-col>
-      <el-col :offset="1" :span="3" class="side-menu-wrapper">
+    <el-row class="blog-setting-body__left">
+      <el-col :span="8" class="left-placeholder"></el-col>
+      <el-col :offset="8" :span="16" class="side-menu-wrapper">
         <side-menu :sideMenu="sideMenu"/>
-      </el-col>
-      <el-col :span="20"></el-col>
+      </el-col> 
+    </el-row>
+    <el-row class="blog-setting-body__center">
+      <el-col :span="24" class="center-display"></el-col>
     </el-row>
   </div>
 </template>
@@ -36,7 +38,14 @@
             name: "其他"
         }],
         sideMenu: [{
-          index: ""
+          index: "theme-color",
+          name: "主题颜色"
+        },{
+          index: "theme-image",
+          name: "主题图片"
+        },{
+          index: "self-edit",
+          name: "自定义编辑"
         }] 
       }
     }

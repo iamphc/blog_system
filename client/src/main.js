@@ -4,8 +4,7 @@ import VueRouter from "vue-router";
 import BlogRouter from "@blog/router";
 import DevelopRouter from "@develop/router";
 import AdminRouter from "@admin/router";
-import BlogSettingRouter from "@setting/router";
-import PublicRouter from "@router";
+import BlogSettingRouter from "@setting/router"; 
 import store from "@blog/store";
 import "../public/css/main.css"; 
 import {
@@ -41,8 +40,7 @@ const router = new VueRouter({
   routes: [
     ...BlogRouter,
     ...DevelopRouter,
-    ...AdminRouter,
-    ...PublicRouter,
+    ...AdminRouter, 
     ...BlogSettingRouter
   ],
   mode: "history"

@@ -1,4 +1,8 @@
-.side-menu-wrapper { 
-  height: 100%;
-  background: #545C64;
+.side-menu {
+  border: none;
+  padding: 20px 0;
+}
+
+.side-menu-item {
+  font-size: 1.8rem;
 }
