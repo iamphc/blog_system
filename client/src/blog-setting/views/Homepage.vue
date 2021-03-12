@@ -1,17 +1,26 @@
 <template>
-  <div class="develop-setting-wrapper">
+  <div class="blog-setting-wrapper">
     <nav-header 
       :navTitleType="navTitleType" 
       :subHeaderMenu="subHeaderMenu"
       :isSub="true" />
+    <el-row class="blog-setting-body">
+      <el-col :span="1" class="left-placeholder"></el-col>
+      <el-col :offset="1" :span="3" class="side-menu-wrapper">
+        <side-menu :sideMenu="sideMenu"/>
+      </el-col>
+      <el-col :span="20"></el-col>
+    </el-row>
   </div>
 </template>
 
 <script>
   import NavHeader from '@components/NavHeader';
+  import SideMenu from '@/public-components/SideMenu';
   export default {
     components: {
-      NavHeader
+      NavHeader,
+      SideMenu
     },
     data() {
       return {
@@ -25,6 +34,9 @@
           },{
             index: "other",
             name: "其他"
+        }],
+        sideMenu: [{
+          index: ""
         }] 
       }
     }

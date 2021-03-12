@@ -3,3 +3,10 @@
   display: block;
   clear: both;
 }
+
+.top-fixed {
+  position: fixed; 
+  left: 0;
+  top: 0;
+  right: 0; 
+}

@@ -1,0 +1,21 @@
+.blog-setting-wrapper {
+  height: 100%;
+  position: relative;
+}
+
+.blog-setting-body {
+  position: relative;
+  border-top: 5px #ccc solid; 
+  height: calc(100% - 60px);
+  top: 60px;
+}
+
+.left-placeholder {
+  position: absolute; 
+  top: 0;
+  left: 0;
+  bottom: 0; 
+  border-right: 5px solid #ccc;
+  background: #545C64;
+}
+
