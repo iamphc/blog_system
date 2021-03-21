@@ -16,6 +16,15 @@
   text-align: right;
 } 
 
+.header-btn-wrapper > a {
+  display: inline-block;
+  max-width: 100%;
+}
+
+.header-btn {
+  max-width: 100%;
+}
+
 .header__nowrap {
   white-space: nowrap; 
 } 
