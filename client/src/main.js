@@ -5,8 +5,8 @@ import BlogRouter from "@blog/router";
 import DevelopRouter from "@develop/router";
 import AdminRouter from "@admin/router";
 import BlogSettingRouter from "@setting/router"; 
-import store from "@blog/store";
-import "../public/css/main.css"; 
+import "../public/css/main.css";  
+import store from '@/store';
 import {
   Container,
   Header,
@@ -22,6 +22,7 @@ import {
 } from 'element-ui';
 
 Vue.config.productionTip = false;
+Vue.prototype.$bus = new Vue();
 
 Vue.use(Container);
 Vue.use(Header);
@@ -51,3 +52,4 @@ new Vue({
   store,
   render: h => h(App)
 }).$mount("#app");
+

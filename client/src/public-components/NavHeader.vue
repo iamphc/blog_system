@@ -11,8 +11,8 @@
         </router-link>
       </el-col>
       <el-col :span="3" class="header-btn-wrapper">
-        <router-link to="/setting">
-          <el-button class="header-btn" type="primary" round>后台设置</el-button>
+        <router-link to="/setting/themes">
+          <el-button type="primary" round>后台设置</el-button>
         </router-link>
       </el-col>
       <el-col :span="3" class="header-btn-wrapper">
@@ -41,6 +41,7 @@
           mode="horizontal" 
           background-color="#545c64"
           text-color="#fff" 
+          @select="handleSelect"
           active-text-color="#ffd04b">
           <el-menu-item 
             class="sub-header-item" 
@@ -68,12 +69,14 @@
   </div>
 </template>
 
-<script>
+<script>  
+  import * as types from '@/store/mutation-types.js'
   import globalMixins from "@mixins/global"
+  import { mapState,mapMutations } from 'vuex'
   export default {
     mixins: [globalMixins],
     data() {
-      return {
+      return {     
         defaultActive: "themes",
         changeShowHome: false,
         initShow: true
@@ -104,10 +107,13 @@
         default: false
       }
     },
-    mounted() {
+    mounted() { 
       this.setTheme()
     },
     methods: { 
+      ...mapMutations({
+        headerType: 'blogSetting/developSettingHeaderType'
+      }),
       showHomeHeader() {
         this.changeShowHome = true
       },
@@ -120,9 +126,13 @@
         let wrapper = document.querySelector(".main-header-content")
         wrapper.style.backgroundColor = this.theme.backgroundColor
         wrapper.style.color = this.theme.fontColor
+      },
+
+      handleSelect(path, keyPath) {
+        this.headerType(path)
       }
     },
-    computed: {
+    computed: { 
       isShowHome() {
         if(this.changeShowHome) {
           this.initShow = false
