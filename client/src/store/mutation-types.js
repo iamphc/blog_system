@@ -1,0 +1,2 @@
+// blog-setting
+export const DEVELOP_SETTING_HEADER_TYPE = 'DEVELOP_SETTING_HEADER_TYPE';
