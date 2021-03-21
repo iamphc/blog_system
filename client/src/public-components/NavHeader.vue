@@ -11,7 +11,7 @@
         </router-link>
       </el-col>
       <el-col :span="3" class="header-btn-wrapper">
-        <router-link to="/setting/themes">
+        <router-link to="/setting/home">
           <el-button type="primary" round>后台设置</el-button>
         </router-link>
       </el-col>
@@ -37,7 +37,7 @@
         :span="6" 
         :offset="6">
         <el-menu  
-          :default-active="defaultActive" 
+          :default-active="defaultActive"  
           mode="horizontal" 
           background-color="#545c64"
           text-color="#fff" 
@@ -111,8 +111,8 @@
       this.setTheme()
     },
     methods: { 
-      ...mapMutations({
-        headerType: 'blogSetting/developSettingHeaderType'
+      ...mapMutations('blogSetting', {
+        headerType: types.SET_DEVELOP_SETTING_HEADER_TYPE
       }),
       showHomeHeader() {
         this.changeShowHome = true
