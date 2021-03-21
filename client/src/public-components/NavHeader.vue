@@ -17,12 +17,12 @@
       </el-col>
       <el-col :span="3" class="header-btn-wrapper">
         <router-link to="/admin">
-          <el-button type="primary" round>控制面板</el-button>
+          <el-button class="header-btn" type="primary" round>控制面板</el-button>
         </router-link>
       </el-col>
       <el-col :span="3" class="header-btn-wrapper">
         <router-link to="/develop">
-          <el-button type="primary" round>开发者模式</el-button>
+          <el-button class="header-btn" type="primary" round>开发者模式</el-button>
         </router-link>
       </el-col>
     </el-row>
