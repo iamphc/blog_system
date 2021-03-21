@@ -23,7 +23,7 @@
             index: "themes",
             name: "主题"
           },{
-            index: "function-area",
+            index: "function_area",
             name: "功能区"
           },{
             index: "other",
