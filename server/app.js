@@ -13,7 +13,8 @@ const {
   BlogHomepageMenu,
   BlogArticles,
   BlogNotes,
-  BlogTags
+  BlogTags,
+  Users
 } = require('./database');
 
 var app = express();

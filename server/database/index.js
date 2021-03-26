@@ -5,3 +5,4 @@ exports.BlogHomepageMenu = require('./schema/BlogHomepageMenu');
 exports.BlogArticles = require('./schema/BlogArticles');
 exports.BlogNotes = require('./schema/BlogNotes');
 exports.BlogTags = require('./schema/BlogTags');
+exports.Users = require('./schema/Users');
