@@ -2,46 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a6c33d27-064e-48cc-aa87-732604d784c8" name="默认的" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/other-blog-system.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-test/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-test/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-test/babel.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-test/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-test/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-test/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-test/public/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-test/public/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-test/src/App.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-test/src/assets/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-test/src/components/HelloWorld.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-test/src/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-test/src/router/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-test/src/server-src/backup/phc/users.bson" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-test/src/server-src/backup/phc/users.metadata.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-test/src/server-src/modules/Operation.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-test/src/server-src/modules/OperationTypes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-test/src/server-src/modules/User.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-test/src/server-src/modules/addressSchema.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-test/src/server-src/modules/createCollection.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-test/src/server-src/modules/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-test/src/store/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-test/src/views/About.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-test/src/views/Home.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server-test/vue.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/bin/www" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/public/stylesheets/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/routes/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/routes/users.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/views/error.jade" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/views/index.jade" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/views/layout.jade" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/client/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/database/createCollection.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/database/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/database/schema/BlogArticles.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/database/schema/BlogHomepageMenu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/database/schema/BlogNotes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/database/schema/BlogTags.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/database/schema/GlobalSettingMenu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-test/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server-test/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +33,10 @@
             <RecentBranchesForRepo>
               <option name="branches">
                 <list>
+                  <RecentBranch>
+                    <option name="branchName" value="feature/20210326-data-documents-build" />
+                    <option name="lastUsedInstant" value="1616749361" />
+                  </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="feature/20210326-server-build" />
                     <option name="lastUsedInstant" value="1616740602" />
@@ -100,7 +77,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1616732330372</updated>
-      <workItem from="1616732331636" duration="6423000" />
+      <workItem from="1616732331636" duration="12017000" />
     </task>
     <servers />
   </component>
