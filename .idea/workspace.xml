@@ -2,10 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a6c33d27-064e-48cc-aa87-732604d784c8" name="默认的" comment="">
-      <change afterPath="$PROJECT_DIR$/server/database/schema/Users.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/routes/admin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/routes/blog-setting.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/routes/blog.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/routes/develop.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/routes/global.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/database/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/database/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/database/createCollection.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/database/createCollection.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/users.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +30,10 @@
             <RecentBranchesForRepo>
               <option name="branches">
                 <list>
+                  <RecentBranch>
+                    <option name="branchName" value="feature/20210326-express-api-create" />
+                    <option name="lastUsedInstant" value="1616758185" />
+                  </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="feature/20210326-data-documents-build" />
                     <option name="lastUsedInstant" value="1616749906" />
@@ -46,6 +56,9 @@
     </option>
   </component>
   <component name="ProjectId" id="1qHN08GKpZodqjqQ8kiTH9YMsvb" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="新增" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -58,6 +71,7 @@
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -74,5 +88,11 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="196" y="-901" key="SettingsEditor" timestamp="1616767297666">
+      <screen x="-273" y="-1080" width="1920" height="1080" />
+    </state>
+    <state x="196" y="-901" key="SettingsEditor/0.0.1280.800/-273.-1080.1920.1080@-273.-1080.1920.1080" timestamp="1616767297666" />
   </component>
 </project>
