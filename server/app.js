@@ -7,6 +7,15 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
+// 连接phc数据库
+const {
+  GlobalSettingMenu,
+  BlogHomepageMenu,
+  BlogArticles,
+  BlogNotes,
+  BlogTags
+} = require('./database');
+
 var app = express();
 
 // view engine setup
