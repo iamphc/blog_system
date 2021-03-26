@@ -2,19 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a6c33d27-064e-48cc-aa87-732604d784c8" name="默认的" comment="">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/database/createCollection.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/database/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/database/schema/BlogArticles.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/database/schema/BlogHomepageMenu.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/database/schema/BlogNotes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/database/schema/BlogTags.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/database/schema/GlobalSettingMenu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/database/schema/Users.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server-test/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server-test/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/database/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/database/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,15 +26,15 @@
                 <list>
                   <RecentBranch>
                     <option name="branchName" value="feature/20210326-data-documents-build" />
-                    <option name="lastUsedInstant" value="1616749361" />
+                    <option name="lastUsedInstant" value="1616749906" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="develop" />
+                    <option name="lastUsedInstant" value="1616749667" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="feature/20210326-server-build" />
                     <option name="lastUsedInstant" value="1616740602" />
-                  </RecentBranch>
-                  <RecentBranch>
-                    <option name="branchName" value="develop" />
-                    <option name="lastUsedInstant" value="1616740601" />
                   </RecentBranch>
                 </list>
               </option>
@@ -77,7 +68,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1616732330372</updated>
-      <workItem from="1616732331636" duration="12017000" />
+      <workItem from="1616732331636" duration="13231000" />
     </task>
     <servers />
   </component>
