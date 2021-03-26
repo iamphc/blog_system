@@ -7,5 +7,5 @@ mongoose.connect("mongodb://localhost:27017/blog-system-backend", {
 });
 
 mongoose.connection.on('open', () => {
-    console.log('数据库「blog-system-backend」已连接...');
+    console.log('数据库「blog-system-backend」连接中...');
 });

@@ -4,10 +4,13 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+const blog = require('./routes/blog');    // 博客主页
+const blogSetting = require('./routes/blog-setting'); // 博客设置
+const develop = require('./routes/develop');  // 开发者模式
+const admin = require('./routes/admin');    // 后台管理
+const global = require('./routes/global');  // 全局
 
-// 连接phc数据库
+// 连接「blog-system-backend」数据库
 const {
   GlobalSettingMenu,
   BlogHomepageMenu,
@@ -29,8 +32,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+// 路由分发
+app.use('/blog', blog);
+app.use('/blog-setting', blogSetting);
+app.use('/admin', admin);
+app.use('/develop', develop);
+app.use('/global', global);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
