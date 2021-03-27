@@ -5,18 +5,32 @@
       <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/client/public/css/components/public/user-operation.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/Api/config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/Api/global/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/Api/index.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/client/src/mixins/UserOperation.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/client/src/public-components/UserOperation.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/store/actions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/store/store.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/public/css/components.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/css/components.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/mixins/admin/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/mixins/blog-setting/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/mixins/blog/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/mixins/develop/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/mixins/admin/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Api/admin/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/mixins/blog-setting/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Api/blog-setting/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/mixins/blog/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Api/blog/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/mixins/develop/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Api/develop/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/mixins/global/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/mixins/User.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/public-components/NavHeader.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/public-components/NavHeader.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/store/actions..js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Api/interceptors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/store/getters.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/getters.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/store/modules/blog-setting.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/modules/blog-setting.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/store/mutations.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/store/mutations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/vue.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/vue.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/global.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/global.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,13 +85,24 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/client/src/Api/admin" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/src/Api/admin" />
+      <recent name="$PROJECT_DIR$/client/src/Api" />
+      <recent name="$PROJECT_DIR$/client/src/Api/blog-setting" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/src/Api" />
+      <recent name="$PROJECT_DIR$/client/src/Api/global" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
