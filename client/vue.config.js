@@ -12,6 +12,7 @@ module.exports = {
       .set("@router", utils.resolve("src/public-router"))
       .set("@setting", utils.resolve("src/blog-setting"))
       .set("@mixins", utils.resolve("src/mixins"))
+      .set("@api", utils.resolve("src/Api"))
   }
 }
 

@@ -71,10 +71,10 @@
 
 <script>  
   import * as types from '@/store/mutation-types.js'
-  import globalMixins from "@mixins/global"
+  import User from "@mixins/User"
   import { mapState,mapMutations } from 'vuex'
   export default {
-    mixins: [globalMixins],
+    mixins: [User],
     data() {
       return {     
         defaultActive: "themes",
