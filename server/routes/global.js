@@ -5,11 +5,6 @@ router.get('/', (req, res, next) => {
     res.send('global homepage');
 });
 
-// TODO:获取用户信息
-router.get('/users/Info', (req, res, next) => {
-    res.send('global user info');
-});
-
 // TODO:创建用户
 router.post('/users/create', (req, res, next) => {
     res.send('global create user');
