@@ -5,7 +5,7 @@ import BlogRouter from "@blog/router";
 import DevelopRouter from "@develop/router";
 import AdminRouter from "@admin/router";
 import BlogSettingRouter from "@setting/router"; 
-import "../public/css/main.css";  
+import "../public/css/main.css";
 import store from '@/store';
 import {
   Container,
@@ -18,7 +18,11 @@ import {
   Icon,
   Menu,
   MenuItem,
-  Submenu
+  Submenu,
+  Dialog,
+  Form,
+  Input,
+  FormItem
 } from 'element-ui';
 
 Vue.config.productionTip = false;
@@ -32,10 +36,14 @@ Vue.use(Button);
 Vue.use(Tree);
 Vue.use(Backtop);
 Vue.use(Icon);
-Vue.use(VueRouter);
 Vue.use(Menu);
 Vue.use(MenuItem);
 Vue.use(Submenu);
+Vue.use(Dialog);
+Vue.use(Form);
+Vue.use(Input);
+Vue.use(FormItem);
+Vue.use(VueRouter);
 
 const router = new VueRouter({
   routes: [

@@ -1,9 +1,16 @@
 <template>
-  <div id="app"> 
+  <div id="app">
+    <user-operation/>
     <router-view />
   </div>
 </template>
 
-<script>  
+<script>
+  import UserOperation from '@components/UserOperation';
+  export default {
+    components: {
+      UserOperation
+    }
+  }
 </script>
  

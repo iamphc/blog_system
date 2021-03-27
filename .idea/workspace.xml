@@ -2,16 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a6c33d27-064e-48cc-aa87-732604d784c8" name="默认的" comment="">
-      <change afterPath="$PROJECT_DIR$/server/routes/admin.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/routes/blog-setting.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/routes/blog.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/routes/develop.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/routes/global.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/public/css/components/public/user-operation.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/mixins/UserOperation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/public-components/UserOperation.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/database/createCollection.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/database/createCollection.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/users.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/css/components.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/css/components.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/mixins/admin/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/mixins/blog-setting/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/mixins/blog/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/mixins/develop/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/mixins/global/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/mixins/User.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/public-components/NavHeader.vue" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/public-components/NavHeader.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,9 +95,21 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="447" y="71" key="#CSS" timestamp="1616817040003">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="447" y="71" key="#CSS/0.0.1280.800@0.0.1280.800" timestamp="1616817040003" />
+    <state x="408" y="30" key="#JavaScript" timestamp="1616779549393">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="408" y="30" key="#JavaScript/0.0.1280.800@0.0.1280.800" timestamp="1616779549393" />
     <state x="196" y="-901" key="SettingsEditor" timestamp="1616767297666">
       <screen x="-273" y="-1080" width="1920" height="1080" />
     </state>
     <state x="196" y="-901" key="SettingsEditor/0.0.1280.800/-273.-1080.1920.1080@-273.-1080.1920.1080" timestamp="1616767297666" />
+    <state x="375" y="110" width="530" height="580" key="find.popup" timestamp="1616779632865">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="375" y="110" width="530" height="580" key="find.popup/0.0.1280.800@0.0.1280.800" timestamp="1616779632865" />
   </component>
 </project>
