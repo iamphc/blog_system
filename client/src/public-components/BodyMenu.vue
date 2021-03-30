@@ -1,8 +1,8 @@
 <template>
   <div class="body-menu-wrapper">
     <el-row class="blog-setting-body__left">
-      <el-col :span="8" class="left-placeholder"></el-col>
-      <el-col :offset="8" :span="16" class="side-menu-wrapper">
+      <el-col :span="4" class="left-placeholder"></el-col>
+      <el-col :offset="4" :span="20" class="side-menu-wrapper">
         <side-menu :sideMenu="sideMenu" />
       </el-col>
     </el-row>

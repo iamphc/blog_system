@@ -34,8 +34,8 @@
         <span class="header__nowrap sub-title">{{getNavTitle}}</span>
       </el-col>
       <el-col 
-        :span="6" 
-        :offset="6">
+        :span="7" 
+        :offset="5">
         <el-menu  
           :default-active="defaultActive"  
           mode="horizontal" 
