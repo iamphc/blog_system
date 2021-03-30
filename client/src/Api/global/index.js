@@ -1,8 +1,9 @@
 import axios from "axios";
 
 export default {
-  userLogin(username, userPwd) {
-    return axios.post("/users/login", {
+  userRegister(userRegisterForm) {
+    alert(userRegisterForm);
+    return axios.post("/users/register", {
       username,
       userPwd
     }).then(res => {

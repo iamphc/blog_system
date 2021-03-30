@@ -1,12 +1,12 @@
-import "@Api/config"
-import interceptors from "@Api/interceptors"
-import admin from "@Api/admin"
-import blog from "@Api/blog"
-import develop from "@Api/develop"
-import blogSetting from "@Api/blog-setting"
-import global from "@Api/global"
+import "@api/config"
+import interceptors from "@api/interceptors"
+import admin from "@api/admin"
+import blog from "@api/blog"
+import develop from "@api/develop"
+import blogSetting from "@api/blog-setting"
+import global from "@api/global"
 
-export default {
+export const Api = {
   admin,
   blog,
   develop,
