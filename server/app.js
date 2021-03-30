@@ -37,11 +37,11 @@ app.use('/blog', blog);
 app.use('/blog-setting', blogSetting);
 app.use('/admin', admin);
 app.use('/develop', develop);
-app.use('/global', global);
+app.use('/', global);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
+app.use(function(req, res, next) { 
+  next(createError(404)); 
 });
 
 // error handler

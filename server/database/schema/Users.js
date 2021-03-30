@@ -2,11 +2,15 @@ const mongoose = require('mongoose');
 const Users = new mongoose.Schema({
     userName: {
         type: String,
-        required: true
+        required: true,
+        minLength: 5,
+        maxLength: 15
     },
     userPwd: {
         type: String,
-        required: true
+        required: true,
+        minLength: 5,
+        maxLength: 15
     },
     userType: {
         type: Number,
