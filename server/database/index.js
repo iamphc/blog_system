@@ -2,7 +2,7 @@ require('./createCollection');
 
 exports.GlobaleSettingMenu = require('./schema/GlobalSettingMenu');
 exports.BlogHomepageMenu = require('./schema/BlogHomepageMenu');
-exports.BlogArticles = require('./schema/BlogArticles');
-exports.BlogNotes = require('./schema/BlogNotes');
-exports.BlogTags = require('./schema/BlogTags');
-exports.Users = require('./schema/Users');
+exports.BlogArticle = require('./schema/BlogArticle');
+exports.BlogNote = require('./schema/BlogNote');
+exports.BlogTag = require('./schema/BlogTag');
+exports.User = require('./schema/User');

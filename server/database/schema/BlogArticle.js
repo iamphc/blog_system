@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const BlogArticles = new mongoose.Schema({
+const BlogArticle = new mongoose.Schema({
     title: {
         type: String,
         required: true
@@ -18,4 +18,4 @@ const BlogArticles = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('BlogArticles',BlogArticles);
+module.exports = mongoose.model('BlogArticle',BlogArticle);
