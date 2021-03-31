@@ -6,17 +6,17 @@ router.get('/', (req, res, next) => {
 });
 
 // TODO:创建用户
-router.post('/register', (req, res, next) => {
+router.post('/user/register', (req, res, next) => {
     res.send(req);
 });
 
 // TODO:用户登录验证
-router.post('/login', (req, res, next) => {
+router.post('/user/login', (req, res, next) => {
     res.send('global user login');
 });
 
 // TODO:获取菜单（顶部+侧边）
-router.get('/menusItemsss', (req, res, next) => {
+router.get('/menusItems', (req, res, next) => {
     res.send('global top-menu/side-menu');
 });
 

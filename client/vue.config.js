@@ -13,6 +13,10 @@ module.exports = {
       .set("@setting", utils.resolve("src/blog-setting"))
       .set("@mixins", utils.resolve("src/mixins"))
       .set("@api", utils.resolve("src/Api"))
+  },
+  // 配置代理服务器（端口）
+  devServer: {
+    proxy: 'http://localhost:3000'
   }
 }
 

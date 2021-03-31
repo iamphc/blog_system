@@ -1,11 +1,10 @@
 import axios from "axios";
 
 export default {
-  userRegister(userRegisterForm) {
-    alert(userRegisterForm);
-    return axios.post("/users/register", {
-      username,
-      userPwd
+  userRegister(userRegisterForm) { 
+    console.log(userRegisterForm);
+    return axios.post("/menusItems", {
+      ...userRegisterForm
     }).then(res => {
       console.log(res);
     }).catch(err => {
