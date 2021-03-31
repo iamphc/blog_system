@@ -60,10 +60,11 @@
       handleRegister(ruleForm) {
         this.$refs[ruleForm].validate(valid => {
           if(valid) {
-            console.log('submit success!');
+            alert('成功！');
+            // 表单提交、触发用户注册接口
             Api.global.userRegister(this.ruleForm);
           } else {
-            console.log('submit failed!');
+            alert('失败！');
             return false
           }
         })
@@ -73,7 +74,7 @@
       }
     },
     mounted() {
-      console.log(Api);
+      // console.log(Api);
     }
   }
 </script>

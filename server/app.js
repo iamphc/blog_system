@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 const blog = require('./routes/blog');    // 博客主页
-const blogSetting = require('./routes/blog-setting'); // 博客设置
+const blogSetting = require('./routes/blogSetting'); // 博客设置
 const develop = require('./routes/develop');  // 开发者模式
 const admin = require('./routes/admin');    // 后台管理
 const global = require('./routes/global');  // 全局
