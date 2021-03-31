@@ -14,10 +14,10 @@ const global = require('./routes/global');  // 全局
 const {
   GlobalSettingMenu,
   BlogHomepageMenu,
-  BlogArticles,
-  BlogNotes,
-  BlogTags,
-  Users
+  BlogArticle,
+  BlogNote,
+  BlogTag,
+  User
 } = require('./database');
 
 var app = express();
