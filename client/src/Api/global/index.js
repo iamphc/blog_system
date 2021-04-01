@@ -3,12 +3,12 @@ import axios from "axios";
 export default {
   userRegister(userRegisterForm) { 
     console.log(userRegisterForm);
-    return axios.post("/menusItems", {
+    return axios.post("/user/register", {
       ...userRegisterForm
     }).then(res => {
-      console.log(res);
+      alert('注册成功');
     }).catch(err => {
-      console.log(err);
+      console.log('注册失败');
     });
   }
 }
