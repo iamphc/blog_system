@@ -8,10 +8,11 @@ exports.global_homepage = (req, res, next) => {
 // TODO:创建用户
 exports.global_register = async(req, res, next) => {
   const user = await User.create({
-    userName: req.body,
+    userName: req.body.userName,
     userPwd: req.body.userPwd
   })
-  res.send(user);
+  const dataSaveRes = user.save();
+  res.send(dataSaveRes);
 }
 
 // TODO:用户登录验证

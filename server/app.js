@@ -3,6 +3,8 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var debug = require('debug')('http');
+var http = require('http');
 
 const blog = require('./routes/blog');    // 博客主页
 const blogSetting = require('./routes/blogSetting'); // 博客设置
@@ -19,6 +21,13 @@ const {
   BlogTag,
   User
 } = require('./database');
+
+// set debug
+debug('booting 「blog system backend」...');
+http.createServer(function(req, res) {
+  debug(req.method + ' ' + req.url);
+  res.send('hello\n');
+});
 
 var app = express();
 
