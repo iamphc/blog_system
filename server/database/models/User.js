@@ -7,13 +7,14 @@ const User = new mongoose.Schema({
         required: true,
         minLength: 5,
         maxLength: 15,
-        unique: true    // 用户名字段唯一
+        unique: true,    // 用户名字段唯一
+        index: true,
+        type: mongoose.Types.ObjectId,
+        trime: true
     },
     userPwd: {
         type: String,
-        required: true,
-        minLength: 5,
-        maxLength: 15,
+        required: true, 
         set(pwd) {
             return bcryptjs.hashSync(pwd, 10);
         }
