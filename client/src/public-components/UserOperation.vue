@@ -37,9 +37,9 @@
       return {
         showDialog: true,
         ruleForm: {
-          userName: '',
-          userName: '',
-          verifiCode: ''
+          userName: 'example',
+          userPwd: '123456',
+          verifiCode: '1234'
         },
         rules: {
           userName: [
