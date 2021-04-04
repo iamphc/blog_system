@@ -22,11 +22,9 @@ import {
   Dialog,
   Form,
   Input,
-  FormItem
+  FormItem,
+  Message
 } from 'element-ui';
-
-Vue.config.productionTip = false;
-Vue.prototype.$bus = new Vue();
 
 Vue.use(Container);
 Vue.use(Header);
@@ -44,6 +42,11 @@ Vue.use(Form);
 Vue.use(Input);
 Vue.use(FormItem);
 Vue.use(VueRouter);
+Vue.use(Message);
+
+Vue.config.productionTip = false;
+Vue.prototype.$bus = new Vue();
+Vue.prototype.$message = Message;
 
 const router = new VueRouter({
   routes: [

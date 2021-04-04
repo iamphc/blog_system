@@ -35,6 +35,7 @@
   export default {
     data() {
       return {
+        registerMsg: '',
         showDialog: true,
         ruleForm: {
           userName: 'example',
@@ -59,22 +60,27 @@
     methods: {
       handleRegister(ruleForm) {
         this.$refs[ruleForm].validate(valid => {
-          if(valid) {
-            alert('成功！');
-            // 表单提交、触发用户注册接口
-            Api.global.userRegister(this.ruleForm);
-          } else {
-            alert('失败！');
-            return false
-          }
+          if(!valid) 
+            return false;
+          // 表单提交、触发用户注册接口
+          Api.global.userRegister(this.ruleForm).then(
+            res => this.registerMsgPrompt(res.msg, res.registerStatus === 'success' ? 'success' : 'error')
+          ).catch(
+            err => this.registerMsgPrompt(err, "error")
+          );
         })
       },
       handleResetForm(ruleForm) {
         this.$refs[ruleForm].resetFields();
+      },
+      // 用户注册信息提示框
+      registerMsgPrompt(message, type) {
+        this.$message({
+          message, 
+          type
+        });
       }
     },
-    mounted() {
-      // console.log(Api);
-    }
+    mounted() {}
   }
 </script>

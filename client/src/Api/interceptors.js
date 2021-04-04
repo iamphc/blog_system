@@ -4,9 +4,7 @@ import axios from 'axios';
 axios.interceptors.request.use(request => {
   console.log('请求成功：',request);
   return request;
-}, err => {
-  alert('请求失败');
-  alert(err);
+}, err => {  
   console.log('请求失败：',err);
   return Promise.reject(err);
 });
@@ -14,10 +12,8 @@ axios.interceptors.request.use(request => {
 // 响应拦截器
 axios.interceptors.response.use(response => {
   console.log('响应成功：',response);
-  return response; 
-}, err => {
-  alert('响应失败');
-  alert(err);
+  return response.data; 
+}, err => { 
   console.log('响应失败：', err);
   return Promise.reject(err);
 });

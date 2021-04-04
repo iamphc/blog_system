@@ -7,15 +7,32 @@ exports.global_homepage = (req, res, next) => {
 
 // TODO:创建用户
 exports.global_register = async(req, res, next) => {
+  const userName = req.body.userName;
+  const userPwd = req.body.userPwd;
+
   try{
+    const isExistUserName = await User.count({userName}) ? true : false;
+    if(isExistUserName) {
+      res.json({
+        msg: '用户已注册',
+        registerStatus: 'failed'
+      });
+      throw new Error('register failed')
+    }
     const user = await User.create({
-      userName: req.body.userName,
-      userPwd: req.body.userPwd
+      userName,
+      userPwd
     }) 
-    const userRegisterRes = user.save();
-    res.send('用户1注册成功');
+    user.save(); 
+    res.json({
+      msg: '注册成功',
+      registerStatus: 'success'
+    });
   } catch (err) {
-    res.send('用户注册失败')
+    res.json({
+      msg: '未知错误',
+      registerStatus: 'failed'
+    });
   };
 }
 
