@@ -7,17 +7,16 @@ const User = new mongoose.Schema({
         required: true,
         minLength: 5,
         maxLength: 15,
-        unique: true,    // 用户名字段唯一
-        index: true,
-        type: mongoose.Types.ObjectId,
-        trime: true
+        trim: true, 
+        unique: true,    // 用户名字段唯一  
     },
     userPwd: {
         type: String,
         required: true, 
         set(pwd) {
             return bcryptjs.hashSync(pwd, 10);
-        }
+        },
+        select: false   // 不查询该字段
     },
     userType: {
         type: Number,
