@@ -1,2 +1,3 @@
 // blog-setting
-export const SET_DEVELOP_SETTING_HEADER_TYPE = 'SET_DEVELOP_SETTING_HEADER_TYPE';
+export const HEADER_TYPE = 'HEADER_TYPE';
+export const TOKEN = 'TOKEN';

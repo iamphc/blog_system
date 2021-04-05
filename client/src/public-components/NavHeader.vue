@@ -111,9 +111,9 @@
       this.setTheme()
     },
     methods: { 
-      ...mapMutations('blogSetting', {
-        headerType: types.SET_DEVELOP_SETTING_HEADER_TYPE
-      }),
+      ...mapMutations('blogSetting', [
+        'headerType'
+      ]),
       showHomeHeader() {
         this.changeShowHome = true
       },

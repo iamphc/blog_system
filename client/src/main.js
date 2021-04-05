@@ -7,46 +7,13 @@ import AdminRouter from "@admin/router";
 import BlogSettingRouter from "@setting/router"; 
 import "../public/css/main.css";
 import store from '@/store';
-import {
-  Container,
-  Header,
-  Row,
-  Col,
-  Button,
-  Tree,
-  Backtop,
-  Icon,
-  Menu,
-  MenuItem,
-  Submenu,
-  Dialog,
-  Form,
-  Input,
-  FormItem,
-  Message
-} from 'element-ui';
+import ElementUI from 'element-ui'
 
-Vue.use(Container);
-Vue.use(Header);
-Vue.use(Row);
-Vue.use(Col);
-Vue.use(Button);
-Vue.use(Tree);
-Vue.use(Backtop);
-Vue.use(Icon);
-Vue.use(Menu);
-Vue.use(MenuItem);
-Vue.use(Submenu);
-Vue.use(Dialog);
-Vue.use(Form);
-Vue.use(Input);
-Vue.use(FormItem);
-Vue.use(VueRouter);
-Vue.use(Message);
+Vue.use(ElementUI)
+Vue.use(VueRouter)
 
 Vue.config.productionTip = false;
-Vue.prototype.$bus = new Vue();
-Vue.prototype.$message = Message;
+Vue.prototype.$bus = new Vue(); 
 
 const router = new VueRouter({
   routes: [
