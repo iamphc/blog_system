@@ -7,7 +7,6 @@ import actions from "@/store/actions";
 import mutations from "@/store/mutations";
 
 import blogSetting from '@/store/modules/blog-setting.js';
-import global from '@/store/modules/global';
 
 Vue.use(Vuex);
 
@@ -17,7 +16,6 @@ export default new Vuex.Store({
   actions,
   mutations,
   modules: {
-    blogSetting,
-    global
+    blogSetting
   }
 });
