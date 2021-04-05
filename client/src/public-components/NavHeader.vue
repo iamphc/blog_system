@@ -70,9 +70,9 @@
 </template>
 
 <script>  
-  import * as types from '@/store/mutation-types.js'
   import User from "@mixins/User"
-  import { mapState,mapMutations } from 'vuex'
+  import * as types from '@store/mutation-types';
+  import { mapState, mapMutations } from 'vuex'
   export default {
     mixins: [User],
     data() {
@@ -111,9 +111,9 @@
       this.setTheme()
     },
     methods: { 
-      ...mapMutations('blogSetting', [
-        'headerType'
-      ]),
+      ...mapMutations('blogSetting', {
+        'headerType': types.HEADER_TYPE
+      }),
       showHomeHeader() {
         this.changeShowHome = true
       },
@@ -132,7 +132,7 @@
         this.headerType(path)
       }
     },
-    computed: { 
+    computed: {
       isShowHome() {
         if(this.changeShowHome) {
           this.initShow = false
