@@ -5,6 +5,7 @@
         title="用户注册"
         width="30%"
         :visible.sync="showDialog"
+        :before-close="handleBeforeCloseDialog"
         center>
       <el-form 
         ref="ruleForm"
@@ -23,7 +24,7 @@
         </el-form-item>
         <el-form-item>
           <el-button @click="handleRegister('ruleForm')">注册</el-button>
-          <el-button @click="handleResetForm('ruleForm')">重制</el-button>
+          <el-button @click="handleResetForm('ruleForm')">清空</el-button>
         </el-form-item>
       </el-form>
     </el-dialog>
@@ -38,9 +39,9 @@
         registerMsg: '',
         showDialog: true,
         ruleForm: {
-          userName: 'example',
-          userPwd: '123456',
-          verifiCode: '1234'
+          userName: '',
+          userPwd: '',
+          verifiCode: ''
         },
         rules: {
           userName: [
@@ -52,7 +53,7 @@
             {min: 5, max: 15, message: '长度在5～15个字符内', trigger: 'blur'}
           ],
           verifiCode: [
-            {required: true, message: '请输入验证码', trigger: 'blur'}
+            {message: '请输入验证码', trigger: 'blur'}
           ]
         }
       }
@@ -79,6 +80,13 @@
           message, 
           type
         });
+      },
+      handleBeforeCloseDialog(done) {
+        this.$confirm('确认关闭？关闭之后，您将作为游客身份浏览').then(
+          _ => done()
+        ).catch(
+          _ => {}
+        );
       }
     },
     mounted() {}

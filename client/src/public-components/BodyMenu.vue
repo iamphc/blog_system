@@ -13,8 +13,6 @@
 </template>
 
 <script>
-  import * as types from '@/store/mutation-types'
-  import { mapMutations } from 'vuex'
   import SideMenu from '@/public-components/SideMenu'
   export default {
     props: {
@@ -36,11 +34,6 @@
     },
     components: {
       SideMenu
-    },
-    methods: {
-      ...mapMutations('blogSetting',{
-        headerType: types.SET_DEVELOP_SETTING_HEADER_TYPE
-      })
     },
     computed: {
       getSideMenu() {}

@@ -1,8 +1,7 @@
 import axios from "axios";
 
 export default {
-  userRegister(userRegisterForm) { 
-    console.log(userRegisterForm);
+  userRegister(userRegisterForm) {  
     return axios.post("/user/register", {
       ...userRegisterForm
     });

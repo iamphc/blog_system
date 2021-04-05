@@ -1,13 +1,14 @@
 import * as types from '@/store/mutation-types.js'; 
 
 const state = {
-  headerType: 'themes'
+  token: ''
 }
 
 const mutations = {
-  [types.HEADER_TYPE](state, payload) {
-    state.headerType = payload;
-  }
+  [types.TOKEN](state, payload) {
+    state.token = payload.token;
+    localStorage.setItem('token', payload.token);   // 将token存到localstorage
+  } 
 }
 
 const getters = {}
