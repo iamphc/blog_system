@@ -5,5 +5,8 @@ export default {
     return axios.post("/user/register", {
       ...userRegisterForm
     });
+  },
+  userLogin(userLoginForm) {
+    return axios.post("/");
   }
 }

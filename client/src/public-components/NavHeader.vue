@@ -72,7 +72,7 @@
 <script>  
   import User from "@mixins/User"
   import * as types from '@store/mutation-types';
-  import { mapState, mapMutations } from 'vuex'
+  import { mapMutations } from 'vuex'
   export default {
     mixins: [User],
     data() {

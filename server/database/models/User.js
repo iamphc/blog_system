@@ -24,6 +24,9 @@ const User = new mongoose.Schema({
     },
     userLoginTime: {
         type: Date
+    },
+    operationToken: {
+        type: String
     }
 });
 
