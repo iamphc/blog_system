@@ -1,4 +1,4 @@
-import * as types from '@/store/mutation-types.js'; 
+import * as types from '@store/mutation-types'; 
 
 const state = {
   headerType: 'themes'
