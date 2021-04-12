@@ -11,8 +11,18 @@ exports.global_homepage = (req, res, next) => {
 }
 
 // TODO:创建用户
-exports.global_register = async(req, res, next) => {
-  createUser(req, res);
+exports.global_register = async (req, res, next) => {
+  await createUser(req).then(
+    _ => res.json({
+      msg: '注册成功',
+      status: 'success'
+    })
+  ).catch(
+    _ => res.json({
+      msg: _.message,
+      status: 'failed'
+    })
+  )
 }
 
 // TODO:用户登录验证
