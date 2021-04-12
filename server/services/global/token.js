@@ -1,20 +1,30 @@
 const jwt = require('jsonwebtoken')
-
-exports.publish = function (info = {}, expiresIn = 1000 * 3600 * 24) {
-  return jwt.sign(info, secret, {
-    expiresIn
-  });
+const secret = 'b2z1_thb#'
+const maxAge = 24 * 3600 * 1000
+// token 24小时后过期
+exports.publish = async (req, res) => {
+  const rawInfo = {
+    name: req.body.userName,
+    pwd: req.body.userPwd,
+    loginTime: Date.now() 
+  }
+  const jToken = await jwt.sign(rawInfo, secret, {
+    expiresIn: maxAge
+  })
+  res.cookie('token', jToken, {
+    path: '/',
+    maxAge
+  })
 }
 
-exports.verify = function (req) {
-  const token = req.body.token;
-  // TOKEN不存在
+exports.verify = async (req, res, next) => {
+  const token = req.cookie.token; // 从cookie获取token
   if(!token) {
-    throw new Error('token not exist!');
+    throw new Error('you done have any token to access the api');
   }
   try {
     // 代替jwt.decode(token)【无验证】
-    const verifyResult = jwt.verify(token, secret); 
+    const verifyResult = await jwt.verify(token, secret); 
     return verifyResult; 
   } catch {
     // TOKEN被篡改
