@@ -12,7 +12,7 @@ exports.global_homepage = (req, res, next) => {
 
 // TODO:创建用户
 exports.global_register = async(req, res, next) => {
-  createUser(res, req.body);
+  createUser(req, res);
 }
 
 // TODO:用户登录验证
