@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const bcryptjs = require('bcryptjs');   // 用户注册时对密码加密
+const bcryptjs = require('bcryptjs');   // 用户注册时对密码加密 
 
 const User = new mongoose.Schema({
     userName: {
@@ -14,7 +14,8 @@ const User = new mongoose.Schema({
         type: String,
         required: true, 
         set(pwd) {
-            return bcryptjs.hashSync(pwd, 10);
+            const salt = bcryptjs.genSaltSync(10) // 生成加密盐
+            return bcryptjs.hashSync(pwd, salt)
         },
         select: false   // 不查询该字段
     },
