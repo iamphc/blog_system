@@ -1,10 +1,11 @@
-const User = require('../../database/models/User'); 
-module.exports = async req => {
+const User = require('../../database/models/User')
+
+exports.createUser = async (req) => {
   const userName = req.body.userName
   const userPwd = req.body.userPwd 
   
   const isExistUserName = await User.countDocuments({userName}) ? true : false;
-  if(isExistUserName) {
+  if (isExistUserName) {
     throw new Error('用户已注册')
   }
 

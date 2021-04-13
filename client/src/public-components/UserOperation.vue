@@ -10,22 +10,22 @@
       <el-form 
         ref="ruleForm"
         :model="ruleForm"
-        :rules="rules"
+        :rules="getUserOperationRules"
         label-width="80px" 
         class="user-operation-form">
         <el-form-item label="用户名" prop="userName">
           <el-input v-model="ruleForm.userName"></el-input>
         </el-form-item>
-        <el-form-item label="密码" prop="userPwd">
+        <el-form-item label="密码" prop="userPwd" ref="userPwd">
           <el-input v-model="ruleForm.userPwd"></el-input>
         </el-form-item>
         <el-form-item label="验证码" prop="verifiCode">
           <el-input v-model="ruleForm.verifiCode"></el-input>
         </el-form-item>
         <el-form-item>
-          <el-button @click="handleRegister('ruleForm')">注册</el-button>
-          <el-button @click="handleResetForm('ruleForm')">清空</el-button>
-          <el-button @click="handleLogin('ruleForm')">登录</el-button>
+          <el-button @click="handleRegister()">{{operationText[0]}}</el-button>
+          <el-button @click="handleResetForm()">清空</el-button>
+          <el-button @click="handleLogin()">{{operationText[1]}}</el-button>
         </el-form-item>
       </el-form>
     </el-dialog>
@@ -37,7 +37,8 @@
   export default {
     data() {
       return {
-        operationType: 'register',
+        operationText: ['去注册', '登录'],
+        operationType: 'login',
         registerMsg: '',
         showDialog: true,
         ruleForm: {
@@ -45,7 +46,8 @@
           userPwd: '',
           verifiCode: ''
         },
-        rules: {
+        // 注册表单验证规则
+        registerRules: {
           userName: [
             {required: true, message: '请输入用户名', trigger: 'blur'},
             {min: 5, max: 15, message: '长度在5～15个字符内', trigger: 'blur'}
@@ -57,27 +59,58 @@
           verifiCode: [
             {message: '请输入验证码', trigger: 'blur'}
           ]
+        },
+        // 登录表单验证规则
+        loginRules: {
+          userName: [
+            {required: true, message: '请输入用户名', trigger: 'blur'}
+          ],
+          userPwd: [
+            {required: true, message: '请输入密码', triiger: 'blur'}
+          ],
+          verifiCode: [
+            {message: '请输入验证码', trigger: 'blur'}
+          ]
         }
       }
     },
     methods: {
       // 页面加载前判断是否有token，存在token，自动登录
       // 否则，弹出用户注册界面
-      handleRegister(ruleForm) {
-        this.operationType = 'register'
-        this.$refs[ruleForm].validate(valid => {
+      handleRegister() {
+        if(this.operationType !== 'register') {  
+          this.triggerOperationText()
+          this.handleResetForm()
+          this.operationType = 'register'
+          return
+        }
+        this.$refs['ruleForm'].validate(valid => {
           if(!valid) 
             return false;
           // 表单提交、触发用户注册接口
           Api.global.userRegister(this.ruleForm).then(
-            res => this.operationMsgPrompt(res.msg, res.status === 'success' ? 'success' : 'error')
+            res => {
+              this.operationMsgPrompt(
+                res.msg, 
+                res.status === 'success' 
+                  ? 'success' 
+                  : 'error'
+              )
+              // 注册成功，token存储在cookie，跳转到登录页面、按钮文案更改。注册失败，保持注册窗口
+              if(res.status === 'success') {
+                this.operationType = 'login'
+                this.triggerOperationText()
+                // 清空密码
+                this.$refs['userPwd'].resetField()
+              }
+            }
           ).catch(
             err => this.operationMsgPrompt(err, "error")
           );
         })
       },
-      handleResetForm(ruleForm) {
-        this.$refs[ruleForm].resetFields();
+      handleResetForm() {
+        this.$refs['ruleForm'].resetFields();
       },
       // 用户操作信息提示框
       operationMsgPrompt(message, type) {
@@ -93,17 +126,59 @@
           _ => {}
         );
       }, 
-      handleLogin(ruleForm) {
-        this.operationType = 'login'
-        Api.global.userLogin(this.ruleForm).then(
-          // res => this.
+      handleLogin() {
+        if(this.operationType !== 'login') {
+          this.triggerOperationText()
+          this.handleResetForm()
+          this.operationType = 'login'
+          return
+        }
+        this.$refs['ruleForm'].validate(valid => {
+          if(!valid) 
+            return false;
+          Api.global.userLogin(this.ruleForm).then(
+            res => {
+              this.operationMsgPrompt(
+                res.msg, 
+                res.status === 'success' 
+                  ? 'success' 
+                  : 'error'
+              )
+              // 登陆成功，关闭窗口
+              // 登录失败，保持窗口，清空信息： 用户名错误，清空所有。密码错误，清空密码
+              res.status === 'success' 
+                ? (this.showDialog = false) 
+                : res.errorField === 'userName'
+                  ? this.handleResetForm()
+                  : this.$refs['userPwd'].resetField()
+            }
+          )
+        })
+      },
+      // 注册/登录时：切换用户操作文案
+      triggerOperationText() {
+        this.operationText = this.operationText.map(
+          ele => {
+            return ele.indexOf('去') === 0 
+              ? ele.slice(1) 
+              : ('去' + ele)
+          }
         )
-      }
+      },
     },
     mounted() {},
     computed: {
+      // 用户操作表单标题文案
       getUserOperation() {
-        return this.operationType === 'register' ? '用户注册':'用户登录'
+        return this.operationType === 'register' 
+          ? '用户注册'
+          : '用户登录'
+      },
+      // 用户操作表单规则
+      getUserOperationRules() {
+        return this.operationType === 'register' 
+          ? this.registerRules 
+          : this.loginRules
       }
     }
   }
