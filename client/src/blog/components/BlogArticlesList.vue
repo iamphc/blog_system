@@ -1,7 +1,10 @@
 <template>
   <div class="articles-wrapper">
     <div class="placeholder">
-      <span class="articles-type-title">{{articleType}}</span>
+      <span class="articles-type-title">
+        {{articleType}}
+        <router-link class="article-create" to="/article/create">写文章</router-link>
+      </span>
     </div>
     <div class="bottom-line"></div>
     <ul class="articles-list">
@@ -81,31 +84,4 @@ export default {
 </script>
 
 <style scoped> 
-  .articles-type-title {
-    position: fixed;
-    top: 78px;
-    font-size: 3rem;
-    display: block;
-    padding: 10px;
-    width: calc(35% - 25px);
-    background-color: #fff;
-    text-align: left;
-    box-shadow: 1px 1px 2px rgba(0,0,0,.5) , -1px -1px 2px rgba(100,100,100,.5);
-  }
-  .placeholder { 
-    display: block;
-    width: 100%;
-    height: 50px;
-  }
-  .bottom-line {
-    height: 0.5px;
-    background-color: #000;
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-  .get-full-article {
-    display: block;
-    margin-top: 10px; 
-    text-align: right;
-  }
 </style>

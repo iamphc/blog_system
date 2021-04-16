@@ -3,28 +3,28 @@
     <nav-header />  
     <el-row type="flex" class="blog-body">
       <!-- 插槽左部分 -->
-      <slot name="section-left">
-        <div class="section-side-wrapper">
-          <el-col class="blog-body-section blog-body-section__left" :span="6">
+      <div class="section-side-wrapper">
+        <el-col class="blog-body-section blog-body-section__left" :span="6">
+          <slot name="section-left">
             <category-menu />
-          </el-col>
-        </div>
-      </slot>
-      <!-- 插槽中间部分 -->
-      <slot name="section-center">
-        <el-col class="blog-body-section blog-body-section__center" :span="12">
-          <blog-articles-list />
+          </slot>
         </el-col>
-      </slot>
+      </div>
+      <!-- 插槽中间部分 -->
+      <el-col class="blog-body-section blog-body-section__center" :span="12">
+        <slot name="section-center">
+          <blog-articles-list />
+        </slot>
+      </el-col>
       <!-- 插槽右部分 -->
-      <slot name="section-right">
-        <div class="section-side-wrapper">
-          <el-col class="blog-body-section blog-body-section__right" :span="6">
+      <div class="section-side-wrapper">
+        <el-col class="blog-body-section blog-body-section__right" :span="6">
+          <slot name="section-right">
             <tag />
             <notes />
-          </el-col>
-        </div>
-      </slot>
+          </slot>
+        </el-col>
+      </div>  
     </el-row> 
     <go-top />
   </div>
