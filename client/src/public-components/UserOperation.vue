@@ -34,6 +34,9 @@
 
 <script>
   import { Api } from '@api';
+  import { mapMutations } from 'vuex';
+  import * as types from '@store/mutation-types';
+
   export default {
     data() {
       return {
@@ -75,6 +78,9 @@
       }
     },
     methods: {
+      ...mapMutations({
+        'token': types.TOKEN
+      }),
       // 页面加载前判断是否有token，存在token，自动登录
       // 否则，弹出用户注册界面
       handleRegister() {
