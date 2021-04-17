@@ -6,7 +6,7 @@
       <div class="section-side-wrapper">
         <el-col class="blog-body-section blog-body-section__left" :span="6">
           <slot name="section-left">
-            <category-menu />
+            <tag-menu-list />
           </slot>
         </el-col>
       </div>
@@ -32,8 +32,8 @@
 
 <script> 
 import GoTop from '@blog/components/GoTop'; 
-import CategoryMenu from '@/blog/components/CategoryMenu';
 import ArticlesList from '@blog/homepagePart/ArticlesList';
+import TagMenuList from '@/blog/homepagePart/TagMenuList';
 import TagCloud from '@blog/homepagePart/TagCloud';
 import Notes from '@blog/homepagePart/Notes';
 import NavHeader from '@components/NavHeader';
@@ -41,7 +41,7 @@ export default {
   components: {
     NavHeader,
     TagCloud,
-    CategoryMenu,
+    TagMenuList,
     ArticlesList,
     GoTop,
     Notes
