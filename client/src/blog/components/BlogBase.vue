@@ -13,7 +13,7 @@
       <!-- 插槽中间部分 -->
       <el-col class="blog-body-section blog-body-section__center" :span="12">
         <slot name="section-center">
-          <blog-articles-list />
+          <articles-list />
         </slot>
       </el-col>
       <!-- 插槽右部分 -->
@@ -31,9 +31,9 @@
 </template>
 
 <script> 
-import BlogArticlesList from '@blog/components/BlogArticlesList';
 import GoTop from '@blog/components/GoTop'; 
 import CategoryMenu from '@/blog/components/CategoryMenu';
+import ArticlesList from '@blog/blogPart/ArticlesList';
 import TagCloud from '@blog/blogPart/TagCloud';
 import Notes from '@blog/blogPart/Notes';
 import NavHeader from '@components/NavHeader';
@@ -42,7 +42,7 @@ export default {
     NavHeader,
     TagCloud,
     CategoryMenu,
-    BlogArticlesList,
+    ArticlesList,
     GoTop,
     Notes
   }

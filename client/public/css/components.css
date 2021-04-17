@@ -7,16 +7,16 @@
 /* 博客主页 */
 @import "components/blog/article.css";            /*article*/
 @import "components/blog/blog-base.css";          /*blog-base*/
-@import "components/blog/blog-articles-list.css"; /*blog-articles-list*/
 @import "components/blog/build-tags.css";         /*build-tags*/
 @import "components/blog/edit-article.css";       /*edit-article*/
-
-/* 博客设置 */
-@import "components/blog-setting/homepage.css";   /*homepage*/
 
 /* 博客首页板块 */
 @import "components/blogPart/tag-cloud.css";      /*tag-cloud*/
 @import "components/blogPart/notes.css";          /*notes*/
+@import "components/blogPart/articles-list.css";  /*articles-list*/
+
+/* 博客设置 */
+@import "components/blog-setting/homepage.css";   /*homepage*/
 
 /* 博客管理 */
 /* 开发者 */    
