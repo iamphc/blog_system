@@ -9,19 +9,31 @@
       class="side-menu-item"
       v-for="(item, index) in sideMenu"
       :key="index"
-      :index="item.index">
+      :index="item.index"
+      @click="changeSettingType(item.index)">
       <i class="el-icon-menu"></i>
       <span slot="title">{{item.name}}</span>
     </el-menu-item > 
   </el-menu>
 </template>
 
-<script>
+<script>  
+  import * as types from "@store/mutation-types"
+  import { mapMutations } from "vuex"
   export default {  
     props: {
       sideMenu: {
         type: Array,
         default: []
+      }
+    },
+    methods: {
+      ...mapMutations('blogSetting', {
+        settingType: types.SETTING_TYPE
+      }),
+      changeSettingType(index) {
+        alert(index)
+        this.settingType(index)
       }
     }
   }

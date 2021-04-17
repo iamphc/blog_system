@@ -1,12 +1,16 @@
-import * as types from '@store/mutation-types'; 
+import * as types from '@store/mutation-types'
 
 const state = {
-  headerType: 'themes'
+  headerType: 'themes',
+  settingType: 'theme'
 }
 
 const mutations = {
   [types.HEADER_TYPE](state, payload) {
-    state.headerType = payload;
+    state.headerType = payload
+  },
+  [types.SETTING_TYPE](state, payload) {
+    state.settingType = payload
   }
 }
 

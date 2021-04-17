@@ -17,6 +17,8 @@
 
 /* 博客设置 */
 @import "components/blog-setting/homepage.css";       /*homepage*/
+@import "components/blog-setting/theme-setting.css";  /*theme-setting*/
+@import "components/blog-setting/font-setting.css";   /*font-setting*/
 
 /* 博客管理 */
 
