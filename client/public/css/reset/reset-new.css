@@ -1,3 +1,7 @@
+* {
+  outline: none;
+}
+
 html,
 body ,
 #app {
@@ -10,4 +14,8 @@ body ,
 
 a {
   text-decoration: none;
+}
+
+textarea {
+  resize: none;
 }
