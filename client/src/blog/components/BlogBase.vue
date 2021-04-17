@@ -32,10 +32,10 @@
 
 <script> 
 import BlogArticlesList from '@blog/components/BlogArticlesList';
-import Notes from '@blog/components/Notes';
 import GoTop from '@blog/components/GoTop'; 
 import CategoryMenu from '@/blog/components/CategoryMenu';
 import TagCloud from '@blog/blogPart/TagCloud';
+import Notes from '@blog/blogPart/Notes';
 import NavHeader from '@components/NavHeader';
 export default {
   components: {

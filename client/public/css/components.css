@@ -16,6 +16,7 @@
 
 /* 博客首页板块 */
 @import "components/blogPart/tag-cloud.css";      /*tag-cloud*/
+@import "components/blogPart/notes.css";          /*notes*/
 
 /* 博客管理 */
 /* 开发者 */    
