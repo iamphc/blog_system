@@ -112,7 +112,7 @@
     },
     methods: { 
       ...mapMutations('blogSetting', {
-        'headerType': types.HEADER_TYPE
+        headerType: types.HEADER_TYPE
       }),
       showHomeHeader() {
         this.changeShowHome = true
