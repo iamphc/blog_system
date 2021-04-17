@@ -33,9 +33,9 @@
 <script> 
 import GoTop from '@blog/components/GoTop'; 
 import CategoryMenu from '@/blog/components/CategoryMenu';
-import ArticlesList from '@blog/blogPart/ArticlesList';
-import TagCloud from '@blog/blogPart/TagCloud';
-import Notes from '@blog/blogPart/Notes';
+import ArticlesList from '@blog/homepagePart/ArticlesList';
+import TagCloud from '@blog/homepagePart/TagCloud';
+import Notes from '@blog/homepagePart/Notes';
 import NavHeader from '@components/NavHeader';
 export default {
   components: {

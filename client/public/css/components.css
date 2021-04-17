@@ -1,22 +1,23 @@
 /* 公共组件 */
-@import "components/public/nav-header.css";       /*/nav-header*/
-@import "components/public/side-menu.css";        /*side-menu*/ 
-@import "components/public/body-menu.css";        /*body-menu*/
-@import "components/public/user-operation.css";   /*user-operation*/
+@import "components/public/nav-header.css";           /*/nav-header*/
+@import "components/public/side-menu.css";            /*side-menu*/ 
+@import "components/public/body-menu.css";            /*body-menu*/
+@import "components/public/user-operation.css";       /*user-operation*/
 
 /* 博客主页 */
-@import "components/blog/article.css";            /*article*/
-@import "components/blog/blog-base.css";          /*blog-base*/
-@import "components/blog/build-tags.css";         /*build-tags*/
-@import "components/blog/edit-article.css";       /*edit-article*/
+@import "components/blog/article.css";                /*article*/
+@import "components/blog/blog-base.css";              /*blog-base*/
+@import "components/blog/build-tags.css";             /*build-tags*/
+@import "components/blog/edit-article.css";           /*edit-article*/
 
 /* 博客首页板块 */
-@import "components/blogPart/tag-cloud.css";      /*tag-cloud*/
-@import "components/blogPart/notes.css";          /*notes*/
-@import "components/blogPart/articles-list.css";  /*articles-list*/
+@import "components/homepagePart/tag-cloud.css";      /*tag-cloud*/
+@import "components/homepagePart/notes.css";          /*notes*/
+@import "components/homepagePart/articles-list.css";  /*articles-list*/
 
 /* 博客设置 */
-@import "components/blog-setting/homepage.css";   /*homepage*/
+@import "components/blog-setting/homepage.css";       /*homepage*/
 
 /* 博客管理 */
+
 /* 开发者 */    
