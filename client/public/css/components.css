@@ -14,5 +14,8 @@
 /* 博客设置 */
 @import "components/blog-setting/homepage.css";   /*homepage*/
 
+/* 博客首页板块 */
+@import "components/blogPart/tag-cloud.css";      /*tag-cloud*/
+
 /* 博客管理 */
 /* 开发者 */    
