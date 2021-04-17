@@ -20,7 +20,7 @@
       <div class="section-side-wrapper">
         <el-col class="blog-body-section blog-body-section__right" :span="6">
           <slot name="section-right">
-            <tag />
+            <tag-cloud />
             <notes />
           </slot>
         </el-col>
@@ -35,12 +35,12 @@ import BlogArticlesList from '@blog/components/BlogArticlesList';
 import Notes from '@blog/components/Notes';
 import GoTop from '@blog/components/GoTop'; 
 import CategoryMenu from '@/blog/components/CategoryMenu';
-import Tag from '@blog/components/Tag';
+import TagCloud from '@blog/blogPart/TagCloud';
 import NavHeader from '@components/NavHeader';
 export default {
   components: {
     NavHeader,
-    Tag,
+    TagCloud,
     CategoryMenu,
     BlogArticlesList,
     GoTop,
