@@ -12,7 +12,7 @@ const mutations = {
     state.headerType = payload
   },
   [types.SETTING_TYPE](state, payload) {
-    state.settingType = payload
+    state.settingType = payload 
   }
 }
 

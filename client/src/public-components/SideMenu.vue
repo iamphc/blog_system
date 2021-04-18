@@ -10,7 +10,7 @@
       v-for="(item, index) in sideMenu"
       :key="index"
       :index="item.index"
-      @click="changeSettingType(item.index)">
+      @click="changeSettingType(item.index, item.path)">
       <i class="el-icon-menu"></i>
       <span slot="title">{{item.name}}</span>
     </el-menu-item > 
@@ -18,7 +18,7 @@
 </template>
 
 <script>  
-  import * as types from "@store/mutation-types"
+  import { SETTING_TYPE } from "@store/mutation-types"
   import { mapState, mapMutations } from "vuex"
   export default {    
     props: {
@@ -33,12 +33,16 @@
       })
     },
     methods: {
-      ...mapMutations('blogSetting', {
-        settingType: types.SETTING_TYPE
+      ...mapMutations({
+        blogSettingType: state => state.blogSetting.SETTING_TYPE,
+        adminSettingType: state => state.admin.SETTING_TYPE
       }),
-      changeSettingType(index) {
-        alert(index)
-        this.settingType(index) 
+      ...mapMutations(),
+      changeSettingType(index, path) {
+        alert(`index:${index},path:${path}`) 
+        path === 'admin'
+          ? this.blogSettingType(index)
+          : this.adminSettingType(index) 
       }
     }
   }
