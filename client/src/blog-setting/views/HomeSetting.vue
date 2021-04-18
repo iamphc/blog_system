@@ -45,6 +45,7 @@
         ]
       }
     },
+    mounted() {},
     computed: {
       ...mapState('blogSetting', [
         'settingType'
