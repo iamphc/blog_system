@@ -19,21 +19,18 @@
 
 <script>  
   import * as types from "@store/mutation-types"
-  import { mapMutations } from "vuex"
-  export default {  
-    data() {
-      return {
-        activeIndex: ''
-      }
-    },
+  import { mapState, mapMutations } from "vuex"
+  export default {    
     props: {
       sideMenu: {
         type: Array,
         default: []
       }
-    },
-    created() {
-      this.activeIndex = this.sideMenu[0].index
+    },  
+    computed: {
+      ...mapState('blogSetting', {
+        activeIndex: 'settingType'
+      })
     },
     methods: {
       ...mapMutations('blogSetting', {
