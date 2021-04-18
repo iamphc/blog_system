@@ -21,5 +21,8 @@
 @import "components/blog-setting/font-setting.css";   /*font-setting*/
 
 /* 博客管理 */
+@import "components/admin/global-statistic.css";      /*global-statistic*/
+@import "components/admin/recommended-setting.css";   /*recommended-setting*/
+@import "components/admin/homepage.css";              /*homepage*/
 
 /* 开发者 */    

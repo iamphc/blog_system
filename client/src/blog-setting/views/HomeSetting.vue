@@ -26,6 +26,11 @@
       ThemeSetting,
       FontSetting
     },
+    provide() {
+      return {
+        sideMenu: this.sideMenu
+      }
+    },
     data() {
       return {
         navTitleType: "blog-setting",
@@ -42,7 +47,25 @@
             index: "other",
             name: "其他"
           }
-        ]
+        ],
+        sideMenu: [
+          {
+            index: "ThemeSetting",
+            name: "主题颜色"
+          },
+          {
+            index: "ThemeImageSetting",
+            name: "主题图片"
+          },
+          {
+            index: "FontSetting",
+            name: "字体设置"
+          },
+          {
+            index: "SelfSetting",
+            name: "自定义编辑"
+          }
+        ] 
       }
     },
     mounted() {},

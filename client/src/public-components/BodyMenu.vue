@@ -22,31 +22,9 @@
     components: {
       SideMenu
     },
-    props: {
-      sideMenu: {
-        type: Array,
-        default() {
-          return [
-            {
-              index: "ThemeSetting",
-              name: "主题颜色"
-            },
-            {
-              index: "ThemeImageSetting",
-              name: "主题图片"
-            },
-            {
-              index: "FontSetting",
-              name: "字体设置"
-            },
-            {
-              index: "SelfSetting",
-              name: "自定义编辑"
-            }
-          ] 
-        }
-      } 
-    },
+    inject: [
+      'sideMenu'
+    ],
     computed: {
       getSideMenu() {}
     }
