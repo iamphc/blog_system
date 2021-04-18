@@ -1,7 +1,7 @@
 <template>
   <el-menu 
     class="side-menu"
-    :default-active="sideMenu[0].index"  
+    :default-active="activeIndex"  
     background-color="#545c64" 
     text-color="#fff" 
     active-text-color="#ffd04b"> 
@@ -21,11 +21,19 @@
   import * as types from "@store/mutation-types"
   import { mapMutations } from "vuex"
   export default {  
+    data() {
+      return {
+        activeIndex: ''
+      }
+    },
     props: {
       sideMenu: {
         type: Array,
         default: []
       }
+    },
+    created() {
+      this.activeIndex = this.sideMenu[0].index
     },
     methods: {
       ...mapMutations('blogSetting', {
@@ -33,7 +41,7 @@
       }),
       changeSettingType(index) {
         alert(index)
-        this.settingType(index)
+        this.settingType(index) 
       }
     }
   }

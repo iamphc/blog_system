@@ -1,8 +1,10 @@
 import * as types from '@store/mutation-types'
 
 const state = {
+  // 顶部菜单默认为主题设置
   headerType: 'themes',
-  settingType: 'theme'
+  // 侧边菜单默认为主题颜色设置
+  settingType: 'ThemeSetting'
 }
 
 const mutations = {

@@ -19,6 +19,9 @@
 <script>
   import SideMenu from '@/public-components/SideMenu'
   export default {
+    components: {
+      SideMenu
+    },
     props: {
       sideMenu: {
         type: Array,
@@ -33,7 +36,7 @@
               name: "主题图片"
             },
             {
-              inde: "FontSetting",
+              index: "FontSetting",
               name: "字体设置"
             },
             {
@@ -43,9 +46,6 @@
           ] 
         }
       } 
-    },
-    components: {
-      SideMenu
     },
     computed: {
       getSideMenu() {}
