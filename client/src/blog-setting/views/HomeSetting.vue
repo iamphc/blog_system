@@ -51,19 +51,23 @@
         sideMenu: [
           {
             index: "ThemeSetting",
-            name: "主题颜色"
+            name: "主题颜色",
+            path: "blogSetting"
           },
           {
             index: "ThemeImageSetting",
-            name: "主题图片"
+            name: "主题图片",
+            path: "blogSetting"
           },
           {
             index: "FontSetting",
-            name: "字体设置"
+            name: "字体设置",
+            path: "blogSetting"
           },
           {
             index: "SelfSetting",
-            name: "自定义编辑"
+            name: "自定义编辑",
+            path: "blogSetting"
           }
         ] 
       }
