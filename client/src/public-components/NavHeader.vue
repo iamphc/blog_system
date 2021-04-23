@@ -132,9 +132,11 @@
       },
 
       handleSelect(path) {
-        this.type === 'admin'
-          ? this.headerType({ admin: path })
-          : this.headerType({ blogSetting: path }) 
+        if(!this.type) {
+          this. type === 'admin'
+            ? this.headerType({ admin: path })
+            : this.headerType({ blogSetting: path }) 
+        } 
       }
     },
     computed: {
