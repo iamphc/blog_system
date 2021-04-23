@@ -17,14 +17,18 @@
   import { mapState } from 'vuex'
   import NavHeader from '@components/NavHeader'
   import BodyMenu from '@/public-components/BodyMenu'
-  import ThemeSetting from '@setting/components/ThemeSetting'
+  import ThemeImageSetting from '@setting/components/ThemeImageSetting'
   import FontSetting from '@setting/components/FontSetting'
+  import SelfSetting from '@setting/components/SelfSetting'
+  import ThemeSetting from '@setting/components/ThemeSetting'
   export default {
     components: {
       NavHeader, 
       BodyMenu,
       ThemeSetting,
-      FontSetting
+      FontSetting,
+      ThemeImageSetting,
+      SelfSetting
     },
     provide() {
       return {
