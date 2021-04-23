@@ -45,6 +45,16 @@ export default {
     ArticlesList,
     GoTop,
     Notes
+  },
+  provide() {
+    return {
+      type: this.type
+    }
+  },
+  data() {
+    return {
+      type: null
+    }
   }
 }
 </script>
