@@ -4,7 +4,7 @@
     <body-menu>
       <!-- 右侧设置部分 -->
       <template v-slot:blog-setting-right-body>
-        <component :is="settingType"></component>
+        <component :is="rightType.admin"></component>
       </template>
     </body-menu> 
   </div>
@@ -16,6 +16,7 @@ import NavHeader from '@components/NavHeader'
 import BodyMenu from '@components/BodyMenu'
 import GlobalStatistic from '@admin/components/GlobalStatistic'
 import RecommendedSetting from '@admin/components/RecommendedSetting'
+
 export default {
   components: {
     NavHeader,
@@ -25,29 +26,29 @@ export default {
   },
   provide() {
     return {
-      sideMenu: this.sideMenu
+      sideMenu: this.sideMenu,
+      type: this.type
     }
   },
   data() {
     return {
+      type: 'admin',
       sideMenu: [
         {
           index: 'GlobalStatistic',
-          name: '总体统计',
-          path: "admin"
+          name: '总体统计'
         },
         {
           index: 'RecommendedSetting',
-          name: '推荐设置',
-          path: "admin"
+          name: '推荐设置'
         }
       ],
     }
   },
   computed: {
-    ...mapState('admin', [
-      'settingType'
-    ])
+    ...mapState({
+      rightType: state => state.sideMenuType
+    })
   }
 }
 </script>

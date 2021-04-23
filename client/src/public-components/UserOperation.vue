@@ -1,5 +1,5 @@
 <template>
-  <div class="user-operation-wrapper">
+  <div class="user-operation-wrapper">  
     <el-dialog
         class="user-operation-dialog"
         :title="getUserOperation"
@@ -34,7 +34,7 @@
 
 <script>
   import { Api } from '@api';
-  import { mapMutations } from 'vuex';
+  import { mapState, mapMutations } from 'vuex';
   import * as types from '@store/mutation-types';
 
   export default {
@@ -171,8 +171,7 @@
           }
         )
       },
-    },
-    mounted() {},
+    }, 
     computed: {
       // 用户操作表单标题文案
       getUserOperation() {

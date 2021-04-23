@@ -4,7 +4,7 @@
     <el-row class="blog-setting-body__left">
       <el-col :span="4" class="left-placeholder"></el-col>
       <el-col :offset="4" :span="20" class="side-menu-wrapper">
-        <side-menu :sideMenu="sideMenu" />
+        <side-menu />
       </el-col>
     </el-row>
     <!-- 右侧设置部分 -->
@@ -21,12 +21,6 @@
   export default {
     components: {
       SideMenu
-    },
-    inject: [
-      'sideMenu'
-    ],
-    computed: {
-      getSideMenu() {}
     }
   }
 </script>

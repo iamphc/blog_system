@@ -1,15 +1,8 @@
 import * as types from '@store/mutation-types'
 
-const state = {
-  // 侧边菜单默认为总体统计
-  settingType: 'GlobalStatistic'
-}
+const state = {}
 
-const mutations = {
-  [types.SETTING_TYPE](state, payload) {
-    state.settingType = payload 
-  }
-}
+const mutations = {}
 
 const getters = {}
 

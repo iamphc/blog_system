@@ -1,6 +1,6 @@
 <template>
   <div class="nav-header-wrapper">
-    <!-- 主标题 -->
+    <!-- 主标题：博客主页相关 -->
     <el-row 
       class="main-header-content top-fixed" 
       v-show="isShowHome" 
@@ -26,7 +26,7 @@
         </router-link>
       </el-col>
     </el-row>
-    <!-- 副标题 -->
+    <!-- 副标题：设置相关 -->
     <el-row 
       v-if="isShowSub"
       class="sub-header-content top-fixed">
@@ -74,6 +74,9 @@
   import * as types from '@store/mutation-types';
   import { mapMutations } from 'vuex'
   export default {
+    inject: [
+      'type'
+    ],
     mixins: [User],
     data() {
       return {     
@@ -111,7 +114,7 @@
       this.setTheme()
     },
     methods: { 
-      ...mapMutations('blogSetting', {
+      ...mapMutations({
         headerType: types.HEADER_TYPE
       }),
       showHomeHeader() {
@@ -128,8 +131,10 @@
         wrapper.style.color = this.theme.fontColor
       },
 
-      handleSelect(path, keyPath) {
-        this.headerType(path)
+      handleSelect(path) {
+        this.type === 'admin'
+          ? this.headerType({ admin: path })
+          : this.headerType({ blogSetting: path }) 
       }
     },
     computed: {

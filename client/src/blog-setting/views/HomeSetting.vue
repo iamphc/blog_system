@@ -7,7 +7,7 @@
     <body-menu>
       <!-- 右侧设置部分 -->
       <template v-slot:blog-setting-right-body>
-        <component :is="settingType"></component>
+        <component :is="rightType.blogSetting"></component>
       </template>
     </body-menu>
   </div>
@@ -28,11 +28,13 @@
     },
     provide() {
       return {
-        sideMenu: this.sideMenu
+        sideMenu: this.sideMenu,
+        type: this.type
       }
     },
     data() {
       return {
+        type: 'blogSetting',
         navTitleType: "blog-setting",
         subHeaderMenu: [
           {
@@ -51,32 +53,28 @@
         sideMenu: [
           {
             index: "ThemeSetting",
-            name: "主题颜色",
-            path: "blogSetting"
+            name: "主题颜色"
           },
           {
             index: "ThemeImageSetting",
-            name: "主题图片",
-            path: "blogSetting"
+            name: "主题图片"
           },
           {
             index: "FontSetting",
-            name: "字体设置",
-            path: "blogSetting"
+            name: "字体设置"
           },
           {
             index: "SelfSetting",
-            name: "自定义编辑",
-            path: "blogSetting"
+            name: "自定义编辑"
           }
         ] 
       }
     },
     mounted() {},
     computed: {
-      ...mapState('blogSetting', [
-        'settingType'
-      ])
+      ...mapState({
+        rightType: state => state.sideMenuType
+      })
     }
   }
 </script>

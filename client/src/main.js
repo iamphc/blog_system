@@ -23,7 +23,7 @@ const router = new VueRouter({
     ...BlogSettingRouter
   ],
   mode: "history"
-}) 
+})  
 
 new Vue({
   router,
