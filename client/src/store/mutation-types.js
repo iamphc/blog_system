@@ -1,6 +1,4 @@
 // global
 export const TOKEN = 'TOKEN';
-// blog-setting
 export const HEADER_TYPE = 'HEADER_TYPE';
-export const SETTING_TYPE = 'SETTING_TYPE';   /* + admin */
-// admin 
+export const SIDE_MENU_TYPE = 'SIDE_MENU_TYPE';
