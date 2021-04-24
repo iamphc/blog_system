@@ -6,11 +6,12 @@ var logger = require('morgan');
 var debug = require('debug')('http');
 var http = require('http');
 
-const blog = require('./routes/blog');    // 博客主页
+const blog = require('./routes/blog');               // 博客主页
 const blogSetting = require('./routes/blogSetting'); // 博客设置
-const develop = require('./routes/develop');  // 开发者模式
-const admin = require('./routes/admin');    // 后台管理
-const global = require('./routes/global');  // 全局
+const develop = require('./routes/develop');         // 开发者模式
+const admin = require('./routes/admin');             // 后台管理
+const groupAdmin = require('./routes/groupAdmin')    // 组管理
+const global = require('./routes/global');           // 全局
 
 // 连接「blog-system-backend」数据库
 const {
@@ -46,6 +47,7 @@ app.use('/blog', blog);
 app.use('/blog-setting', blogSetting);
 app.use('/admin', admin);
 app.use('/develop', develop);
+app.use('/group-admin', groupAdmin)
 app.use('/', global);
 
 // catch 404 and forward to error handler

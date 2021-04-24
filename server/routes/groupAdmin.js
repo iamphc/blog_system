@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 
 router.get('/', (req, res, next) => {
-    res.send('admin homepage');
+  res.send('group-admin homepage')
 })
 
 module.exports = router

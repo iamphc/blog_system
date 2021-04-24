@@ -5,6 +5,7 @@ import BlogRouter from "@blog/router";
 import DevelopRouter from "@develop/router";
 import AdminRouter from "@admin/router";
 import BlogSettingRouter from "@setting/router"; 
+import GroupAdminRouter from "@group/router";
 import "../public/css/main.css";
 import store from '@/store';
 import ElementUI from 'element-ui'
@@ -20,7 +21,8 @@ const router = new VueRouter({
     ...BlogRouter,
     ...DevelopRouter,
     ...AdminRouter, 
-    ...BlogSettingRouter
+    ...BlogSettingRouter,
+    ...GroupAdminRouter
   ],
   mode: "history"
 })  

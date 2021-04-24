@@ -5,7 +5,7 @@ export default {
     state.token = payload.token;
     localStorage.setItem('token', payload.token);
   },
-  [types.HEADER_TYPE](state, { admin, blogSetting } = {}) {
+  [types.HEADER_TYPE](state, { admin, blogSetting, groupAdmin } = {}) {
     // admin headerType
     admin
       ? state.headerType.admin = admin
@@ -14,8 +14,12 @@ export default {
     blogSetting
       ? state.headerType.blogSetting = blogSetting
       : ''  
+    // groupAdmin headerType
+    groupAdmin 
+      ? state.headerType.groupAdmin = groupAdmin
+      : ''
   },
-  [types.SIDE_MENU_TYPE](state, { admin, blogSetting } = {}) {
+  [types.SIDE_MENU_TYPE](state, { admin, blogSetting, groupAdmin } = {}) {
     // admin sideMenuType
     admin
       ? state.sideMenuType.admin = admin
@@ -24,5 +28,9 @@ export default {
     blogSetting
       ? state.sideMenuType.blogSetting = blogSetting
       : ''  
+    // groupAdmin sideMenuType
+    groupAdmin 
+      ? state.sideMenuType.groupAdmin = groupAdmin
+      : ''
   }
 }
