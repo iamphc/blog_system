@@ -1,3 +1,7 @@
+.nav-header-wrapper {
+  position: relative;
+}
+
 /* main header */
 .main-header-content { 
   text-align: center;
@@ -31,6 +35,11 @@
 
 .home-title {
   color: #fff;
+}
+
+.group-admin-btn {
+  position: absolute;
+  right: 0;
 }
 
 /* sub header */

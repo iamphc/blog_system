@@ -25,4 +25,7 @@
 @import "components/admin/recommended-setting.css";   /*recommended-setting*/
 @import "components/admin/homepage.css";              /*homepage*/
 
+/* 组管理 */
+@import "components/group-admin/homepage.css";        /*hompage.css*/
+
 /* 开发者 */    

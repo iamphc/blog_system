@@ -25,6 +25,11 @@
           <el-button class="header-btn" type="primary" round>开发者模式</el-button>
         </router-link>
       </el-col>
+      <el-col :span="3" class="header-btn-wrapper group-admin-btn">
+        <router-link to="/group-admin">
+          <el-button class="header-btn" round>组设置</el-button>
+        </router-link>
+      </el-col>
     </el-row>
     <!-- 副标题：设置相关 -->
     <el-row 
@@ -37,7 +42,7 @@
         :span="7" 
         :offset="5">
         <el-menu  
-          :default-active="defaultActive"  
+          :default-active="subHeaderMenu[0].index"  
           mode="horizontal" 
           background-color="#545c64"
           text-color="#fff" 
@@ -79,8 +84,7 @@
     ],
     mixins: [User],
     data() {
-      return {     
-        defaultActive: "themes",
+      return {      
         changeShowHome: false,
         initShow: true
       }
@@ -132,11 +136,18 @@
       },
 
       handleSelect(path) {
-        if(!this.type) {
-          this. type === 'admin'
-            ? this.headerType({ admin: path })
-            : this.headerType({ blogSetting: path }) 
-        } 
+        alert(this.type)
+        switch (this.type) {
+          case 'admin':
+            this.headerType({ admin: path })
+            break;
+          case 'blogSetting':
+            this.headerType({ blogSetting: path })
+            break;
+          case 'groupAdmin':
+            this.headerType({ groupAdmin: path })
+            break;
+        }
       }
     },
     computed: {
@@ -167,6 +178,9 @@
             break;
           case "develop":
             title = "开发者模式"
+            break;
+          case "group-admin":
+            title = "组管理"
             break;
         } 
         return title

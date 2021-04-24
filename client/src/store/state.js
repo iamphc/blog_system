@@ -2,10 +2,12 @@ export default {
   token: 'noToken',
   headerType: {
     admin: '',
-    blogSetting: ''
+    blogSetting: '',
+    groupAdmin: ''
   },
   sideMenuType: {
     admin: 'GlobalStatistic',
-    blogSetting: 'ThemeSetting'
+    blogSetting: 'ThemeSetting',
+    groupAdmin: 'SettingSEO'
   }
 }

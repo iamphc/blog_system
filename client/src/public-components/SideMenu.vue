@@ -36,9 +36,17 @@
       }),
       changeSettingType(index) {
         alert(index) 
-        this.type === 'admin'
-          ? this.setType({ admin: index })
-          : this.setType({ blogSetting: index }) 
+        switch (this.type) {
+          case 'admin':
+            this.setType({ admin: index })
+            break;
+          case 'blogSetting':
+            this.setType({ blogSetting: index })
+            break;
+          case 'groupAdmin':
+            this.setType({ groupAdmin: index })
+            break;
+        }
       }
     }
   }
