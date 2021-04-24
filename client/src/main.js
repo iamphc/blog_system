@@ -1,14 +1,17 @@
-import Vue from "vue";
-import App from "./App.vue"; 
-import VueRouter from "vue-router";  
-import BlogRouter from "@blog/router";
-import DevelopRouter from "@develop/router";
-import AdminRouter from "@admin/router";
-import BlogSettingRouter from "@setting/router"; 
-import GroupAdminRouter from "@group/router";
-import "../public/css/main.css";
-import store from '@/store';
-import ElementUI from 'element-ui'
+import App from "./App.vue"
+import "../public/css/main.css"
+
+import Vue from "vue"
+import store from '@/store'
+import VueRouter from "vue-router"
+
+import BlogRouter from "@blog/router"
+import DevelopRouter from "@develop/router"
+import AdminRouter from "@admin/router"
+import BlogSettingRouter from "@setting/router"
+import GroupAdminRouter from "@group/router"
+
+import ElementUI from 'element-ui' 
 
 Vue.use(ElementUI)
 Vue.use(VueRouter)
