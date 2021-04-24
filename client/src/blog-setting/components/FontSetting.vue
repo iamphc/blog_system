@@ -19,7 +19,7 @@
         label="字体操作"
         prop="operation">
         <template slot-scope="scope">
-          <el-button>使用</el-button>
+          <el-button type="success">使用</el-button>
           <el-button type="danger">禁用</el-button>
         </template>
       </el-table-column>
@@ -51,7 +51,7 @@ export default {
     ]
   },
   methods: {
-    setRowClassName({ row, rowIndex }) {
+    setRowClassName({ row, rowIndex } = {}) {
       return rowIndex % 2 === 0
         ? 'table-height-row'
         : 'table-normal-row'
