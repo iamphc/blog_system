@@ -34,6 +34,9 @@ export default {
       type: this.type
     }
   },
+  created() {  
+    this.rightType.groupAdmin = this.sideMenu[0].index
+  },
   data() {
     return {
       type: 'groupAdmin',
