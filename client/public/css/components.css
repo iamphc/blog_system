@@ -27,5 +27,6 @@
 
 /* 组管理 */
 @import "components/group-admin/homepage.css";        /*hompage.css*/
+@import "components/group-admin/group-member.css";    /*group-member*/
 
 /* 开发者 */    
