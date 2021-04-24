@@ -34,8 +34,7 @@
       ...mapMutations({
         setType: types.SIDE_MENU_TYPE
       }),
-      changeSettingType(index) {
-        alert(index) 
+      changeSettingType(index) { 
         switch (this.type) {
           case 'admin':
             this.setType({ admin: index })

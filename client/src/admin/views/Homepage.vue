@@ -30,6 +30,9 @@ export default {
       type: this.type
     }
   },
+  created() { 
+    this.rightType.admin = this.sideMenu[0].index
+  },
   data() {
     return {
       type: 'admin',

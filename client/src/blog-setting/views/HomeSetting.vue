@@ -36,6 +36,9 @@
         type: this.type
       }
     },
+    created() {  
+      this.rightType.blogSetting = this.sideMenu[0].index
+    },
     data() {
       return {
         type: 'blogSetting',

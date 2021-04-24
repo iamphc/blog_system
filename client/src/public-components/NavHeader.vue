@@ -135,8 +135,7 @@
         wrapper.style.color = this.theme.fontColor
       },
 
-      handleSelect(path) {
-        alert(this.type)
+      handleSelect(path) { 
         switch (this.type) {
           case 'admin':
             this.headerType({ admin: path })
