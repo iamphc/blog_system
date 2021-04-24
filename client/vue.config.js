@@ -15,6 +15,7 @@ module.exports = {
       .set("@mixins", utils.resolve("src/mixins"))
       .set("@api", utils.resolve("src/Api"))
       .set("@store", utils.resolve("src/store"))
+      .set("@utils", utils.resolve("src/utils"))
   },
   // 配置代理服务器（端口）
   devServer: {
