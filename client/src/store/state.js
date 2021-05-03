@@ -6,8 +6,8 @@ export default {
     groupAdmin: ''
   },
   sideMenuType: {
-    admin: 'GlobalStatistic',
+    admin: 'Statistic',
     blogSetting: 'ThemeSetting',
-    groupAdmin: 'SettingSEO'
+    groupAdmin: 'SEOSetting'
   }
 }

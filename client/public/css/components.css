@@ -3,6 +3,7 @@
 @import "components/public/side-menu.css";            /*side-menu*/ 
 @import "components/public/body-menu.css";            /*body-menu*/
 @import "components/public/user-operation.css";       /*user-operation*/
+@import "components/public/statistic.css";            /*statistic*/
 
 /* 博客主页 */
 @import "components/blog/article.css";                /*article*/
@@ -21,7 +22,6 @@
 @import "components/blog-setting/font-setting.css";   /*font-setting*/
 
 /* 博客管理 */
-@import "components/admin/global-statistic.css";      /*global-statistic*/
 @import "components/admin/recommended-setting.css";   /*recommended-setting*/
 @import "components/admin/homepage.css";              /*homepage*/
 

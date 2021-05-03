@@ -17,16 +17,16 @@
 import { mapState } from 'vuex'
 import NavHeader from '@components/NavHeader'
 import BodyMenu from '@components/BodyMenu'
-import SettingSEO from '@group/components/SettingSEO'
-import GroupMember from '@group/components/GroupMember'
-import GroupStatistic from '@group/components/GroupStatistic'
+import SEOSetting from '@group/components/SEOSetting'
+import Member from '@group/components/Member'
+import Statistic from '@group/components/Statistic'
 export default {
   components: {
     NavHeader,
     BodyMenu,
-    SettingSEO,
-    GroupMember,
-    GroupStatistic
+    SEOSetting,
+    Member,
+    Statistic
   },
   provide() {
     return {
@@ -53,15 +53,15 @@ export default {
       ],
       sideMenu: [
         {
-          index: 'SettingSEO',
+          index: 'SEOSetting',
           name: 'SEO优化策略'
         },
         {
-          index: 'GroupMember',
+          index: 'Member',
           name: '组成员'
         },
         {
-          index: 'GroupStatistic',
+          index: 'Statistic',
           name: '组数据统计'
         }
       ]
