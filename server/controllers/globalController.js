@@ -25,6 +25,7 @@ exports.global_register = async (req, res, next) => {
 }
 
 // TODO:用户登录验证
+// 明文验证
 exports.global_login = async (req, res, next) => {
   const { userName, userPwd } = req.body
 

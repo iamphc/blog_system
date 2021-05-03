@@ -74,13 +74,29 @@
           verifiCode: [
             {message: '请输入验证码', trigger: 'blur'}
           ]
-        }
+        },
+        token: null
+      }
+    },
+    created() { 
+      // 如果token过期前登录，则跳过登录
+      if(this.getToken().token) {
+        this.showDialog = false
       }
     },
     methods: {
-      ...mapMutations({
-        'token': types.TOKEN
-      }),
+      getToken() {
+        const cookie = document.cookie
+        const res = { token: null, status: 'fail' }
+        if(cookie) {
+          const tokenStr = cookie.match(/(?=token\=)[\w\W]+/)[0]
+          if(tokenStr) {
+            res.token = tokenStr.substr(6)
+            res.status = 'success'
+          }
+        } 
+        return res
+      },
       // 页面加载前判断是否有token，存在token，自动登录
       // 否则，弹出用户注册界面
       handleRegister() {
@@ -153,7 +169,7 @@
               // 登陆成功，关闭窗口
               // 登录失败，保持窗口，清空信息： 用户名错误，清空所有。密码错误，清空密码
               res.status === 'success' 
-                ? (this.showDialog = false) 
+                ? (this.showDialog = false)
                 : res.errorField === 'userName'
                   ? this.handleResetForm()
                   : this.$refs['userPwd'].resetField()

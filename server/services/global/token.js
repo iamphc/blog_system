@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken')
 const secret = 'b2z1_thb#'
 const maxAge = 24 * 3600 * 1000 // token 24小时后过期
 
-// 颁发token
+// 【注册】颁发token
 exports.publish = async (req, res) => {
   const rawInfo = {
     userName: req.body.userName,
@@ -19,7 +19,8 @@ exports.publish = async (req, res) => {
   })
 }
 
-// 用户操作时，验证jwt的token
+// 用户操作【非登录】时，验证jwt的token
+// 问题：什么时候验证？为什么要验证？
 exports.verify = async (req) => {
   const token = req.cookies['token']; // 从cookie获取token
   if (!token) {
