@@ -13,16 +13,16 @@
 <script>
 import { mapState } from 'vuex'
 import NavHeader from '@components/NavHeader'
-import BodyMenu from '@components/BodyMenu'
-import GlobalStatistic from '@admin/components/GlobalStatistic'
+import BodyMenu from '@components/BodyMenu' 
+import Statistic from '@admin/components/Statistic'
 import RecommendedSetting from '@admin/components/RecommendedSetting'
 
 export default {
   components: {
     NavHeader,
-    BodyMenu,
-    GlobalStatistic,
-    RecommendedSetting
+    BodyMenu, 
+    RecommendedSetting,
+    Statistic
   },
   provide() {
     return {
@@ -38,8 +38,8 @@ export default {
       type: 'admin',
       sideMenu: [
         {
-          index: 'GlobalStatistic',
-          name: '总体统计'
+          index: 'Statistic',
+          name: '数据统计'
         },
         {
           index: 'RecommendedSetting',

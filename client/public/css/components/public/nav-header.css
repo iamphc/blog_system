@@ -25,6 +25,11 @@
   max-width: 100%;
 }
 
+.header-btn-wrapper button {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
 .header-btn {
   max-width: 100%;
 }
