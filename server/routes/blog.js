@@ -1,33 +1,22 @@
 const express = require('express');
 const router = express.Router();
+const blog_controller = require('../controllers/blogController')
 
-router.get('/', (req, res, next) => {
-    res.send('blog homepage');
-});
-
-// TODO:获取博客主页目录
-router.get('/menu', (req, res, next) => {
-    res.send('blog homepage menu');
-});
+router.get('/', blog_controller.homepage)
 
 // TODO:获取留言板
-router.get('/notes', (req, res, next) => {
-    res.send('blog homepage notes');
-});
+router.get('/notes', blog_controller.get_notes)
 
 // TODO:获取标签云
-router.get('/tagsCloud', (req, res, next) => {
-    res.send('blog homepage tagsCloud');
-});
+router.get('/tagsCloud', blog_controller.get_tags_cloud)
 
 // TODO:获取文章列表
-router.get('/articles', (req, res, next) => {
-    res.send('articles list');
-});
+router.get('/articles', blog_controller.get_articles_list)
 
 // TODO:获取文章
-router.get('/article/:articleId', (req, res, next) => {
-    res.send(req.params);
-}); 
+router.get('/article/:articleId', blog_controller.get_article)
 
-module.exports = router;
+// TODO:写文章
+router.post('/article/create', blog_controller.article_create)
+
+module.exports = router

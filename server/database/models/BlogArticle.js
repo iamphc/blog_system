@@ -4,17 +4,32 @@ const BlogArticle = new mongoose.Schema({
         type: String,
         required: true
     },
-    date: {
+    // 创建时间
+    createdDate: {
         type: Date,
         required: true
     },
-    author: {
+    // 上次更新时间
+    lastUpdatedDate: {
+        type: Date,
+        require: true
+    },
+    userName: {
         type: String,
-        required: false
+        required: true
     },
     context: {
         type: String,
         required: true
+    },
+    groupId: {
+        type: Number
+    },
+    // 文章标签分类数组，作为索引
+    tags: {
+        type: [String],
+        require: true,
+        index: true 
     }
 });
 

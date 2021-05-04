@@ -1,9 +1,9 @@
 import * as types from "@store/mutation-types";
 
 export default {
-  [types.TOKEN](state, payload) {
-    state.token = payload.token;
-    localStorage.setItem('token', payload.token);
+  [types.USER_NAME](state, payload) {
+    state.userName = payload
+    localStorage.setItem('userName', payload)
   },
   [types.HEADER_TYPE](state, { admin, blogSetting, groupAdmin } = {}) {
     // admin headerType

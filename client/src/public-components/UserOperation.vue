@@ -74,22 +74,27 @@
           verifiCode: [
             {message: '请输入验证码', trigger: 'blur'}
           ]
-        },
-        token: null
+        }
       }
     },
     created() { 
       // 如果token过期前登录，则跳过登录
       if(this.getToken().token) {
         this.showDialog = false
+      } else {
+        // token不存在，或过期时，清空 userName 
+        this.userName(null)
       }
     },
     methods: {
+      ...mapMutations({
+        userName: types.USER_NAME
+      }),
       getToken() {
         const cookie = document.cookie
         const res = { token: null, status: 'fail' }
         if(cookie) {
-          const tokenStr = cookie.match(/(?=token\=)[\w\W]+/)[0]
+          const tokenStr = cookie.match(/(?=token\=)[\w\W]+/) && cookie.match(/(?=token\=)[\w\W]+/)[0]
           if(tokenStr) {
             res.token = tokenStr.substr(6)
             res.status = 'success'
@@ -168,11 +173,16 @@
               )
               // 登陆成功，关闭窗口
               // 登录失败，保持窗口，清空信息： 用户名错误，清空所有。密码错误，清空密码
-              res.status === 'success' 
-                ? (this.showDialog = false)
-                : res.errorField === 'userName'
-                  ? this.handleResetForm()
-                  : this.$refs['userPwd'].resetField()
+              if(res.status === 'success') {
+                this.showDialog = false 
+                this.userName(this.ruleForm.userName)
+                return 
+              } 
+              if(res.errorField === 'userName') {
+                this.handleResetForm()
+                return
+              }
+              this.$refs['userPwd'].resetField()
             }
           )
         })

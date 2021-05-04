@@ -5,12 +5,12 @@ const { decrypt } = require('../util/decrypt')
 const { publish, verify } = require('../services/global/token')
 
 // TODO:无
-exports.global_homepage = (req, res, next) => {
+exports.homepage = (req, res, next) => {
   res.send('global homepage')
 }
 
 // TODO:创建用户
-exports.global_register = async (req, res, next) => {
+exports.register = async (req, res, next) => {
   await createUser(req).then(
     _ => res.json({
       msg: '注册成功',
@@ -26,14 +26,13 @@ exports.global_register = async (req, res, next) => {
 
 // TODO:用户登录验证
 // 明文验证
-exports.global_login = async (req, res, next) => {
+exports.login = async (req, res, next) => {
   const { userName, userPwd } = req.body
 
   // 用户名查询
   await User.findOne({userName: userName}, {userPwd: 1})
     .then(
-      query => {
-        console.log(query)
+      query => { 
         const isUserExist = !!query
         if(!isUserExist) throw new Error('userName')  // 用户名不存在
 
@@ -62,6 +61,6 @@ exports.global_login = async (req, res, next) => {
 }
 
 // TODO:获取菜单（顶部+侧边）
-exports.global_get_menu_items = (req, res, next) => {
+exports.get_menu_items = (req, res, next) => {
   res.send('global top-menu/side-menu');
 }
