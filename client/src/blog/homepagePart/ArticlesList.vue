@@ -7,65 +7,18 @@
       </span>
     </div>
     <div class="bottom-line"></div>
-    <ul class="articles-list">
-      <li class="article-item">
-        <h2 class="article-title">文章标题</h2>
+    <ul class="articles-list"> 
+      <li 
+        class="article-item"
+        v-for="(article, index) in articlesList"
+        :key="index">
+        <h2 class="article-title">{{ article.title }}</h2>
         <div class="article-update-detailes">
-          <span class="article-upload-time">2021-03-03</span>
+          <span class="article-upload-time">{{ article.createdDate }}</span>
         </div>
         <div class="article-abstract">
-          article-contentLorem ipsum dolor sit amet consectetur adipisicing elit. Sit quo similique quos tempore dolores, nemo quaerat rem fugit laborum neque dicta reprehenderit laboriosam, porro commodi provident iusto aliquam numquam soluta.Sed, dolorum! Magnam est non provident vel itaque eaque similique nisi sequi sapiente commodi? Nemo eaque eos possimus exercitationem at nobis dignissimos, praesentium ducimus accusantium aperiam ratione rerum sit ea 
+          {{ article.context }}
           <router-link class="get-full-article" to="/article/view">阅读全文>></router-link>
-        </div>
-      </li> 
-      <li class="article-item">
-        <h2 class="article-title">文章标题</h2>
-        <div class="article-update-detailes">
-          <span class="article-upload-time">2021-03-03</span>
-        </div>
-        <div class="article-abstract">
-          article-contentLorem ipsum dolor sit amet consectetur adipisicing elit. Sit quo similique quos tempore dolores, nemo quaerat rem fugit laborum neque dicta reprehenderit laboriosam, porro commodi provident iusto aliquam numquam soluta.Sed, dolorum! Magnam est non provident vel itaque eaque similique nisi sequi sapiente commodi? Nemo eaque eos possimus exercitationem at nobis dignissimos, praesentium ducimus accusantium aperiam ratione rerum sit ea 
-         <router-link class="get-full-article" to="/article/view">阅读全文>></router-link>
-        </div>
-      </li> 
-      <li class="article-item">
-        <h2 class="article-title">文章标题</h2>
-        <div class="article-update-detailes">
-          <span class="article-upload-time">2021-03-03</span>
-        </div>
-        <div class="article-abstract">
-          article-contentLorem ipsum dolor sit amet consectetur adipisicing elit. Sit quo similique quos tempore dolores, nemo quaerat rem fugit laborum neque dicta reprehenderit laboriosam, porro commodi provident iusto aliquam numquam soluta.Sed, dolorum! Magnam est non provident vel itaque eaque similique nisi sequi sapiente commodi? Nemo eaque eos possimus exercitationem at nobis dignissimos, praesentium ducimus accusantium aperiam ratione rerum sit ea 
-         <router-link class="get-full-article" to="/article/view">阅读全文>></router-link>
-        </div>
-      </li>
-      <li class="article-item">
-        <h2 class="article-title">文章标题</h2>
-        <div class="article-update-detailes">
-          <span class="article-upload-time">2021-03-03</span>
-        </div>
-        <div class="article-abstract">
-          article-contentLorem ipsum dolor sit amet consectetur adipisicing elit. Sit quo similique quos tempore dolores, nemo quaerat rem fugit laborum neque dicta reprehenderit laboriosam, porro commodi provident iusto aliquam numquam soluta.Sed, dolorum! Magnam est non provident vel itaque eaque similique nisi sequi sapiente commodi? Nemo eaque eos possimus exercitationem at nobis dignissimos, praesentium ducimus accusantium aperiam ratione rerum sit ea 
-         <router-link class="get-full-article" to="/article/view">阅读全文>></router-link>
-        </div>
-      </li>
-      <li class="article-item">
-        <h2 class="article-title">文章标题</h2>
-        <div class="article-update-detailes">
-          <span class="article-upload-time">2021-03-03</span>
-        </div>
-        <div class="article-abstract">
-          article-contentLorem ipsum dolor sit amet consectetur adipisicing elit. Sit quo similique quos tempore dolores, nemo quaerat rem fugit laborum neque dicta reprehenderit laboriosam, porro commodi provident iusto aliquam numquam soluta.Sed, dolorum! Magnam est non provident vel itaque eaque similique nisi sequi sapiente commodi? Nemo eaque eos possimus exercitationem at nobis dignissimos, praesentium ducimus accusantium aperiam ratione rerum sit ea 
-         <router-link class="get-full-article" to="/article/view">阅读全文>></router-link>
-        </div>
-      </li>
-      <li class="article-item">
-        <h2 class="article-title">文章标题</h2>
-        <div class="article-update-detailes">
-          <span class="article-upload-time">2021-03-03</span>
-        </div>
-        <div class="article-abstract">
-          article-contentLorem ipsum dolor sit amet consectetur adipisicing elit. Sit quo similique quos tempore dolores, nemo quaerat rem fugit laborum neque dicta reprehenderit laboriosam, porro commodi provident iusto aliquam numquam soluta.Sed, dolorum! Magnam est non provident vel itaque eaque similique nisi sequi sapiente commodi? Nemo eaque eos possimus exercitationem at nobis dignissimos, praesentium ducimus accusantium aperiam ratione rerum sit ea 
-         <router-link class="get-full-article" to="/article/view">阅读全文>></router-link>
         </div>
       </li> 
     </ul>
@@ -73,11 +26,32 @@
 </template>
 
 <script> 
+import { Api } from "@api"
 export default {
+  data() {
+    return {
+      articlesList: []
+    }
+  },
   props: {
     articleType: {
       type: String,
       default: "默认分类"
+    }
+  },
+  async created() { 
+    // 初始化文章列表
+    this.articlesList = []
+    await this.getArticlesList()  
+    console.log(this.articlesList)
+  },
+  methods: {
+    async getArticlesList() {
+      await Api.blog.getArticlesList().then(
+        _ => this.articlesList = _.articlesList    
+      ).catch(
+        _ => this.$message({ message: _.message, type: 'error' })
+      )
     }
   }
 }

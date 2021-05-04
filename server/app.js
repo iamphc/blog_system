@@ -5,7 +5,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var debug = require('debug')('http');
 var http = require('http');
-
+const { verify } = require('./services/global/token');
+ 
 const blog = require('./routes/blog');               // 博客主页
 const blogSetting = require('./routes/blogSetting'); // 博客设置
 const develop = require('./routes/develop');         // 开发者模式
@@ -41,6 +42,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+// 全局中间件：token验证
+app.use(verify)
 
 // 路由分发
 app.use('/blog', blog);

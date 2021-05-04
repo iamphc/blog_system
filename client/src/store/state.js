@@ -1,5 +1,5 @@
-export default {
-  token: 'noToken',
+export default { 
+  userName: null,
   headerType: {
     admin: '',
     blogSetting: '',

@@ -26,5 +26,5 @@ function encrypt(textPlain) {
     mode: CryptoJS.mode.CBC,
     padding: CryptoJS.pad.Pkcs7
   })
-  return encrypted.ciphertext.toString();
+  return encrypted.ciphertext.toString()
 }
