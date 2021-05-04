@@ -60,7 +60,8 @@ export default {
         context: this.$refs.context.innerText,
         createdDate: new Date(),
         userName: this.getUserName(),
-        lastUpdatedDate: new Date()
+        lastUpdatedDate: new Date(),
+        id: new Date().getTime() % 10000000000
       }
     },
     getUserName() { 

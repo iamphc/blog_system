@@ -1,4 +1,4 @@
-const { createArticle, getArticleList } = require('../services/blog/article')
+const { createArticle, getArticleList, getArticle } = require('../services/blog/article')
 
 exports.homepage = (req, res, next) => {
   res.send('blog homepage')
@@ -25,7 +25,11 @@ exports.get_articles_list = async (req, res, next) => {
 
 // TODO:获取文章
 exports.get_article = async (req, res, next) => { 
-  res.send('article: id')
+  await getArticle(req, res).then(
+    _ => res.json({ msg: '获取文章成功', status: 'success', articleRaw: _ })
+  ).catch(
+    _ => res.json({ msg: '获取文章失败', status: 'failed' , errDetail: _.message})
+  )
 }
 
 // TODO:写文章

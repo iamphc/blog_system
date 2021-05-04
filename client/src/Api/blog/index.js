@@ -11,6 +11,8 @@ export default {
   getArticlesList() {
     return axios.get("/blog/articles")
   },
-  // TODO:浏览某一篇文章
-  getArticle() {}
+  // TODO:浏览文章
+  getArticle(id) {
+    return axios.get(`/blog/article/${id}`)
+  }
 }

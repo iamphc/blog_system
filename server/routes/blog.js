@@ -14,7 +14,7 @@ router.get('/tagsCloud', blog_controller.get_tags_cloud)
 router.get('/articles', blog_controller.get_articles_list)
 
 // TODO:获取文章
-router.get('/article/:articleId', blog_controller.get_article)
+router.get('/article/:id', blog_controller.get_article)
 
 // TODO:写文章
 router.post('/article/create', blog_controller.article_create)
