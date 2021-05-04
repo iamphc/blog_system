@@ -2,30 +2,36 @@
   position: relative;
   z-index: 1;
 }
+
 .blog-body {
   position: absolute;
   left: 0;
   right: 0;
   top: 69px;
-  padding: 10px 15%; 
+  padding: 10px 15%;
 }
+
 .blog-body-section {
   background-color: transparent;
 }
+
 .blog-body-section__left {
   margin-right: 5px;
   position: fixed;
   width: calc(17.5% - 10px) !important;
 }
+
 .blog-body-section__center {
   margin: 0 5px;
   overflow: hidden;
-} 
+}
+
 .blog-body-section__right {
   margin-left: 5px;
   position: fixed;
   width: calc(17.5% - 10px) !important;
 }
+
 .section-side-wrapper {
   width: 25%;
   min-height: 1px;

@@ -14,9 +14,11 @@ const BlogArticle = new mongoose.Schema({
         type: Date,
         require: true
     },
+    // 用户名，作为查询索引
     userName: {
         type: String,
-        required: true
+        required: true,
+        index: true
     },
     context: {
         type: String,
@@ -25,11 +27,16 @@ const BlogArticle = new mongoose.Schema({
     groupId: {
         type: Number
     },
-    // 文章标签分类数组，作为索引
+    // 文章标签分类数组，作为查询索引
     tags: {
         type: [String],
         require: true,
         index: true 
+    },
+    // 【自增，函数实现】文章id，唯一索引
+    id: {
+        type: Number,
+        unique: true
     }
 });
 

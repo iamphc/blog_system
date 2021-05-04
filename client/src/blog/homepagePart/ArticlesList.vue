@@ -10,16 +10,16 @@
     <ul class="articles-list"> 
       <li 
         class="article-item"
-        v-for="(article, index) in articlesList"
-        :key="index">
+        v-for="article in articlesList"
+        :key="article.id">
         <h2 class="article-title">{{ article.title }}</h2>
         <div class="article-update-detailes">
           <span class="article-upload-time">{{ article.createdDate }}</span>
         </div>
         <div class="article-abstract">
           {{ article.context }}
-          <router-link class="get-full-article" to="/article/view">阅读全文>></router-link>
         </div>
+        <router-link class="get-full-article" :to="getViewArticleRouter(article.id)">阅读全文>></router-link>
       </li> 
     </ul>
   </div>
@@ -48,10 +48,21 @@ export default {
   methods: {
     async getArticlesList() {
       await Api.blog.getArticlesList().then(
-        _ => this.articlesList = _.articlesList    
-      ).catch(
-        _ => this.$message({ message: _.message, type: 'error' })
+        res => {
+          res.status === 'success' 
+            ? this.articlesList = res.articlesList  
+            : this.msgPrompt(res.msg, 'error')
+        }  
       )
+    },
+    getViewArticleRouter(id) {
+      return {
+        name: 'viewArticle',
+        params: { id }
+      }
+    },
+    msgPrompt(message, type) {
+      this.$message({ message, type })
     }
   }
 }

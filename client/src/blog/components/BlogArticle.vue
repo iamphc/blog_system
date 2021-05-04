@@ -1,18 +1,32 @@
 <template> 
   <div class="article-wrapper article-item">
-    <h1 class="article-title">文章标题</h1>
+    <h1 class="article-title">{{ articleRaw.title }}</h1>
     <div class="article-update-detailes">
-      <span class="article-upload-time">2021-03-03</span> 
+      <span class="article-upload-time">{{ articleRaw.lastUpdatedDate }}</span> 
     </div>
-    <div class="article-abstract">
-      <span class="article-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit quo similique quos tempore dolores, nemo quaerat rem fugit laborum neque dicta reprehenderit laboriosam, porro commodi provident iusto aliquam numquam soluta.Sed, dolorum! Magnam est non provident vel itaque eaque similique nisi sequi sapiente commodi? Nemo eaque eos possimus exercitationem at nobis dignissimos, praesentium ducimus accusantium aperiam ratione rerum sit ea.</span> 
+    <div class="article-context">
+      <span class="article-content">{{ articleRaw.context }}</span> 
     </div>
   </div>   
 </template>
 
 <script>
 export default {
-  
+  props: {
+    articleRaw: {
+      type: Object,
+      default() {
+        return {
+          title: '默认标题',
+          context: '默认正文...',
+          createdDate: new Date(),
+          lastUpdatedDate: new Date(),
+          userName: 'no man',
+          id: '-1'
+        }
+      }
+    }
+  }
 }
 </script>
 
