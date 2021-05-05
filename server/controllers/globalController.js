@@ -59,8 +59,3 @@ exports.login = async (req, res, next) => {
       })
     ) 
 }
-
-// TODO:获取菜单（顶部+侧边）
-exports.get_menu_items = (req, res, next) => {
-  res.send('global top-menu/side-menu');
-}

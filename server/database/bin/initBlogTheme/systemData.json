@@ -1,0 +1,34 @@
+{
+  "themeList": [
+    {
+      "color": "e3b4b8",
+      "name": "鼠鼻红",
+      "createdDate": {},
+      "themeType": "system defaylt"
+    },
+    {
+      "color": "2b333e",
+      "name": "青灰",
+      "createdDate": {},
+      "themeType": "system defaylt"
+    },
+    {
+      "color": "29b7cb",
+      "name": "蔚蓝",
+      "createdDate": {},
+      "themeType": "system defaylt"
+    },
+    {
+      "color": "ffa60f",
+      "name": "金叶黄",
+      "createdDate": {},
+      "themeType": "system defaylt"
+    },
+    {
+      "color": "f9cb8b",
+      "name": "瓜瓤粉",
+      "createdDate": {},
+      "themeType": "system defaylt"
+    }
+  ]
+}
