@@ -1,0 +1,25 @@
+{
+  "userList": [
+    {
+      "userName": "admin",
+      "userPwd": "admin",
+      "userType": [0, 1, 2],
+      "userLoginTime": {},
+      "blogTheme": "no-setting"
+    },
+    {
+      "userName": "member",
+      "userPwd": "member",
+      "userType": [0, 1],
+      "userLoginTime": {},
+      "blogTheme": "no-setting"
+    },
+    {
+      "userName": "normal",
+      "userPwd": "normal",
+      "userType": [0],
+      "userLoginTime": {},
+      "blogTheme": "no-setting"
+    }
+  ] 
+}

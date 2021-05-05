@@ -3,7 +3,7 @@ const data = require('./systemData.json')
 
 exports.init_blog_theme = async () => {
   console.log('pending: 正在初始化 BlogTheme 表数据...')
-  // 当表为空时，触发初始化 
+  // 当 BlogTheme 表为空时，触发初始化 
   const isEmpty = await isBlogThemeEmpty()
   if(isEmpty) { 
     await addCreatedDateToList() 

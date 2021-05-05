@@ -23,34 +23,43 @@ exports.publish = async (req, res) => {
 // TODO:全局中间件：用户操作时，验证jwt的token
 exports.verify = async (req, res, next) => {
   console.log('处于全局中间件了...') 
+
+  let userName, userPwd, loginTime
   const path = req.path
   // TODO:登录、注册操作，以及其他游客级操作
   if(path === "/user/login" || path === "/user/register") {
     next()
   } else {
-    // 从cookie获取token
+    // 从 cookie 获取 token
     const token = req.cookies['token'] 
     if(!token) {
-      throw new Error('token 不存在') 
+      res.json({ msg: 'token 不存在', status: 'failed', tokenErrDetail: '无法从 cookie 中解析 token' })
     }
-    const { userName, userPwd, loginTime } = await jwt.verify(token, secret)
-    // 是否有用户
+    // 对 token 进行签名认证
+    jwt.verify(token, secret, (err, decode) => {
+      if(err) {
+        res.json({ msg: 'token 无效', status: 'failed', tokenErrDetail: '无效的签名' })
+      }
+      userName = decode.userName
+      userPwd = decode.userPwd
+      loginTime = decode.loginTime
+    })
     await User.findOne({ userName }, { userPwd: 1 }).then(
       query => { 
+        // 匹配用户名
         const isUserExist = !!query 
-        if(!isUserExist) throw new Error('token 无效')
+        if(!isUserExist) res.json({ msg: 'token 无效', status: 'failed', tokenErrDetail: '匹配不到用户名' })
+        // 匹配密码
         const isPwdCorrect = bcryptjs.compareSync(userPwd, query.userPwd)
-        if(!isPwdCorrect) throw new Error('token 无效')
+        if(!isPwdCorrect) res.json({ msg: 'token 无效', status: 'failed', tokenErrDetail: '匹配不到密码' })
       }
     ).catch( 
-      _ => {
-        throw new Error('其他错误')
-      }
+      _ => res.json({ msg: 'token 无效', status: 'failed', tokenErrDetail: '请排查数据库' }) 
     )
-    // token是否过期
+    // 检查token是否过期
     const isExpired = (Date.now() - loginTime) >= maxAge  
     if(isExpired) {
-      throw new Error('token 过期, 请登录')
+      res.json({ msg: 'token 无效', status: 'failed', tokenErrDetail: 'token 过期'}) 
     }
     next()
   }   

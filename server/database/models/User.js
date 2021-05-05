@@ -20,8 +20,8 @@ const User = new mongoose.Schema({
 		select: false // 不查询该字段
 	},
 	userType: {
-		type: Number,
-		default: 1, // 用户类型：0（普通用户）、1（管理员）
+		type: [Number],
+		default: [0], // 用户类型：0（普通用户）、1（组成员）、2（组管理员）
 	},
 	userLoginTime: {
 		type: Date
