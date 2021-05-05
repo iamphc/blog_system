@@ -52,7 +52,9 @@ export default {
           res.status === 'success' 
             ? this.articlesList = res.articlesList  
             : this.msgPrompt(res.msg, 'error')
-        }  
+        }
+      ).catch(
+        err => this.msgPrompt(err.message, 'error')
       )
     },
     getViewArticleRouter(id) {

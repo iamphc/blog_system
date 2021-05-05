@@ -33,9 +33,9 @@
 </template>
 
 <script>
-  import { Api } from '@api';
-  import { mapState, mapMutations } from 'vuex';
-  import * as types from '@store/mutation-types';
+  import { Api } from '@api'
+  import { mapState, mapMutations } from 'vuex'
+  import * as types from '@store/mutation-types'
 
   export default {
     data() {
@@ -79,6 +79,7 @@
     },
     created() { 
       // 如果token过期前登录，则跳过登录
+      // 问题：过期时间内保存的 token 一定有效吗？需要做校验？
       if(this.getToken().token) {
         this.showDialog = false
       } else {
