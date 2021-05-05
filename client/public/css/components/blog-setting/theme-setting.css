@@ -9,7 +9,9 @@
   margin-bottom: 40px;
 } 
 
-.theme-circle {}
+.theme-circle {
+  padding: 24px !important;
+}
 
 .theme-name {
   position: absolute;

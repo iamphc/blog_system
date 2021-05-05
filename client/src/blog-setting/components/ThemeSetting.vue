@@ -9,8 +9,9 @@
       :key="theme.index"
       ref="pickCol">
         <el-button 
+          circle
           class="theme-circle"
-          circle >
+          @click="selectThemeColor(theme.name)">
         </el-button>
         <span class="theme-name">{{theme.name}}</span>
     </el-col>
@@ -18,48 +19,37 @@
 </template>
 
 <script>
+import { Api } from "@api"
 export default {
   data() {
     return {
-      themeColorList: [
-        {
-          index: 0,
-          color: "e3b4b8",
-          name: "鼠鼻红"
-        },
-        {
-          index: 1,
-          color: "2b333e",
-          name: "青灰"
-        },
-        {
-          index: 2,
-          color: "29b7cb",
-          name: "蔚蓝"
-        },
-        {
-          index: 3,
-          color: "ffa60f",
-          name: "金叶黄"
-        },
-        {
-          index: 4,
-          color: "f9cb8b",
-          name: "瓜瓤粉"
-        }
-      ]
+      themeColorList: []
     }
   },
-  mounted() {   
-    console.log(this.$refs.pickCol['0'])
+  async created() { 
+    await this.getAllThemeColor()  
     this.setButtonThemes()
-  },
+  }, 
   methods: {
+    selectThemeColor(name) {
+      Api.blogSetting.setThemeColor(name).then(
+        // _ => this.themeColorList = _.themeColorList
+      )
+    },
+    async getAllThemeColor() {
+      await Api.blogSetting.getThemeColor().then(
+        _ => this.themeColorList = _.themeColorList
+      )
+    },
+    msgPrompt(message, type) {
+      this.$message({ message, type })
+    },
+    // 设置按钮的颜色
     setButtonThemes() {
       this.$refs.pickCol.forEach((col, index) => {
         col.$children[0].$el.style.backgroundColor = `#${this.themeColorList[index].color}`
       })
-    }
+    },
   }
 }
 </script>

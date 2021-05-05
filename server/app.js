@@ -15,14 +15,7 @@ const groupAdmin = require('./routes/groupAdmin')    // 组管理
 const global = require('./routes/global');           // 全局
 
 // 连接「blog-system-backend」数据库
-const {
-  GlobalSettingMenu,
-  BlogHomepageMenu,
-  BlogArticle,
-  BlogNote,
-  BlogTag,
-  User
-} = require('./database');
+require('./database');
 
 // set debug
 debug('booting 「blog system backend」...');
