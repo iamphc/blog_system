@@ -1,4 +1,4 @@
-const { setThemeColor, getThemeColor } = require('../services/blogSetting/theme')
+const { setThemeColor, getThemeColor, getCurrentThemeColor } = require('../services/blogSetting/theme')
 
 // TODO
 exports.homepage = (req, res, next) => {
@@ -7,8 +7,8 @@ exports.homepage = (req, res, next) => {
 
 // TODO:设置主题颜色
 exports.set_theme_color = async (req, res, next) => {
-  await setThemeColor().then(
-    _ => res.json({ msg: '设置主题颜色成功', status: 'success', themeColor: _ })
+  await setThemeColor(req, res).then(
+    _ => res.json({ msg: '设置主题颜色成功', status: 'success', themeName: _ })
   ).catch(
     _ => res.json({ msg: '设置主题颜色失败', status: 'failed' })
   )
@@ -17,8 +17,8 @@ exports.set_theme_color = async (req, res, next) => {
 // TODO:获取主题颜色
 exports.get_theme_color = async (req, res, next) => {
   await getThemeColor().then(
-    _ => res.json({ msg: '获取主题颜色成功', status: 'success', themeColorList: _ })
+    _ => res.json({ msg: '获取所有可配置主题颜色成功', status: 'success', themeColorList: _ })
   ).catch(
-    _ => res.json({ msg: '获取主题颜色失败', status: 'failed' })
+    _ => res.json({ msg: '获取所有可配置主题颜色失败', status: 'failed' })
   )
 }

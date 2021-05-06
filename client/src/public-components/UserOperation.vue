@@ -172,11 +172,12 @@
                   ? 'success' 
                   : 'error'
               )
-              // 登陆成功，关闭窗口
+              // 登陆成功，关闭窗口.重载页面
               // 登录失败，保持窗口，清空信息： 用户名错误，清空所有。密码错误，清空密码
               if(res.status === 'success') {
                 this.showDialog = false 
                 this.userName(this.ruleForm.userName)
+                setTimeout(() => location.reload(), 1500) 
                 return 
               } 
               if(res.errorField === 'userName') {

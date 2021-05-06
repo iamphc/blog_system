@@ -15,6 +15,10 @@ export default {
     return axios.post("/user/login", {
       ...userLoginForm
     });
+  },
+  // TODO:获取博客当前的主题颜色
+  getCurrentThemeColor(userName) {
+    return axios.get(`/theme/current/?userName=${userName}`)
   }
 }
 

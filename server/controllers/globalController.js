@@ -3,6 +3,7 @@ const bcryptjs = require('bcryptjs')
 const { createUser } = require('../services/global/createUser')
 const { decrypt } = require('../util/decrypt')
 const { publish, verify } = require('../services/global/token')
+const { getCurrentThemeColor } = require('../services/global/getBlogSetting')
 
 // TODO:无
 exports.homepage = (req, res, next) => {
@@ -58,4 +59,13 @@ exports.login = async (req, res, next) => {
         errorField: _.message
       })
     ) 
+}
+
+// TODO:获取博客当前的主题颜色 
+exports.get_current_theme_color = async (req, res, next) => {
+  await getCurrentThemeColor(req, res).then(
+    _ => res.json({ msg: '获取当前主题颜色成功', status: 'success', name: _.name, color: _.color })
+  ).catch(
+    _ => res.json({ msg: '获取当前主题颜色失败', status: 'failed' })
+  )
 }

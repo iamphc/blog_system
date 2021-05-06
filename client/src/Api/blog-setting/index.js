@@ -2,13 +2,13 @@ import axios from "axios"
 
 export default {
   // TODO:设置主题颜色
-  setThemeColor(name) {
+  setThemeColor(options) {
     return axios.post("/blog-setting/theme", {
-      name
+      ...options
     })
   },
 
-  // TODO:获取主题颜色
+  // TODO:获取所有主题颜色
   getThemeColor() {
     return axios.get("/blog-setting/theme")
   }
