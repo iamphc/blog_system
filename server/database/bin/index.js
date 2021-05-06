@@ -39,7 +39,7 @@ async function init_mongodb_data() {
   /**
    * 初始化插件表
    */
-  await init_plugin.then(
+  await init_plugin().then(
     _ => console.log('success: 初始化数据表 Plugin 成功!!!')
   ).catch(
     _ => {
