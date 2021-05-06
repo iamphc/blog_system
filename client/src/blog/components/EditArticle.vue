@@ -50,7 +50,7 @@ export default {
           )
         }
       ).catch(
-        _ => this.msgPrompt(err.message, 'error')
+        _ => this.msgPrompt(_.message, 'error')
       )
     },
     // 获取文章信息

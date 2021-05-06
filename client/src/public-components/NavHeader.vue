@@ -2,6 +2,7 @@
   <div class="nav-header-wrapper">
     <!-- 主标题：博客主页相关 -->
     <el-row 
+      ref="wrapper"
       class="main-header-content top-fixed" 
       v-show="isShowHome" 
       v-on:mouseleave.native="hideHomeHeader">
@@ -33,6 +34,7 @@
     </el-row>
     <!-- 副标题：设置相关 -->
     <el-row 
+      ref="subWrapper"
       v-if="isShowSub"
       class="sub-header-content top-fixed">
       <el-col :span="12">
@@ -44,7 +46,7 @@
         <el-menu  
           :default-active="subHeaderMenu[0].index"  
           mode="horizontal" 
-          background-color="#545c64"
+          :background-color="themeColor"
           text-color="#fff" 
           @select="handleSelect"
           active-text-color="#ffd04b">
@@ -75,6 +77,7 @@
 </template>
 
 <script>  
+  import { Api } from "@api"
   import User from "@mixins/User"
   import * as types from '@store/mutation-types';
   import { mapMutations } from 'vuex'
@@ -86,7 +89,8 @@
     data() {
       return {      
         changeShowHome: false,
-        initShow: true
+        initShow: true,
+        themeColor: null
       }
     },
     props: {
@@ -114,8 +118,10 @@
         default: false
       }
     },
-    mounted() { 
-      this.setTheme()
+    created() {},
+    async mounted() {  
+      await this.getSettingTheme() 
+      await this.setTheme()  
     },
     methods: { 
       ...mapMutations({
@@ -130,11 +136,16 @@
         }
       },
       setTheme() {
-        let wrapper = document.querySelector(".main-header-content")
-        wrapper.style.backgroundColor = this.theme.backgroundColor
+        let wrapper = this.$refs.wrapper.$el   
+        wrapper.style.backgroundColor =  this.themeColor || this.theme.backgroundColor
         wrapper.style.color = this.theme.fontColor
-      },
 
+        if(this.$refs.subWrapper) {
+          let subWrapper = this.$refs.subWrapper.$el
+          subWrapper.style.backgroundColor = this.themeColor || this.theme.backgroundColor
+          subWrapper.style.color = this.theme.fontColor
+        } 
+      },
       handleSelect(path) { 
         switch (this.type) {
           case 'admin':
@@ -147,6 +158,16 @@
             this.headerType({ groupAdmin: path })
             break;
         }
+      },
+      async getSettingTheme() {
+        const userName = this.getUserName() 
+        await Api.global.getCurrentThemeColor(userName).then(
+          _ => this.themeColor = `#${_.color}`
+        )
+      },
+      getUserName() { 
+        // state 刷新之后会被清空
+        return this.$store.state.userName || localStorage.getItem('userName')
       }
     },
     computed: {

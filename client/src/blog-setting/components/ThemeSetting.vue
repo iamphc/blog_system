@@ -11,7 +11,7 @@
         <el-button 
           circle
           class="theme-circle"
-          @click="selectThemeColor(theme.name)">
+          @click="setThemeColor(theme.name)">
         </el-button>
         <span class="theme-name">{{theme.name}}</span>
     </el-col>
@@ -27,29 +27,41 @@ export default {
     }
   },
   async created() { 
-    await this.getAllThemeColor()  
+    await this.getAllThemeColor()   
     this.setButtonThemes()
   }, 
   methods: {
-    selectThemeColor(name) {
-      Api.blogSetting.setThemeColor(name).then(
-        // _ => this.themeColorList = _.themeColorList
+    setThemeColor(blogTheme) {
+      const userName = this.getUserName()
+      Api.blogSetting.setThemeColor({ userName, blogTheme }).then(
+        res => {
+          res.status === 'success'
+            ? this.msgPrompt(res.msg + ', 颜色为: ' + res.themeName, 'success')
+            : this.msgPrompt(res.msg, 'error')
+        }
       )
     },
     async getAllThemeColor() {
       await Api.blogSetting.getThemeColor().then(
-        _ => this.themeColorList = _.themeColorList
+        _ => this.themeColorList = _.themeColorList 
       )
     },
     msgPrompt(message, type) {
       this.$message({ message, type })
     },
     // 设置按钮的颜色
-    setButtonThemes() {
+    setButtonThemes() { 
       this.$refs.pickCol.forEach((col, index) => {
         col.$children[0].$el.style.backgroundColor = `#${this.themeColorList[index].color}`
       })
     },
-  }
+    getUserName() { 
+      // state 刷新之后会被清空
+      return this.$store.state.userName || localStorage.getItem('userName')
+    },
+    msgPrompt(message, type) {
+      this.$message({ message, type })
+    }
+  },
 }
 </script>
