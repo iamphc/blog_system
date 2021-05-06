@@ -17,6 +17,11 @@ const Plugin = new mongoose.Schema({
   describe: {
     type: String,
     required: true
+  },
+  // 插件作用的地方：blog、blogSetting、admin、groupAdmin、develop
+  target: {
+    type: String,
+    required: true
   }
 })
 

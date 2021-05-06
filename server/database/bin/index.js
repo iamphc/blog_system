@@ -8,7 +8,9 @@ const { init_user } = require('./initUser')
 init_mongodb_data().then(
   _ => console.log('success: 初始化数据成功!!!\n===============')
 ).catch( 
-  _ => console.log('fail: 初始化数据失败!!!\n===============') 
+  _ => {
+    console.log('fail: 初始化数据失败!!!\n===============') 
+  }
 ) 
 
 async function init_mongodb_data() { 
@@ -39,7 +41,7 @@ async function init_mongodb_data() {
   /**
    * 初始化插件表
    */
-  await init_plugin.then(
+  await init_plugin().then(
     _ => console.log('success: 初始化数据表 Plugin 成功!!!')
   ).catch(
     _ => {
