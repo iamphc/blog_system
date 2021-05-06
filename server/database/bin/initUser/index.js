@@ -7,7 +7,7 @@ exports.init_user = async () => {
   const isLack = await isUserLack()
   if(isLack) {
     await addUserLoginTime()
-    await User.insertMany(data.userList).catch(
+    await User.insertMany(data.systemUserList).catch(
       err => { 
         console.log('失败原因: ', err.message)
         throw new Error()
@@ -29,7 +29,7 @@ async function isUserLack() {
 
 async function addUserLoginTime() {
   const date = new Date()
-  data.userList.map(item => {
+  data.systemUserList.map(item => {
     item.userLoginTime = date
     return item
   })

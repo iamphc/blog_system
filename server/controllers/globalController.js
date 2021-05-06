@@ -69,3 +69,6 @@ exports.get_current_theme_color = async (req, res, next) => {
     _ => res.json({ msg: '获取当前主题颜色失败', status: 'failed' })
   )
 }
+
+// TODO:获取用户可用的所有插件
+exports.get_plugins_user_own = (req, res, next) => {}

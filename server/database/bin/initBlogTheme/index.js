@@ -7,7 +7,7 @@ exports.init_blog_theme = async () => {
   const isEmpty = await isBlogThemeEmpty()
   if(isEmpty) { 
     await addCreatedDateToList() 
-    await BlogTheme.insertMany(data.themeList).catch( 
+    await BlogTheme.insertMany(data.systemThemeList).catch( 
       err => { 
         console.log('失败原因: ', err.message)
         throw new Error() 
@@ -24,7 +24,7 @@ async function isBlogThemeEmpty() {
 
 async function addCreatedDateToList() {
   const date = new Date()
-  data.themeList.map(item => {
+  data.systemThemeList.map(item => {
     item.createdDate = date 
     return item
   })

@@ -1,13 +1,13 @@
 export default { 
   userName: null,
-  headerType: {
-    admin: '',
+  headerType: { 
     blogSetting: '',
     groupAdmin: ''
   },
   sideMenuType: {
     admin: 'Statistic',
     blogSetting: 'ThemeSetting',
-    groupAdmin: 'SEOSetting'
+    groupAdmin: 'SEOSetting',
+    develop: 'PluginsMarket'
   }
 }
