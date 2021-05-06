@@ -19,6 +19,10 @@ export default {
   // TODO:获取博客当前的主题颜色
   getCurrentThemeColor(userName) {
     return axios.get(`/theme/current/?userName=${userName}`)
+  },
+  // TODO:获取用户可用的所有插件
+  getPluginsUserOwn(userName) {
+    return axios.get(`/plugins/?userName=${userName}`)
   }
 }
 

@@ -30,6 +30,11 @@ const User = new mongoose.Schema({
 	blogTheme: {
 		type: String,
 		default: 'no-setting'
+	},
+	// 用户可用插件(plugin-name)，默认为空
+	enablePlugins: {
+		type: [String],
+		default: []
 	}
 })
 
