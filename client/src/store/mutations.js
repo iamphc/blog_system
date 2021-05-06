@@ -5,11 +5,7 @@ export default {
     state.userName = payload
     localStorage.setItem('userName', payload)
   },
-  [types.HEADER_TYPE](state, { admin, blogSetting, groupAdmin } = {}) {
-    // admin headerType
-    admin
-      ? state.headerType.admin = admin
-      : ''
+  [types.HEADER_TYPE](state, { blogSetting, groupAdmin } = {}) {
     // blogSetting headerType
     blogSetting
       ? state.headerType.blogSetting = blogSetting
@@ -19,7 +15,7 @@ export default {
       ? state.headerType.groupAdmin = groupAdmin
       : ''
   },
-  [types.SIDE_MENU_TYPE](state, { admin, blogSetting, groupAdmin } = {}) {
+  [types.SIDE_MENU_TYPE](state, { admin, blogSetting, groupAdmin, develop } = {}) {
     // admin sideMenuType
     admin
       ? state.sideMenuType.admin = admin
@@ -31,6 +27,10 @@ export default {
     // groupAdmin sideMenuType
     groupAdmin 
       ? state.sideMenuType.groupAdmin = groupAdmin
+      : ''
+    // develop sidenMenuType
+    develop
+      ? state.sideMenuType.develop = develop
       : ''
   }
 }

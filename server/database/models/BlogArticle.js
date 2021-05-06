@@ -12,7 +12,7 @@ const BlogArticle = new mongoose.Schema({
     // 上次更新时间
     lastUpdatedDate: {
         type: Date,
-        require: true
+        required: true
     },
     // 用户名，作为查询索引
     userName: {
@@ -30,7 +30,7 @@ const BlogArticle = new mongoose.Schema({
     // 文章标签分类数组，作为查询索引
     tags: {
         type: [String],
-        require: true,
+        required: true,
         index: true 
     },
     // 【自增，函数实现】文章id，唯一索引

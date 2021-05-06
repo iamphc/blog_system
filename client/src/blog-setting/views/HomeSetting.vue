@@ -16,7 +16,7 @@
 <script>
   import { mapState } from 'vuex'
   import NavHeader from '@components/NavHeader'
-  import BodyMenu from '@/public-components/BodyMenu'
+  import BodyMenu from '@components/BodyMenu'
   import ThemeImageSetting from '@setting/components/ThemeImageSetting'
   import FontSetting from '@setting/components/FontSetting'
   import SelfSetting from '@setting/components/SelfSetting'

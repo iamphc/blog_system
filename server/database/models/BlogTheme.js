@@ -11,7 +11,7 @@ const BlogTheme = new mongoose.Schema({
     trim: true,
     minLength: 1,
     maxLength: 6,
-    require: true,
+    required: true,
     unique: true
   },
   // 主体颜色，创建时间
@@ -22,7 +22,7 @@ const BlogTheme = new mongoose.Schema({
   // 主题色类型：自定义、系统、插件颜色等
   themeType: {
     type: String,
-    require: true
+    required: true
   }
 })
 

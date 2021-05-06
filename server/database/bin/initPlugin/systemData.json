@@ -1,0 +1,9 @@
+{
+  "systemPluginList": [
+    {
+      "name": "themePlugin",
+      "level": "system",
+      "describe": "编辑主题颜色：添加对后台设置的主题颜色进行增删改查、禁用等操作"
+    }
+  ]
+}
