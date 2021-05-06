@@ -4,6 +4,7 @@ const { createUser } = require('../services/global/createUser')
 const { decrypt } = require('../util/decrypt')
 const { publish, verify } = require('../services/global/token')
 const { getCurrentThemeColor } = require('../services/global/getBlogSetting')
+const { getPluginsUserOwn } = require('../services/global/userPlugins')
 
 // TODO:无
 exports.homepage = (req, res, next) => {
@@ -71,4 +72,10 @@ exports.get_current_theme_color = async (req, res, next) => {
 }
 
 // TODO:获取用户可用的所有插件
-exports.get_plugins_user_own = (req, res, next) => {}
+exports.get_plugins_user_own = async (req, res, next) => {
+  await getPluginsUserOwn(req, res).then(
+    _ => res.json({ msg: '获取用户拥有的所有插件成功', status: 'success', enablePlugins: _ })
+  ).catch(
+    _ => res.json({ msg: '获取用户拥有的所有插件失败', status: 'failed' })
+  )
+}

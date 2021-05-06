@@ -45,6 +45,9 @@
           case 'groupAdmin':
             this.setType({ groupAdmin: index })
             break;
+          case 'develop':
+            this.setType({ develop: index })
+            break;
         }
       }
     }
