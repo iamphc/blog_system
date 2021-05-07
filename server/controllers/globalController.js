@@ -76,6 +76,6 @@ exports.get_plugins_user_own = async (req, res, next) => {
   await getPluginsUserOwn(req, res).then(
     _ => res.json({ msg: '获取用户拥有的所有插件成功', status: 'success', enablePlugins: _ })
   ).catch(
-    _ => res.json({ msg: '获取用户拥有的所有插件失败', status: 'failed' })
+    _ => res.json({ msg: '获取用户拥有的所有插件失败', status: 'failed', errDetaiil: _.message })
   )
 }

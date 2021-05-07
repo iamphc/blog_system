@@ -29,5 +29,6 @@
 @import "components/group-admin/homepage.css";        /*hompage.css*/
 @import "components/group-admin/group-member.css";    /*group-member*/
 
-/* 开发者 */    
-@import "components/develop/plugins-market.css"       /*plugins-market*/
+/* 开发者 */               
+@import "components/develop/plugin.css";              /*plugin*/
+@import "components/develop/plugins-market.css";      /*plugins-market*/
