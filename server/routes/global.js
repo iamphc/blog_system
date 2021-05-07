@@ -17,4 +17,7 @@ router.get('/theme/current', global_controller.get_current_theme_color)
 // TODO:获取用户可用的所有插件
 router.get('/plugins', global_controller.get_plugins_user_own)
 
+// TODO:获取所有留言
+router.get('/notes', global_controller.get_all_notes)
+
 module.exports = router;

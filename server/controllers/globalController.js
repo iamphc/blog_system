@@ -5,6 +5,7 @@ const { decrypt } = require('../util/decrypt')
 const { publish, verify } = require('../services/global/token')
 const { getCurrentThemeColor } = require('../services/global/getBlogSetting')
 const { getPluginsUserOwn } = require('../services/global/userPlugins')
+const { getAllNotes } = require('../services/global/notes')
 
 // TODO:无
 exports.homepage = (req, res, next) => {
@@ -77,5 +78,14 @@ exports.get_plugins_user_own = async (req, res, next) => {
     _ => res.json({ msg: '获取用户拥有的所有插件成功', status: 'success', enablePlugins: _ })
   ).catch(
     _ => res.json({ msg: '获取用户拥有的所有插件失败', status: 'failed', errDetaiil: _.message })
+  )
+}
+
+// TODO:获取所有留言
+exports.get_all_notes = async (req, res, next) => {
+  await getAllNotes(req, res).then(
+    _ => res.json({ msg: '获取所有留言成功', status: 'success', notes: _ })
+  ).catch(
+    _ => res.json({ msg: '获取所有留言失败', status: 'failed' })
   )
 }
