@@ -1,10 +1,18 @@
 {
   "systemPluginList": [
     {
-      "name": "themePlugin",
+      "name": "ThemePlugin",
       "level": "system",
       "describe": "编辑主题颜色：添加对后台设置的主题颜色进行增删改查、禁用等操作",
-      "target": "develop"
+      "target": "develop",
+      "coverUrl": "plugins/ThemePlugin/cover.jpeg"
+    },
+    {
+      "name": "ThemeImgPlugin",
+      "level": "system",
+      "target": "develop",
+      "describe": "编辑主题图片：添加对后台设置的主题图片进行增删改查、禁用等操作",
+      "coverUrl": "plugins/ThemeImgPlugin/cover.jpeg"
     }
   ]
 }

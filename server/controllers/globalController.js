@@ -67,7 +67,7 @@ exports.get_current_theme_color = async (req, res, next) => {
   await getCurrentThemeColor(req, res).then(
     _ => res.json({ msg: '获取当前主题颜色成功', status: 'success', name: _.name, color: _.color })
   ).catch(
-    _ => res.json({ msg: '获取当前主题颜色失败', status: 'failed' })
+    _ => res.json({ msg: '获取当前主题颜色失败', status: 'failed', errDetail: _.message })
   )
 }
 

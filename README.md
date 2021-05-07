@@ -41,6 +41,7 @@
   (1) 结构、逻辑与功能：index.vue
   (2) 样式：index.css
   (3) 说明书：readme.md
+  (4) 封面：cover.xx(jpg、jpeg、png...)
 
 - 插件市场：
   ```
