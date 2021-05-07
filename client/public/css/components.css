@@ -9,12 +9,13 @@
 @import "components/blog/article.css";                /*article*/
 @import "components/blog/blog-base.css";              /*blog-base*/
 @import "components/blog/build-tags.css";             /*build-tags*/
-@import "components/blog/edit-article.css";           /*edit-article*/
+@import "components/blog/edit-article.css";           /*edit-article*/ 
 
 /* 博客首页板块 */
 @import "components/homepagePart/tag-cloud.css";      /*tag-cloud*/
 @import "components/homepagePart/notes.css";          /*notes*/
 @import "components/homepagePart/articles-list.css";  /*articles-list*/
+@import "components/homepagePart/history-today.css";  /*history-today*/
 
 /* 博客设置 */
 @import "components/blog-setting/homepage.css";       /*homepage*/

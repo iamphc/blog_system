@@ -6,7 +6,7 @@
       <div class="section-side-wrapper">
         <el-col class="blog-body-section blog-body-section__left" :span="6">
           <slot name="section-left">
-            <tag-menu-list />
+            <history-today />
           </slot>
         </el-col>
       </div>
@@ -31,17 +31,17 @@
 </template>
 
 <script> 
-import GoTop from '@blog/components/GoTop'; 
-import ArticlesList from '@blog/homepagePart/ArticlesList';
-import TagMenuList from '@/blog/homepagePart/TagMenuList';
-import TagCloud from '@blog/homepagePart/TagCloud';
-import Notes from '@blog/homepagePart/Notes';
-import NavHeader from '@components/NavHeader';
+import GoTop from '@blog/components/GoTop'
+import ArticlesList from '@blog/homepagePart/ArticlesList'
+import HistoryToday from '@/blog/homepagePart/HistoryToday'
+import TagCloud from '@blog/homepagePart/TagCloud'
+import Notes from '@blog/homepagePart/Notes'
+import NavHeader from '@components/NavHeader'
 export default {
   components: {
     NavHeader,
     TagCloud,
-    TagMenuList,
+    HistoryToday,
     ArticlesList,
     GoTop,
     Notes

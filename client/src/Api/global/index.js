@@ -6,31 +6,31 @@ const iv = CryptoJS.enc.Utf8.parse('kaqer122s') // 偏移量
 export default {
   // TODO:用户注册，注册信息未加密
   userRegister(userRegisterForm) {  
-    return axios.post("/user/register", {
+    return axios.post("/api/global/user/register", {
       ...userRegisterForm
     });
   },
   // TODO:用户登录，登录信息未加密
   userLogin(userLoginForm) {
-    return axios.post("/user/login", {
+    return axios.post("/api/global/user/login", {
       ...userLoginForm
     });
   },
   // TODO:获取博客当前的主题颜色
   getCurrentThemeColor(userName) {
-    return axios.get(`/theme/current/?userName=${userName}`)
+    return axios.get(`/api/global/theme/current/?userName=${userName}`)
   },
   // TODO:获取用户可用的所有插件
   getPluginsUserOwn(userName) {
-    return axios.get(`/plugins/?userName=${userName}`)
+    return axios.get(`/api/global/plugins/?userName=${userName}`)
   },
   // TODO:获取博主所有留言
   getAllNotes(userName) {
-    return axios.get(`/notes/?userName=${userName}`)
+    return axios.get(`/api/global/notes/?userName=${userName}`)
   },
   // TODOl添加留言
   addNote(options) {
-    return axios.post('/note/add', {
+    return axios.post('/api/global/note/add', {
       ...options
     })
   }
