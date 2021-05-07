@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const BlogNote = new mongoose.Schema({
-  createdTime: {
+  createdDate: {
     type: Date,
     required: true
   },

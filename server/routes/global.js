@@ -20,4 +20,7 @@ router.get('/plugins', global_controller.get_plugins_user_own)
 // TODO:获取所有留言
 router.get('/notes', global_controller.get_all_notes)
 
+// TODO:添加留言
+router.post('/note/add', global_controller.add_note)
+
 module.exports = router;
