@@ -25,10 +25,11 @@ module.exports = {
       "/api": {
         target: "http://localhost:3000"
       },
+      // 特殊接口：历史上的今天
       "/todayOnhistory": {
         target: "http://v.juhe.cn",
         ws: true,
-        changeOrigin: true,
+        changeOrigin: true, // 允许跨域
         secure: false,
       }
     }
