@@ -27,6 +27,12 @@ export default {
   // TODO:获取博主所有留言
   getAllNotes(userName) {
     return axios.get(`/notes/?userName=${userName}`)
+  },
+  // TODOl添加留言
+  addNote(options) {
+    return axios.post('/note/add', {
+      ...options
+    })
   }
 }
 
