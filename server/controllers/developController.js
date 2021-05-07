@@ -15,11 +15,17 @@ exports.get_all_plugins = async (req, res, next) => {
 // TODO:用户添加插件
 exports.user_add_plugin = async (req, res, next) => {
   await userAddPlugin(req, res).then(
-    _ => res.json({ msg: '添加插件成功', status: 'success' })
+    _ => res.json({ msg: '添加插件成功', status: 'success', currentPlugins: _ })
   ).catch(
-    _ => res.json({ msg: '添加插件失败', status: 'success' })
+    _ => res.json({ msg: '添加插件失败', status: 'failed', errDetail: _.message })
   )
 }
 
 // TODO:用户移除插件
-exports.user_remove_plugin = (req, res, next) => {}
+exports.user_remove_plugin = async (req, res, next) => {
+  await userRemovePlugin(req, res).then(
+    _ => res.json({ msg: '移除插件成功', status: 'success', currentPlugins: _ })
+  ).catch(
+    _ => res.json({ msg: '移除插件失败', status: 'failed', errDetail: _.message })
+  )
+}
