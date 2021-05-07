@@ -22,6 +22,11 @@ const Plugin = new mongoose.Schema({
   target: {
     type: String,
     required: true
+  },
+  // 插件封面url地址，默认图片地址为
+  coverUrl: {
+    type: String,
+    default: "public/imgs/pluginDefaultCover.jpeg"
   }
 })
 

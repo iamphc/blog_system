@@ -1,0 +1,36 @@
+.plugins-list {}
+
+.plugin-item {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 40px;
+}
+
+.plugin-cover {
+  width: 170px;
+  height: 120px;
+  margin-right: 16px;
+}
+
+.cover {
+  width: 100%;
+  height: 100%;
+}
+
+.plugin-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.plugin-name, .plugin-level, .plugin-describe {
+  color: #fff;
+  font-size: 2rem;
+} 
+
+.plugin-operation {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+}
