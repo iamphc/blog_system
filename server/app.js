@@ -40,12 +40,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(verify)
 
 // 路由分发
-app.use('/blog', blog);
-app.use('/blog-setting', blogSetting);
-app.use('/admin', admin);
-app.use('/develop', develop);
-app.use('/group-admin', groupAdmin)
-app.use('/', global);
+app.use('/api/blog', blog);
+app.use('/api/blog-setting', blogSetting);
+app.use('/api/admin', admin);
+app.use('/api/develop', develop);
+app.use('/api/group-admin', groupAdmin)
+app.use('/api/global', global);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) { 

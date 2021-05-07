@@ -21,7 +21,17 @@ module.exports = {
   },
   // 配置代理服务器（端口）
   devServer: {
-    proxy: 'http://localhost:3000'
+    proxy: { 
+      "/api": {
+        target: "http://localhost:3000"
+      },
+      "/todayOnhistory": {
+        target: "http://v.juhe.cn",
+        ws: true,
+        changeOrigin: true,
+        secure: false,
+      }
+    }
   }
 }
 

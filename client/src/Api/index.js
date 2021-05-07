@@ -6,6 +6,7 @@ import develop from "@api/develop"
 import blogSetting from "@api/blog-setting"
 import global from "@api/global"
 import groupAdmin from "@api/group-admin"
+import outside from "@api/outside"
 
 export const Api = {
   admin,
@@ -14,5 +15,6 @@ export const Api = {
   blogSetting,
   groupAdmin,
   global,
-  interceptors
+  interceptors,
+  outside
 }

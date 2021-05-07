@@ -1,0 +1,31 @@
+.history-today-wrapper {
+  padding: 10px;
+  background-color: #fff;
+}
+
+.history-today-wrapper .title {
+  font-size: 2.5rem;
+}
+
+.today-date-title {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+}
+
+.history-today-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+  align-items: flex-end;
+}
+
+.event-time {
+  font-size: 1.2rem;
+}
+
+.event-title {
+  font-size: 1.2rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
