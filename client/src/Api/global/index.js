@@ -23,6 +23,10 @@ export default {
   // TODO:获取用户可用的所有插件
   getPluginsUserOwn(userName) {
     return axios.get(`/plugins/?userName=${userName}`)
+  },
+  // TODO:获取博主所有留言
+  getAllNotes(userName) {
+    return axios.get(`/notes/?userName=${userName}`)
   }
 }
 
