@@ -1,0 +1,16 @@
+.article-tags-wrapper {
+  padding: 10px;
+  background-color: #fff;
+}
+
+.article-tags-title {
+  font-size: 2.5rem;
+}
+
+.tag-list-wrapper {}
+
+.article-tag {}
+
+.tag-list-wrapper .tips {
+  font-size: 1.5rem;
+}

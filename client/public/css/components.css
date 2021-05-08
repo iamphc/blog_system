@@ -10,6 +10,7 @@
 @import "components/blog/blog-base.css";              /*blog-base*/
 @import "components/blog/build-tags.css";             /*build-tags*/
 @import "components/blog/edit-article.css";           /*edit-article*/ 
+@import "components/blog/article-tags.css";           /*article-tags*/
 
 /* 博客首页板块 */
 @import "components/homepagePart/tag-cloud.css";      /*tag-cloud*/
