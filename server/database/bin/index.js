@@ -1,3 +1,4 @@
+const { init_blog_theme_img } = require('./initBlogThemeImg')
 const { init_blog_theme } = require('./initBlogTheme') 
 const { init_blog_tag } = require('./initBlogTag')
 const { init_plugin } = require('./initPlugin')
@@ -56,6 +57,17 @@ async function init_mongodb_data() {
   ).catch(
     _ => {
       console.log('fail: 初始化数据表 BlogTag 失败!!!')
+      throw new Error()
+    }
+  )
+  /**
+   * 初始化主题图片表
+   */
+  await init_blog_theme_img().then(
+    _ => console.log('success: 初始化数据表 BlogThemeImg 成功!!!')
+  ).catch(
+    _ => {
+      console.log('fail: 初始化数据表 BlogThemeImg 失败!!!')
       throw new Error()
     }
   )

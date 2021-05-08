@@ -9,7 +9,7 @@ exports.setThemeColor = async (req, res) => {
   return theme.name
 }
 
-// TODO:获取主题颜色
-exports.getThemeColor = async () => {
+// TODO:获取所有可配置的主题颜色
+exports.getAllThemeColor = async () => {
   return await BlogTheme.find() 
 }

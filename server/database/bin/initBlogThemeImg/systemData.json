@@ -1,0 +1,49 @@
+{
+  "systemThemeImgList": [
+    {
+      "name": "sea",
+      "userName": "admin",
+      "src": "public/images/themeImgs/sea.jpeg"
+    },
+    {
+      "name": "night",
+      "userName": "admin",
+      "src": "public/images/themeImgs/night.jpeg"
+    },
+    {
+      "name": "sunset",
+      "userName": "admin",
+      "src": "public/images/themeImgs/sunset.jpeg"
+    },
+    {
+      "name": "sea",
+      "userName": "member",
+      "src": "public/images/themeImgs/sea.jpeg"
+    },
+    {
+      "name": "night",
+      "userName": "member",
+      "src": "public/images/themeImgs/night.jpeg"
+    },
+    {
+      "name": "sunset",
+      "userName": "member",
+      "src": "public/images/themeImgs/sunset.jpeg"
+    },
+    {
+      "name": "sea",
+      "userName": "normal",
+      "src": "public/images/themeImgs/sea.jpeg"
+    },
+    {
+      "name": "night",
+      "userName": "normal",
+      "src": "public/images/themeImgs/night.jpeg"
+    },
+    {
+      "name": "sunset",
+      "userName": "normal",
+      "src": "public/images/themeImgs/sunset.jpeg"
+    }
+  ]
+}
