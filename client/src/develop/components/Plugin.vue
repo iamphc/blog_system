@@ -13,6 +13,7 @@
         class="add" 
         type="success" 
         size="small"
+        :disabled="disabled"
         @click="addPlugin(plugin.name)">
         添加
       </el-button>
@@ -20,6 +21,7 @@
         class="remove" 
         type="danger" 
         size="small"
+        :disabled="!disabled"
         @click="removePlugin(plugin.name)">
         移除
       </el-button>
@@ -43,9 +45,11 @@ export default {
     },
     userName: {
       type: String
-    },
-    isDisable: {
-      type: Boolean
+    }
+  },
+  data() {
+    return {
+      disabled: false
     }
   },
   methods: {
@@ -60,7 +64,8 @@ export default {
       Api.develop.userAddPlugin(options).then(
         res => {
           if(res.status === 'success') { 
-            this.msgPrompt(res.msg, 'success')
+            this.msgPrompt(res.msg, 'success') 
+            this.triggerBtnDisable()
           } else {
             this.msgPrompt(res.msg, 'error')
           }
@@ -74,13 +79,20 @@ export default {
         res => {
           if(res.status === 'success') { 
             this.msgPrompt(res.msg, 'success')
+            this.triggerBtnDisable()
           } else {
             this.msgPrompt(res.msg, 'error')
           }
         }
       )
     },
-    banPlugin(pluginName) {},
+    msgPrompt(message, type) {
+      this.$message({ message, type })
+    },
+    // 切换按钮（添加、移除）禁用
+    triggerBtnDisable() {
+      this.disabled = !this.disabled
+    }
   }
 }
 </script>

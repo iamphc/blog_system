@@ -27,22 +27,8 @@ export default {
   async created() {
     await this.getPlugins() 
   },
-  async mounted() {
-    this.userName = this.getUserName()    
-  },
-  computed: {
-    // 添加按钮是否可用
-    isAddButtonDisable() {
-      return function (index) {
-        return this.disablePluginsList[index]
-      }
-    },
-    // 移除按钮是否可用
-    isRemoveButtonDisable() {
-      return function (index) {
-        return !this.disablePluginsList[index]
-      }
-    }
+  mounted() {
+    this.userName = this.getUserName()  
   },
   methods: {
     async getPlugins() {
@@ -57,9 +43,6 @@ export default {
         _ => console.log(_.message)
       )
     }, 
-    msgPrompt(message, type) {
-      this.$message({ message, type })
-    },
     getUserName() { 
       // state 刷新之后会被清空
       return this.$store.state.userName || localStorage.getItem('userName')

@@ -24,7 +24,7 @@ exports.userRemovePlugin = async (req, res) => {
   let currentPlugins = user.enablePlugins
   console.log('before: ', currentPlugins)
   let index = currentPlugins.indexOf(pluginName)
-  currentPlugins = currentPlugins.splice(index, 1)
+  currentPlugins.splice(index, 1)
   console.log(index)
   console.log('after: ', currentPlugins)
   await User.updateOne({ userName }, { $set: { enablePlugins: currentPlugins } })
