@@ -1,5 +1,8 @@
 <template>  
   <blog-base>
+    <template v-slot:section-left>
+      <article-tags />
+    </template>
     <template v-slot:section-center>
       <blog-article :articleRaw="articleRaw" /> 
     </template>
@@ -8,12 +11,14 @@
 
 <script>
 import { Api } from "@api"
-import BlogArticle from '@blog/components/BlogArticle';
-import BlogBase from '@blog/components/BlogBase';
+import BlogArticle from '@blog/components/BlogArticle'
+import BlogBase from '@blog/components/BlogBase'
+import ArticleTags from "@blog/components/ArticleTags" 
 export default {
   components: {
     BlogBase,
-    BlogArticle
+    BlogArticle,
+    ArticleTags 
   },
   data() {
     return {
