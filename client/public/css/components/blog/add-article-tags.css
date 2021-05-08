@@ -1,8 +1,27 @@
-.build-tags_wrapper {
+.build-tags__wrapper {
   background-color: #fff;
   padding: 10px;
 }
 
+.select-article-tags .title {
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+}
+
+.add-new-tag__wrapper {
+  margin-bottom: 12px;
+}
+
+.build-tags__wrapper .divide {
+  margin: 12px 0;
+}
+
+.selectable-tags .title {
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+}
+
 .article-tag {
+  cursor: pointer;
   margin: 0 10px 10px 0;
 }

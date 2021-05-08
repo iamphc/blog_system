@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import { Api } from "@api" 
+import { Api } from "@api"  
 export default {
   data() {
     return {}
@@ -54,23 +54,26 @@ export default {
       )
     },
     // 获取文章信息
-    getArticleRaw() {
+    getArticleRaw() { 
+      console.log('tags:', this.$store.state.blog.articleSelectedTags)
       return {
         title: this.$refs.title.innerText,
         context: this.$refs.context.innerText,
         createdDate: new Date(),
         userName: this.getUserName(),
         lastUpdatedDate: new Date(),
-        id: new Date().getTime() % 10000000000
+        id: new Date().getTime() % 10000000000,
+        tags: this.$store.state.blog.articleSelectedTags
       }
     },
     getUserName() { 
       // state 刷新之后会被清空
       return this.$store.state.userName || localStorage.getItem('userName')
     },
-    async validateArticleRaw(raw) {
+    async validateArticleRaw(raw) { 
       if(raw.title === '') throw new Error('标题不能为空')
       if(raw.context === '') throw new Error('文章正文不能为空')
+      if(!raw.tags.length) throw new Error('请选择标签')
     },
     // 用户操作信息提示框
     msgPrompt(message, type) {

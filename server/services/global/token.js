@@ -27,7 +27,7 @@ exports.verify = async (req, res, next) => {
   let userName, userPwd, loginTime
   const path = req.path
   // TODO:登录、注册操作，以及其他游客级操作
-  if(path === "/user/login" || path === "/user/register") {
+  if(path === "/api/global/user/login" || path === "/api/global/user/register") {
     next()
   } else {
     // 从 cookie 获取 token

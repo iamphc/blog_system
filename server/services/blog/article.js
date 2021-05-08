@@ -1,14 +1,15 @@
 const BlogArticle = require('../../database/models/BlogArticle')
 // 创建文章
 exports.createArticle = async (req, res, next) => {
-  const { title, context, userName, createdDate, lastUpdatedDate, id } = req.body
+  const { title, context, userName, createdDate, lastUpdatedDate, id, tags } = req.body
   const blogArticle = await BlogArticle({
     id,
     title,
     context,
     userName,
     createdDate,
-    lastUpdatedDate
+    lastUpdatedDate,
+    tags
   })
   blogArticle.save()
 }

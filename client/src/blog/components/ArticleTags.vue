@@ -7,7 +7,7 @@
         class="article-tag"
         v-for="(tag, index) in articleTags"
         :key="index">
-        {{tag.name}}
+        {{tag}}
       </el-tag>
       <span 
         class="tips"
