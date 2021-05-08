@@ -11,10 +11,10 @@ import AdminRouter from "@admin/router"
 import BlogSettingRouter from "@setting/router"
 import GroupAdminRouter from "@group/router"
 
-import ElementUI from 'element-ui' 
+import ElementUI from 'element-ui'  
 
-Vue.use(ElementUI)
 Vue.use(VueRouter)
+Vue.use(ElementUI) 
 
 Vue.config.productionTip = false;
 Vue.prototype.$bus = new Vue(); 
