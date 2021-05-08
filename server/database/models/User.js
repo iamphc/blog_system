@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const bcryptjs = require('bcryptjs'); // 用户注册时对密码加密 
+const mongoose = require('mongoose')
+const bcryptjs = require('bcryptjs') // 用户注册时对密码加密 
 
 const User = new mongoose.Schema({
 	userName: {
@@ -38,4 +38,4 @@ const User = new mongoose.Schema({
 	}
 })
 
-module.exports = mongoose.model('User', User);
+module.exports = mongoose.model('User', User)
