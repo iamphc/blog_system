@@ -5,6 +5,8 @@
       v-for="(plugin, index) in enablePlugins"
       :key="index">
       <plugin 
+        :showAddBtn="false"
+        :showRemoveBtn="false"
         :plugin="plugin"
         :userName="userName"/>
     </li>

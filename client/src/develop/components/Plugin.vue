@@ -10,6 +10,7 @@
     </div>
     <div class="plugin-operation">
       <el-button 
+        v-if="showAddBtn"
         class="add" 
         type="success" 
         size="small"
@@ -18,6 +19,7 @@
         添加
       </el-button>
       <el-button 
+        v-if="showRemoveBtn"
         class="remove" 
         type="danger" 
         size="small"
@@ -49,6 +51,14 @@ export default {
     // 插件一开始是否可用
     originDisabled: { 
       type: Boolean
+    },
+    showAddBtn: {
+      type: Boolean,
+      default: true
+    },
+    showRemoveBtn: {
+      type: Boolean,
+      default: true
     }
   },
   data() {
