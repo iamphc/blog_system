@@ -13,7 +13,7 @@
         class="add" 
         type="success" 
         size="small"
-        :disabled="disabled"
+        :disabled="changeDisabled"
         @click="addPlugin(plugin.name)">
         添加
       </el-button>
@@ -21,7 +21,7 @@
         class="remove" 
         type="danger" 
         size="small"
-        :disabled="!disabled"
+        :disabled="!changeDisabled"
         @click="removePlugin(plugin.name)">
         移除
       </el-button>
@@ -45,12 +45,19 @@ export default {
     },
     userName: {
       type: String
+    },
+    // 插件一开始是否可用
+    originDisabled: { 
+      type: Boolean
     }
   },
   data() {
     return {
-      disabled: false
+      changeDisabled: false
     }
+  },
+  created() {
+    this.changeDisabled = this.originDisabled 
   },
   methods: {
     resolvePluginLevel(level) {
@@ -91,7 +98,7 @@ export default {
     },
     // 切换按钮（添加、移除）禁用
     triggerBtnDisable() {
-      this.disabled = !this.disabled
+      this.changeDisabled = !this.changeDisabled
     }
   }
 }
