@@ -18,5 +18,9 @@ export default {
   // TODO:获取文章所属的所有标签
   getArticleAllTags(id) {
     return axios.get(`/api/blog/article/${id}/tags`)
+  },
+  // TODO:获取博主的所有标签
+  getUserAllTags(userName) {
+    return axios.get(`/api/blog/tags/?userName=${userName}`)
   }
 }

@@ -1,18 +1,13 @@
 <template>
-  <div class="build-tags_wrapper">
-    <el-select
-      v-model="searchTag"
-      placeholder="给个标签吧"
-      filterable>
-    </el-select>
-    <el-divider></el-divider>
+  <div class="build-tags_wrapper">  
     <el-row>
       <el-tag
         class="article-tag"
-        v-for="tag in dynamicTag"
-        :key="tag"
+        v-for="(tag, index) in allTags"
+        :key="index"
         closable
-        @close="handleClose(tag)">
+        @close="handleClose(tag)"
+        size="mini">
         {{tag}}
       </el-tag>
       <el-input
@@ -20,14 +15,14 @@
         v-if="inputVisiable"
         v-model="inputValue"
         ref="saveTagInput"
-        size="small"
+        size="mini"
         @blur="handleInputConfirm"
         @keyup.enter.native="handleInputConfirm">
       </el-input>
       <el-button
         class="button-new-tag"
         v-else
-        size="small"
+        size="mini"
         @click="showInput">
         + New Tag
       </el-button>
@@ -36,16 +31,20 @@
 </template>
 
 <script>
+import { Api } from "@api"
 export default {
   data() {
     return {
       searchTag: '',
-      dynamicTag: ['标签一', '标签二', '标签三'],
+      allTags: [],
       inputVisiable: false,
       inputValue: ''
     }
+  }, 
+  async created() {
+    await this.getUserAlltags()
+    console.log(this.allTags)
   },
-  beforeCreated() {},
   methods: {
     showInput() {
       this.inputVisiable = true
@@ -66,6 +65,16 @@ export default {
       this.$nextTick(
         _ => this.$refs.saveTagInput.$refs.input.focus()
       )
+    },
+    async getUserAlltags() { 
+      const userName = this.getUserName()
+      Api.blog.getUserAllTags(userName).then(
+        res => this.allTags = res.tags
+      )
+    },
+    getUserName() { 
+      // state 刷新之后会被清空
+      return this.$store.state.userName || localStorage.getItem('userName')
     }
   }
 }

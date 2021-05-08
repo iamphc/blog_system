@@ -1,4 +1,5 @@
 const { init_blog_theme } = require('./initBlogTheme') 
+const { init_blog_tag } = require('./initBlogTag')
 const { init_plugin } = require('./initPlugin')
 const { init_user } = require('./initUser')
 
@@ -44,6 +45,17 @@ async function init_mongodb_data() {
   ).catch(
     _ => {
       console.log('fail: 初始化数据表 Plugin 失败!!!')
+      throw new Error()
+    }
+  )
+  /**
+   * 初始化标签表
+   */
+  await init_blog_tag().then(
+    _ => console.log('success: 初始化数据表 BlogTag 成功!!!')
+  ).catch(
+    _ => {
+      console.log('fail: 初始化数据表 BlogTag 失败!!!')
       throw new Error()
     }
   )

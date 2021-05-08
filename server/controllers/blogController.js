@@ -1,5 +1,5 @@
 const { createArticle, getArticleList, getArticle } = require('../services/blog/article')
-const { getArticleAllTags } = require('../services/blog/tags')
+const { getArticleAllTags, getUserAllTags } = require('../services/blog/tags')
 
 exports.homepage = (req, res, next) => {
   res.send('blog homepage')
@@ -52,4 +52,10 @@ exports.get_article_all_tags = async (req, res, next) => {
 }
 
 // TODO:获取博主的所有标签
-exports.get_user_all_tags = (req, res, next) => {}
+exports.get_user_all_tags = async (req, res, next) => {
+  await getUserAllTags(req, res).then(
+    _ => res.json({ msg: '获取博主所有标签成功', status: 'success', tags: _ })
+  ).catch(
+    _ => res.json({ msg: '获取博主所有标签失败', status: 'failed', errDetail: _.message })
+  )
+}

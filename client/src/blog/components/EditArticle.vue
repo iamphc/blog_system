@@ -29,7 +29,7 @@ export default {
     return {}
   }, 
   mounted() {
-    console.log(this.$store.state.userName)
+    // console.log(this.$store.state.userName)
   },
   methods: {
     // 提交文章

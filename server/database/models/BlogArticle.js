@@ -27,7 +27,7 @@ const BlogArticle = new mongoose.Schema({
   groupId: {
     type: Number
   },
-  // 文章标签分类数组，作为查询索引
+  // 文章标签分类数组(name)，作为查询索引
   tags: {
     type: [String],
     required: true,

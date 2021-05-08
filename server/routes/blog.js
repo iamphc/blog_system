@@ -23,6 +23,6 @@ router.post('/article/create', blog_controller.article_create)
 router.get('/article/:id/tags', blog_controller.get_article_all_tags)
 
 // TODO:获取博主的所有标签
-router.get('/user/tags', blog_controller.get_user_all_tags)
+router.get('/tags', blog_controller.get_user_all_tags)
 
 module.exports = router
