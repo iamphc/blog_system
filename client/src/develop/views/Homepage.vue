@@ -31,6 +31,9 @@ export default {
       type: this.type
     }
   },
+  created() {
+    this.rightType.develop = this.sideMenu[0].index
+  },
   data() {
     return {
       navTitleType: 'develop',
