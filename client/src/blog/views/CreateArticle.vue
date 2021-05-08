@@ -6,7 +6,7 @@
     </template>
     <!-- 中间：编辑博客文本 -->
     <template v-slot:section-center>
-      <edit-article></edit-article>
+      <edit-article />
     </template>
   </blog-base>
 </template>
