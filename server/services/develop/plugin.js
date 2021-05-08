@@ -21,12 +21,9 @@ exports.userRemovePlugin = async (req, res) => {
   const { userName, pluginName } = req.body
   const user = await User.findOne({ userName })
   // 移除插件之后，可用的插件列表
-  let currentPlugins = user.enablePlugins
-  console.log('before: ', currentPlugins)
+  let currentPlugins = user.enablePlugins 
   let index = currentPlugins.indexOf(pluginName)
-  currentPlugins.splice(index, 1)
-  console.log(index)
-  console.log('after: ', currentPlugins)
+  currentPlugins.splice(index, 1) 
   await User.updateOne({ userName }, { $set: { enablePlugins: currentPlugins } })
   return currentPlugins
 }
