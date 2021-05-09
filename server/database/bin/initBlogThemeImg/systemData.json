@@ -3,17 +3,20 @@
     {
       "name": "sea", 
       "userName": "everyone",
-      "src": "static/images/themeImgs/sea.jpeg"
+      "src": "static/images/themeImgs/sea.jpeg",
+      "describe": "海洋，向往的地方，有风暴也有阳光"
     },
     {
       "name": "night", 
       "userName": "everyone",
-      "src": "static/images/themeImgs/night.jpeg"
+      "src": "static/images/themeImgs/night.jpeg",
+      "describe": "星空，千年来我们仰望同一片天空"
     },
     {
       "name": "sunset", 
       "userName": "everyone",
-      "src": "static/images/themeImgs/sunset.jpeg"
+      "src": "static/images/themeImgs/sunset.jpeg",
+      "describe": "日落，金黄的时光总是过得很快"
     }
   ]
 }

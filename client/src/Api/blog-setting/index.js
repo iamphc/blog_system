@@ -6,10 +6,15 @@ export default {
     return axios.post("/api/blog-setting/theme", {
       ...options
     })
-  },
+  }, 
 
-  // TODO:获取所有主题颜色
+  // TODO:获取用户所有可配置的主题颜色
   getThemeColor(userName) {
     return axios.get(`/api/blog-setting/theme/?userName=${userName}`)
+  },
+
+  // TODO:获取用户所有可配置主题图片资源地址
+  getAllThemeImgs(userName) {
+    return axios.get(`/api/blog-setting/themeimgs/?userName=${userName}`)
   }
 }

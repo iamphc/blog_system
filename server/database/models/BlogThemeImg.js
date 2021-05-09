@@ -18,6 +18,12 @@ const BlogThemeImg = new mongoose.Schema({
   src: {
     type: String,
     required: true 
+  },
+  // 主题图片描述
+  describe: {
+    type: String,
+    required: true,
+    default: '一张图片，希望你喜欢'
   }
 })
 

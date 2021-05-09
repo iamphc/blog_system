@@ -15,7 +15,7 @@ exports.set_theme_color = async (req, res, next) => {
   )
 }
 
-// TODO:获取所有可配置的主题颜色
+// TODO:获取用户所有可配置的主题颜色
 exports.get_all_theme_color = async (req, res, next) => {
   await getAllThemeColor(req, res).then(
     _ => res.json({ msg: '获取所有可配置主题颜色成功', status: 'success', themeColorList: _ })
@@ -24,9 +24,13 @@ exports.get_all_theme_color = async (req, res, next) => {
   )
 }
 
-// TODO:获取所有主题图片资源地址
+// TODO:获取用户所有可配置主题图片资源地址
 exports.get_all_theme_imgs = async (req, res, next) => {
-  await setUserThemeImg(req, res).then()
+  await getAllThemeImgs(req, res).then(
+    _ => res.json({ msg: '获取所有可配置主题图片成功', status: 'success', themeImgList: _ })
+  ).catch(
+    _ => res.json({ msg: '获取所有可配置主题图片失败', status: 'failed', errDetail: _.message })
+  )
 } 
 
 // TODO:用户设置当前主题图片资源地址

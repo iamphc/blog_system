@@ -5,35 +5,40 @@
       "name": "鼠鼻红",
       "userName": "everyone",
       "createdDate": {},
-      "themeType": "system defaylt"
+      "themeType": "system defaylt",
+      "describe": "并不是红色哦"
     },
     {
       "color": "2b333e",
       "name": "青灰",
       "userName": "everyone",
       "createdDate": {},
-      "themeType": "system defaylt"
+      "themeType": "system defaylt",
+      "describe": "比黑色要好看许多"
     },
     {
       "color": "29b7cb",
       "name": "蔚蓝",
       "userName": "everyone",
       "createdDate": {},
-      "themeType": "system defaylt"
+      "themeType": "system defaylt",
+      "describe": "和天空一样的碧蓝色"
     },
     {
       "color": "ffa60f",
       "name": "金叶黄",
       "userName": "everyone",
       "createdDate": {},
-      "themeType": "system defaylt"
+      "themeType": "system defaylt",
+      "describe": "是不是看到它，你就想起秋天的枫叶"
     },
     {
       "color": "f9cb8b",
       "name": "瓜瓤粉",
       "userName": "everyone",
       "createdDate": {},
-      "themeType": "system defaylt"
+      "themeType": "system defaylt",
+      "describe": "很淡，也很美"
     }
   ]
 }

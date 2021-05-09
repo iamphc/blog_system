@@ -1,37 +1,38 @@
 /* 公共组件 */
-@import "components/public/nav-header.css";           /*/nav-header*/
-@import "components/public/side-menu.css";            /*side-menu*/ 
-@import "components/public/body-menu.css";            /*body-menu*/
-@import "components/public/user-operation.css";       /*user-operation*/
-@import "components/public/statistic.css";            /*statistic*/
+@import "components/public/nav-header.css";               /*/nav-header*/
+@import "components/public/side-menu.css";                /*side-menu*/ 
+@import "components/public/body-menu.css";                /*body-menu*/
+@import "components/public/user-operation.css";           /*user-operation*/
+@import "components/public/statistic.css";                /*statistic*/
 
 /* 博客主页 */
-@import "components/blog/article.css";                /*article*/
-@import "components/blog/blog-base.css";              /*blog-base*/
-@import "components/blog/add-article-tags.css";       /*add-article-tags*/
-@import "components/blog/edit-article.css";           /*edit-article*/ 
-@import "components/blog/article-tags.css";           /*article-tags*/
+@import "components/blog/article.css";                    /*article*/
+@import "components/blog/blog-base.css";                  /*blog-base*/
+@import "components/blog/add-article-tags.css";           /*add-article-tags*/
+@import "components/blog/edit-article.css";               /*edit-article*/ 
+@import "components/blog/article-tags.css";               /*article-tags*/
 
 /* 博客首页板块 */
-@import "components/homepagePart/tag-cloud.css";      /*tag-cloud*/
-@import "components/homepagePart/notes.css";          /*notes*/
-@import "components/homepagePart/articles-list.css";  /*articles-list*/
-@import "components/homepagePart/history-today.css";  /*history-today*/
+@import "components/homepagePart/tag-cloud.css";          /*tag-cloud*/
+@import "components/homepagePart/notes.css";              /*notes*/
+@import "components/homepagePart/articles-list.css";      /*articles-list*/
+@import "components/homepagePart/history-today.css";      /*history-today*/
 
 /* 博客设置 */
-@import "components/blog-setting/homepage.css";       /*homepage*/
-@import "components/blog-setting/theme-setting.css";  /*theme-setting*/
-@import "components/blog-setting/font-setting.css";   /*font-setting*/
+@import "components/blog-setting/homepage.css";           /*homepage*/
+@import "components/blog-setting/theme-setting.css";      /*theme-setting*/
+@import "components/blog-setting/font-setting.css";       /*font-setting*/
+@import "components/blog-setting/theme-img-setting.css";  /*theme-img-setting*/
 
 /* 博客管理 */
-@import "components/admin/recommended-setting.css";   /*recommended-setting*/
-@import "components/admin/homepage.css";              /*homepage*/
+@import "components/admin/recommended-setting.css";       /*recommended-setting*/
+@import "components/admin/homepage.css";                  /*homepage*/
 
 /* 组管理 */
-@import "components/group-admin/homepage.css";        /*hompage.css*/
-@import "components/group-admin/group-member.css";    /*group-member*/
+@import "components/group-admin/homepage.css";            /*hompage.css*/
+@import "components/group-admin/group-member.css";        /*group-member*/
 
 /* 开发者 */               
-@import "components/develop/plugin.css";              /*plugin*/
-@import "components/develop/plugins-market.css";      /*plugins-market*/
-@import "components/develop/plugin-create.css";       /*plugin-create*/
+@import "components/develop/plugin.css";                  /*plugin*/
+@import "components/develop/plugins-market.css";          /*plugins-market*/
+@import "components/develop/plugin-create.css";           /*plugin-create*/
