@@ -42,7 +42,8 @@ export default {
       )
     },
     async getAllThemeColor() {
-      await Api.blogSetting.getThemeColor().then(
+      const userName = this.getUserName()
+      await Api.blogSetting.getThemeColor(userName).then(
         _ => this.themeColorList = _.themeColorList 
       )
     },

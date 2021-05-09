@@ -1,4 +1,5 @@
 const { setThemeColor, getAllThemeColor } = require('../services/blogSetting/theme')
+const { getAllThemeImgs, setUserThemeImg } = require('../services/blogSetting/themeImg')
 
 // TODO
 exports.homepage = (req, res, next) => {
@@ -16,18 +17,17 @@ exports.set_theme_color = async (req, res, next) => {
 
 // TODO:获取所有可配置的主题颜色
 exports.get_all_theme_color = async (req, res, next) => {
-  await getAllThemeColor().then(
+  await getAllThemeColor(req, res).then(
     _ => res.json({ msg: '获取所有可配置主题颜色成功', status: 'success', themeColorList: _ })
   ).catch(
     _ => res.json({ msg: '获取所有可配置主题颜色失败', status: 'failed' })
   )
 }
 
-// TODO:获取所有主题图片
-exports.get_all_theme_imgs = (req, res, next) => {}
+// TODO:获取所有主题图片资源地址
+exports.get_all_theme_imgs = async (req, res, next) => {
+  await setUserThemeImg(req, res).then()
+} 
 
-// TODO:获取用户当前主题图片
-exports.get_user_theme_img = (req, res, next) => {}
-
-// TODO:用户设置当前主题图片
+// TODO:用户设置当前主题图片资源地址
 exports.set_user_theme_img = (req, res, next) => {}

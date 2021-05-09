@@ -23,4 +23,7 @@ router.get('/notes', global_controller.get_all_notes)
 // TODO:添加留言
 router.post('/note/add', global_controller.add_note)
 
+// TODO:获取用户当前主题图片
+router.get('/user/:id/themeimgs', global_controller.get_user_theme_img)
+
 module.exports = router;

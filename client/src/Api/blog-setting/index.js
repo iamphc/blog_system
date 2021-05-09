@@ -9,7 +9,7 @@ export default {
   },
 
   // TODO:获取所有主题颜色
-  getThemeColor() {
-    return axios.get("/api/blog-setting/theme")
+  getThemeColor(userName) {
+    return axios.get(`/api/blog-setting/theme/?userName=${userName}`)
   }
 }
