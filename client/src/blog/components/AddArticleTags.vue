@@ -119,6 +119,7 @@ export default {
       let inputValue = this.inputValue 
       if(inputValue) {
         this.articleSelectedTags.push(inputValue)
+        this.setTags({ articleSelectedTags: this.articleSelectedTags })
       }
       this.inputVisiable = false
       this.inputValue = ''
