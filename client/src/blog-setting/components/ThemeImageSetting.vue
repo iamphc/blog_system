@@ -15,7 +15,8 @@
       <div class="theme-img__operation">
         <el-button 
           class="theme-img-set"
-          type="success">
+          type="success"
+          @click="setThemeImg(themeImg)">
           设置
         </el-button>
       </div>
@@ -44,7 +45,7 @@ export default {
           if(res.status === 'success') {
             this.themeImgList = res.themeImgList
             this.resolveThemeImg()
-            this.msgPrompt(res.msg, 'success')
+            // this.msgPrompt(res.msg, 'success')
             console.log(this.themeImgList)
           } else {
             this.msgPrompt(res.msg, 'error')
@@ -57,7 +58,7 @@ export default {
       return this.$store.state.userName || localStorage.getItem('userName')
     },
     msgPrompt(message, type) {
-      this.$message(message, type)
+      this.$message({ message, type})
     },
     // 对获取到的主题图片列表做二次转换
     resolveThemeImg() {
@@ -72,6 +73,21 @@ export default {
     // 对图片来源进行解析
     resolveLevel(userName) {
       return userName === 'everyone' ? '默认' : '你'
+    },
+    setThemeImg(themeImg) {
+      const options = { 
+        userName: this.userName,
+        blogThemeImg: themeImg.name
+       }
+      Api.blogSetting.setUserThemeImg(options).then(
+        res => {
+          if(res.status === 'success') {
+            this.msgPrompt(res.msg, 'success')
+          } else {
+            this.msgPrompt(res.msg, 'error')
+          }
+        }
+      )
     }
   }
 }

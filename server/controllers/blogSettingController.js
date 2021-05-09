@@ -33,5 +33,11 @@ exports.get_all_theme_imgs = async (req, res, next) => {
   )
 } 
 
-// TODO:用户设置当前主题图片资源地址
-exports.set_user_theme_img = (req, res, next) => {}
+// TODO:用户设置当前主题图片 
+exports.set_user_theme_img = async (req, res, next) => {
+  await setUserThemeImg(req, res).then(
+    _ => res.json({ msg: '用户设置当前主题图片成功', status: 'success', themeImg: _ })
+  ).catch(
+    _ => res.json({ msg: '用户设置当前主题图片失败', status: 'failed', errDetail: _.message })
+  )
+}
