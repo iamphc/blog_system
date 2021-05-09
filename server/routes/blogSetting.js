@@ -12,9 +12,9 @@ router.get('/theme', blog_setting_controller.get_all_theme_color)
 router.post('/theme', blog_setting_controller.set_theme_color)
 
 // TODO:获取用户所有可配置主题图片资源地址
-router.get('/themeimgs', blog_setting_controller.get_all_theme_imgs)
+router.get('/themeImgs', blog_setting_controller.get_all_theme_imgs)
 
 // TODO:用户设置当前主题图片
-router.post('/themeimgs', blog_setting_controller.set_user_theme_img)
+router.post('/themeImgs', blog_setting_controller.set_user_theme_img)
 
 module.exports = router;
