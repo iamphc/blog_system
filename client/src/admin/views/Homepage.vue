@@ -39,11 +39,11 @@ export default {
       sideMenu: [
         {
           index: 'Statistic',
-          name: '数据统计'
+          name: '博客访问统计'
         },
         {
           index: 'RecommendedSetting',
-          name: '推荐设置'
+          name: '文章统计'
         }
       ],
     }

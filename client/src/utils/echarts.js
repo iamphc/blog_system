@@ -13,17 +13,17 @@ export function initHistogram(dom, {
   let data1 = []
   let data2 = []
   for (let i = 0; i < 100; i++) {
-    xAxisData.push('类目' + i)
-    data1.push((Math.sin(i / 5) * (i / 5 - 10) + i / 6) * 5)
-    data2.push((Math.cos(i / 5) * (i / 5 - 10) + i / 6) * 5)
+    xAxisData.push('6月' + Math.ceil((i / 7 + 1) % 30) + '日')
+    data1.push(Math.abs((Math.ceil(Math.sin(i / 5) * (i / 5 - 10) + i / 6)) * 5))
+    data2.push(Math.abs((Math.ceil(Math.cos(i / 5) * (i / 5 - 10) + i / 6)) * 5))
   }
 
   defaultOption = {
     title: {
-      text: '柱状图动画延迟'
+      text: 'Lvanzn 博客访问量统计'
     },
     legend: {
-      data: ['bar', 'bar2']
+      data: ['国内访问统计', '国外访问统计']
     },
     toolbox: {
       // y: 'bottom',
@@ -46,7 +46,7 @@ export function initHistogram(dom, {
     },
     yAxis: {},
     series: [{
-      name: 'bar',
+      name: '国内访问统计',
       type: 'bar',
       data: data1,
       emphasis: {
@@ -56,7 +56,7 @@ export function initHistogram(dom, {
         return idx * 10;
       }
     }, {
-      name: 'bar2',
+      name: '国外访问统计',
       type: 'bar',
       data: data2,
       emphasis: {
@@ -81,104 +81,87 @@ export function initDynamicSortLine(dom, {
   config,
   data
 } = {}) {
-  let PATH = 'https://cdn.jsdelivr.net/gh/apache/echarts-website@asf-site/examples/data/asset/data/life-expectancy-table.json'
-
   let myChart = echarts.init(dom)
-  let defaultOption
 
-  axios.get(PATH).then(
-    res => {
-      run(res)
-      const option = Object.assign(defaultOption, config)
-      myChart.setOption(option)
-    }
-  )
+  var base = +new Date(2021, 6, 1);
+  var oneDay = 24 * 3600 * 1000;
+  var date = [];
 
-  function run(_rawData) {
-    // let countries = ['Australia', 'Canada', 'China', 'Cuba', 'Finland', 'France', 'Germany', 'Iceland', 'India', 'Japan', 'North Korea', 'South Korea', 'New Zealand', 'Norway', 'Poland', 'Russia', 'Turkey', 'United Kingdom', 'United States'];
-    let countries = ['Finland', 'France', 'Germany', 'Iceland', 'Norway', 'Poland', 'Russia', 'United Kingdom'];
-    let datasetWithFilters = [];
-    let seriesList = [];
-    echarts.util.each(countries, function (country) {
-      let datasetId = 'dataset_' + country;
-      datasetWithFilters.push({
-        id: datasetId,
-        fromDatasetId: 'dataset_raw',
-        transform: {
-          type: 'filter',
-          config: {
-            and: [{
-                dimension: 'Year',
-                gte: 1950
-              },
-              {
-                dimension: 'Country',
-                '=': country
-              }
-            ]
-          }
-        }
-      });
-      seriesList.push({
-        type: 'line',
-        datasetId: datasetId,
-        showSymbol: false,
-        name: country,
-        endLabel: {
-          show: true,
-          formatter: function (params) {
-            return params.value[3] + ': ' + params.value[0];
-          }
-        },
-        labelLayout: {
-          moveOverlap: 'shiftY'
-        },
-        emphasis: {
-          focus: 'series'
-        },
-        encode: {
-          x: 'Year',
-          y: 'Income',
-          label: ['Country', 'Income'],
-          itemName: 'Year',
-          tooltip: ['Income'],
-        }
-      });
-    });
+  var data = [Math.random() * 300];
 
-    defaultOption = {
-      animationDuration: 10000,
-      dataset: [{
-        id: 'dataset_raw',
-        source: _rawData
-      }].concat(datasetWithFilters),
-      title: {
-        text: 'Income of Germany and France since 1950'
-      },
-      tooltip: {
-        order: 'valueDesc',
-        trigger: 'axis'
-      },
-      xAxis: {
-        type: 'category',
-        nameLocation: 'middle'
-      },
-      yAxis: {
-        name: 'Income'
-      },
-      grid: {
-        right: 140
-      },
-      series: seriesList
-    };
+  for (var i = 1; i < 10; i++) {
+    var now = new Date(base += oneDay);
+    date.push([now.getFullYear(), now.getMonth() + 1, now.getDate()].join('/'));
+    data.push(Math.round((Math.random() - 0.5) * 20 + data[i - 1]));
   }
+
+  const defaultOption = {
+    tooltip: {
+      trigger: 'axis',
+      position: function (pt) {
+        return [pt[0], '10%'];
+      }
+    },
+    title: {
+      left: 'center',
+      text: '历史文章访问量统计',
+    },
+    toolbox: {
+      feature: {
+        dataZoom: {
+          yAxisIndex: 'none'
+        },
+        restore: {},
+        saveAsImage: {}
+      }
+    },
+    xAxis: {
+      type: 'category',
+      boundaryGap: false,
+      data: date
+    },
+    yAxis: {
+      type: 'value',
+      boundaryGap: [0, '100%']
+    },
+    dataZoom: [{
+      type: 'inside',
+      start: 0,
+      end: 10
+    }, {
+      start: 0,
+      end: 10
+    }],
+    series: [{
+      name: '模拟数据',
+      type: 'line',
+      symbol: 'none',
+      sampling: 'lttb',
+      itemStyle: {
+        color: 'rgb(255, 70, 131)'
+      },
+      areaStyle: {
+        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+          offset: 0,
+          color: 'rgb(255, 158, 68)'
+        }, {
+          offset: 1,
+          color: 'rgb(255, 70, 131)'
+        }])
+      },
+      data: data
+    }]
+  };
+
+  const option = Object.assign(defaultOption, config)
+  option && myChart.setOption(option);
 }
 
 // 生产饼状图
 export function initBarOnPolar(dom, {
   config,
   data
-} = {}) {  
+} = {}) {
   let myChart = echarts.init(dom)
   let defaultOption;
 
@@ -276,5 +259,66 @@ export function initBarOnPolar(dom, {
   };
 
   const option = Object.assign(defaultOption, config)
-  option && myChart.setOption(option); 
+  option && myChart.setOption(option);
+}
+
+export function initOther(dom, {
+  config,
+  data
+} = {}) {
+  let myChart = echarts.init(dom)
+  let defaultOption;
+
+  defaultOption = {
+    tooltip: {
+      trigger: 'axis',
+      axisPointer: { // Use axis to trigger tooltip
+        type: 'shadow' // 'shadow' as default; can also be 'line' or 'shadow'
+      }
+    },
+    legend: {
+      data: ['admin', 'member']
+    },
+    grid: {
+      left: '3%',
+      right: '4%',
+      bottom: '3%',
+      containLabel: true
+    },
+    xAxis: {
+      type: 'value'
+    },
+    yAxis: {
+      type: 'category',
+      data: ['2021/01', '2021/02', '2021/03', '2021/04', '2021/05', '2021/06']
+    },
+    series: [{
+        name: 'admin',
+        type: 'bar',
+        stack: 'total',
+        label: {
+          show: true
+        },
+        emphasis: {
+          focus: 'series'
+        },
+        data: [320, 302, 301, 334, 390, 330, 320]
+      },
+      {
+        name: 'member',
+        type: 'bar',
+        stack: 'total',
+        label: {
+          show: true
+        },
+        emphasis: {
+          focus: 'series'
+        },
+        data: [120, 132, 101, 134, 90, 230, 210]
+      }
+    ]
+  };
+
+  const option = Object.assign(defaultOption, config)
+  option && myChart.setOption(option);
 }
