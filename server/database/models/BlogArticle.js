@@ -1,4 +1,5 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
+
 const BlogArticle = new mongoose.Schema({
   title: {
     type: String,
@@ -38,6 +39,6 @@ const BlogArticle = new mongoose.Schema({
     type: Number,
     unique: true
   }
-});
+})
 
-module.exports = mongoose.model('BlogArticle', BlogArticle);
+module.exports = mongoose.model('BlogArticle', BlogArticle)

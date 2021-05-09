@@ -18,7 +18,7 @@ const BlogTheme = new mongoose.Schema({
     type: Date,
     required: true
   }, 
-  // 主题色类型：自定义、系统、插件颜色等
+  // 主题色类型：系统、插件颜色等
   themeType: {
     type: String,
     required: true
@@ -32,8 +32,7 @@ const BlogTheme = new mongoose.Schema({
   },
   // 主题颜色描述
   describe: {
-    type: String,
-    required: true,
+    type: String, 
     default: '三原色中会有无限可能'
   }
 })
