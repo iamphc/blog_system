@@ -10,29 +10,39 @@ export default {
       ...userRegisterForm
     });
   },
+
   // TODO:用户登录，登录信息未加密
   userLogin(userLoginForm) {
     return axios.post("/api/global/user/login", {
       ...userLoginForm
     });
   },
+
   // TODO:获取博客当前的主题颜色
   getCurrentThemeColor(userName) {
     return axios.get(`/api/global/theme/current/?userName=${userName}`)
   },
+
   // TODO:获取用户可用的所有插件
   getPluginsUserOwn(userName) {
     return axios.get(`/api/global/plugins/?userName=${userName}`)
   },
+
   // TODO:获取博主所有留言
   getAllNotes(userName) {
     return axios.get(`/api/global/notes/?userName=${userName}`)
   },
+
   // TODOl添加留言
   addNote(options) {
     return axios.post('/api/global/note/add', {
       ...options
     })
+  },
+
+  // TODO:获取用户当前主题图片
+  getUserThemeImg(userName) {
+    return axios.get(`/api/global/user/${userName}/themeImgs`)
   }
 }
 
