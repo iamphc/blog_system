@@ -1,13 +1,11 @@
 .body-menu-wrapper {
   height: 100%;
+  display: flex;
 }
 
-.blog-setting-body__left {
-  position: relative;
+.blog-setting-body__left { 
   border-top: 5px #ccc solid; 
-  border-bottom: 5px #ccc solid;
-  height: calc(100% - 60px);
-  top: 70px;
+  border-bottom: 5px #ccc solid; 
   /* z-index: 500; */
   width: 15%;
 }
@@ -27,10 +25,7 @@
   background: #545C64;
 }
 
-.blog-setting-body__center {
-  position: absolute;
-  top: 70px;
-  right: 0; 
+.blog-setting-body__center {   
   width: 85%;
   border: 5px solid #ccc; 
   background: #545C64;
