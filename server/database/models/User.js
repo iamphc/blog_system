@@ -40,6 +40,11 @@ const User = new mongoose.Schema({
 	blogThemeImg: {
 		type: String,
 		default: 'no-setting'
+	},
+	// 用户创建时间
+	createdDate: {
+		type: Date,
+		default: new Date()
 	}
 })
 

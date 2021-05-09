@@ -10,7 +10,7 @@ const Group = new mongoose.Schema({
     required: true,
   },
   members: {
-    type: [String],
+    type: [{ name: String, level: String }],
     required: true
   },
   // 管理员用户名（name）
