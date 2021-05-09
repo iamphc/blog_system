@@ -29,6 +29,12 @@ const BlogTheme = new mongoose.Schema({
     required: true,
     index: true,
     default: "everyone"
+  },
+  // 主题颜色描述
+  describe: {
+    type: String,
+    required: true,
+    default: '三原色中会有无限可能'
   }
 })
 
