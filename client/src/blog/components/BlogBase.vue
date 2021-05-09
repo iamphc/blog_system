@@ -1,7 +1,7 @@
 <template>
   <div class="blog-wrapper">
     <nav-header />  
-    <el-row type="flex" class="blog-body">
+    <el-row type="flex" class="blog-body" ref="blogBody">
       <!-- 插槽左部分 -->
       <div class="section-side-wrapper">
         <el-col class="blog-body-section blog-body-section__left" :span="6">
@@ -31,6 +31,7 @@
 </template>
 
 <script> 
+import { Api } from "@api"
 import GoTop from '@blog/components/GoTop'
 import ArticlesList from '@blog/homepagePart/ArticlesList'
 import HistoryToday from '@/blog/homepagePart/HistoryToday'
@@ -53,7 +54,40 @@ export default {
   },
   data() {
     return {
-      type: null
+      type: null,
+      userName: '',
+      currentThemeImg: {}
+    }
+  },
+  async mounted() {
+    this.userName = this.getUserName()
+    await this.getCurrentThemeImg()
+  },
+  methods: {
+    async getCurrentThemeImg() {
+      Api.global.getUserThemeImg(this.userName).then(
+        res => {
+          if(res.status === 'success') {
+            this.currentThemeImg = res.themeImg 
+            this.setBackgroundImg()
+            console.log(this.currentThemeImg)
+          } else {
+            this.msgPrompt(res.msg, 'error')
+          }
+        }
+      )
+    },
+    getUserName() { 
+      // state 刷新之后会被清空
+      return this.$store.state.userName || localStorage.getItem('userName')
+    },
+    msgPrompt(message, type) {
+      this.$message({ message, type })
+    },
+    setBackgroundImg() {
+      const dom = this.$refs.blogBody.$el 
+      const imgSrc = 'url(\"http://localhost:3000/' + this.currentThemeImg.src + '\")' 
+      dom.style.backgroundImage = imgSrc
     }
   }
 }

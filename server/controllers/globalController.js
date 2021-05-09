@@ -100,5 +100,11 @@ exports.add_note = async (req, res, next) => {
   )
 }
 
-// TODO:获取用户当前主题图片资源地址
-exports.get_user_theme_img = (req, res, next) => {}
+// TODO:获取用户当前主题图片
+exports.get_user_theme_img = async (req, res, next) => {
+  await getUserThemeImg(req, res).then(
+    _ => res.json({ msg: '获取用户当前主题图片成功', status: 'success', themeImg: _ })
+  ).catch(
+    _ => res.json({ msg: '获取用户当前主题图片失败', status: 'failed', errDetail: _.message })
+  )
+}
