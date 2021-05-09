@@ -24,6 +24,15 @@ const BlogThemeImg = new mongoose.Schema({
     type: String,
     required: true,
     default: '一张图片，希望你喜欢'
+  },
+  // 主题图片类型：系统、插件主题图片等
+  themeImgType: {
+    type: String,
+    required: true
+  },
+  createdDate: {
+    type: Date,
+    required: true
   }
 })
 
