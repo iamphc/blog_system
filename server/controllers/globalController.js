@@ -3,9 +3,10 @@ const bcryptjs = require('bcryptjs')
 const { createUser } = require('../services/global/createUser')
 const { decrypt } = require('../util/decrypt')
 const { publish, verify } = require('../services/global/token')
-const { getCurrentThemeColor } = require('../services/global/getBlogSetting')
+const { getCurrentThemeColor } = require('../services/global/theme')
 const { getPluginsUserOwn } = require('../services/global/userPlugins')
 const { getAllNotes, addNote } = require('../services/global/notes')
+const { getUserThemeImg } = require('../services/global/themeImg')
 
 // TODO:无
 exports.homepage = (req, res, next) => {
@@ -98,3 +99,6 @@ exports.add_note = async (req, res, next) => {
     _ => res.json({ msg: '添加留言失败', status: 'failed', errDetail: _.message })
   )
 }
+
+// TODO:获取用户当前主题图片资源地址
+exports.get_user_theme_img = (req, res, next) => {}

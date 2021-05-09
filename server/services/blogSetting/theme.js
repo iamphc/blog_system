@@ -10,6 +10,7 @@ exports.setThemeColor = async (req, res) => {
 }
 
 // TODO:获取所有可配置的主题颜色
-exports.getAllThemeColor = async () => {
-  return await BlogTheme.find() 
+exports.getAllThemeColor = async (req, res) => {
+  const { userName } = req.params
+  return await BlogTheme.find({ userName: { $in: [userName, 'everyone'] } }) 
 }

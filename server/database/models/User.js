@@ -35,6 +35,11 @@ const User = new mongoose.Schema({
 	enablePlugins: {
 		type: [String],
 		default: []
+	},
+	// 博客主题图片（name），默认为no-setting
+	blogThemeImg: {
+		type: String,
+		default: 'no-setting'
 	}
 })
 
