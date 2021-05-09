@@ -23,6 +23,7 @@
 @import "components/blog-setting/theme-setting.css";      /*theme-setting*/
 @import "components/blog-setting/font-setting.css";       /*font-setting*/
 @import "components/blog-setting/theme-img-setting.css";  /*theme-img-setting*/
+@import "components/blog-setting/self-setting.css";       /*self-setting*/
 
 /* 博客管理 */
 @import "components/admin/recommended-setting.css";       /*recommended-setting*/
