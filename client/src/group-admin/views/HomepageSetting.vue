@@ -1,9 +1,7 @@
 <template>
   <div class="group-admin-wrapper">
-    <nav-header 
-      :navTitleType="navTitleType"
-      :subHeaderMenu="subHeaderMenu"
-      :isSub="true"/>
+    <nav-header  
+      :isSub="false"/>
     <body-menu>
       <!-- 右侧设置部分 -->
       <template v-slot:blog-setting-right-body>
@@ -39,23 +37,8 @@ export default {
   },
   data() {
     return {
-      type: 'groupAdmin',
-      navTitleType: 'group-admin',
-      subHeaderMenu: [
-        {
-          index: 'basic-setting',
-          name: '基本设置'
-        },
-        {
-          index: 'extension-setting',
-          name: '扩展设置'
-        }
-      ],
+      type: 'groupAdmin', 
       sideMenu: [
-        {
-          index: 'SEOSetting',
-          name: 'SEO优化策略'
-        },
         {
           index: 'Member',
           name: '组成员'

@@ -30,8 +30,7 @@
       <el-button 
         class="ban"
         type="info" 
-        size="small"
-        @click="banPlugin(plugin.name)">
+        size="small">
         禁用
       </el-button>
     </div>

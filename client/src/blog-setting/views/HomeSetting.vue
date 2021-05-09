@@ -1,9 +1,7 @@
 <template>
   <div class="blog-setting-wrapper">
-    <nav-header 
-      :navTitleType="navTitleType" 
-      :subHeaderMenu="subHeaderMenu"
-      :isSub="true" />
+    <nav-header  
+      :isSub="false" />
     <body-menu>
       <!-- 右侧设置部分 -->
       <template v-slot:blog-setting-right-body>
@@ -41,22 +39,7 @@
     },
     data() {
       return {
-        type: 'blogSetting',
-        navTitleType: "blog-setting",
-        subHeaderMenu: [
-          {
-            index: "themes",
-            name: "主题"
-          },
-          {
-            index: "function_area",
-            name: "功能区"
-          },
-          {
-            index: "other",
-            name: "其他"
-          }
-        ],
+        type: 'blogSetting', 
         sideMenu: [
           {
             index: "ThemeSetting",

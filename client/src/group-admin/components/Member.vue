@@ -13,15 +13,7 @@
         class="member"
         label="组员"
         prop="member"> 
-      </el-table-column>
-      <el-table-column
-        class="data"
-        label="组员数据"
-        prop="data"> 
-        <template slot-scope="scope">
-          <el-button type="success">查看数据</el-button>
-        </template>
-      </el-table-column>
+      </el-table-column> 
       <el-table-column
         class="operation"
         label="操作"
@@ -45,15 +37,11 @@ export default {
     this.tableData = [
       {
         date: '2020.02.01',
-        member: '张三'
+        member: 'admin'
       },
       {
         date: '2020.05.01',
-        member: '李四'
-      },
-      {
-        date: '2020.10.01',
-        member: '王五'
+        member: 'member'
       }
     ]
   },

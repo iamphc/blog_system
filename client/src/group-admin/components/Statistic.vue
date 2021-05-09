@@ -1,12 +1,20 @@
 <template>
-  <statistic /> 
+  <div class="group-statistic__wrapper" ref="groupStatistic"></div>
 </template>
 
 <script>
-import Statistic from '@components/Statistic'
+import { initOther } from '@utils/echarts'
 export default {
-  components: {
-    Statistic
+  mounted() {
+    const dom = this.$refs.groupStatistic
+    initOther(dom)
   }
 }
 </script>
+
+<style>
+  .group-statistic__wrapper {
+    width: 100%;
+    height: 300px;
+  }
+</style>
