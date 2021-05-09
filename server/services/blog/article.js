@@ -1,4 +1,5 @@
 const BlogArticle = require('../../database/models/BlogArticle')
+const BlogTag = require('../../database/models/BlogTag')
 // 创建文章
 exports.createArticle = async (req, res, next) => {
   const { title, context, userName, createdDate, lastUpdatedDate, id, tags } = req.body
@@ -11,7 +12,36 @@ exports.createArticle = async (req, res, next) => {
     lastUpdatedDate,
     tags
   })
+
   blogArticle.save()
+  
+  // 用户所有的标签
+  const currentTags = await BlogTag.find({ userName })
+  // 文章所有的标签数量
+  const articleTagsNum = tags.length
+  // 标记为新增的标签
+  const markNewTag = [] 
+
+  // 创建新建的标签, 给每个标签添加新的文章 id
+  tags.forEach((tag, index) => {
+    markNewTag[index] = currentTags.findIndex(el => el.name === tag) === -1
+  })
+
+  for(let i = 0; i < articleTagsNum; ++ i) {
+    const name = tags[i]
+    const articleIds = [id]
+    if(markNewTag[i]) { 
+      const blogTag = await BlogTag.create({
+        name,
+        createdDate,
+        userName,
+        articleIds
+      })
+      blogTag.save()
+    } else {
+      await BlogTag.updateOne({userName, name }, { $push: { articleIds: id } })
+    }
+  } 
 }
 
 // 获取文章列表
