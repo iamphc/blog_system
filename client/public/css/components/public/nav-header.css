@@ -41,12 +41,7 @@
 
 .home-title {
   color: #fff;
-}
-
-.group-admin-btn {
-  position: absolute;
-  right: 0;
-}
+} 
 
 /* sub header */
 .sub-header-content {    
@@ -75,4 +70,19 @@
   height: 60px;
   width: 10px;
   cursor: pointer;
+}
+
+.header-dropdown-text__other {
+  font-size: 1.7rem;
+  color: #fff;
+  margin: 0 16px;
+}
+
+.dropdown-wrapper {
+  position: absolute;
+  right: 0;
+}
+
+.dropdown-item {
+  color-interpolation-filters: #000;
 }

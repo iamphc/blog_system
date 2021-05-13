@@ -12,7 +12,7 @@
         </router-link>
       </el-col>
       <el-col :span="3" class="header-btn-wrapper">
-        <router-link to="/setting/home">
+        <router-link to="/setting">
           <el-button type="primary" round>后台设置</el-button>
         </router-link>
       </el-col>
@@ -26,10 +26,25 @@
           <el-button class="header-btn" type="primary" round>开发者模式</el-button>
         </router-link>
       </el-col>
-      <el-col :span="3" class="header-btn-wrapper group-admin-btn">
-        <router-link to="/group-admin">
-          <el-button class="header-btn" round>组设置</el-button>
-        </router-link>
+      <el-col :span="3" class="header-btn-wrapper dropdown-wrapper">
+        <el-dropdown>
+          <span class="header-dropdown-text__other">
+            其他
+            <i class="el-icon-arrow-down el-icon--right"></i>
+          </span>
+          <el-dropdown-menu slot="dropdown">
+            <el-dropdown-item class="dropdown-item" >
+              <router-link to="/group-admin" ref="dropdownItemGroup">
+                组设置
+              </router-link>
+            </el-dropdown-item>
+            <el-dropdown-item class="dropdown-item">
+              <router-link to="/system-detail" ref="dropdownItemSystem">
+                系统说明
+              </router-link>
+            </el-dropdown-item>
+          </el-dropdown-menu> 
+        </el-dropdown> 
       </el-col>
     </el-row>
     <!-- 副标题：设置相关 -->
@@ -136,9 +151,16 @@
         }
       },
       setTheme() {
+        // 设置顶部导航颜色
         let wrapper = this.$refs.wrapper.$el   
         wrapper.style.backgroundColor =  this.themeColor || this.theme.backgroundColor
         wrapper.style.color = this.theme.fontColor
+
+        // 设置顶部导航的其他下拉menu颜色
+        let group = this.$refs.dropdownItemGroup.$el
+        let system = this.$refs.dropdownItemSystem.$el
+        group.style.color = this.themeColor || this.themeColor.backgroundColor
+        system.style.color = this.themeColor || this.themeColor.backgroundColor
 
         if(this.$refs.subWrapper) {
           let subWrapper = this.$refs.subWrapper.$el

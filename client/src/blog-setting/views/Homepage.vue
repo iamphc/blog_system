@@ -1,7 +1,6 @@
 <template>
   <div class="blog-setting-wrapper">
-    <nav-header  
-      :isSub="false" />
+    <nav-header :isSub="false" />
     <body-menu>
       <!-- 右侧设置部分 -->
       <template v-slot:blog-setting-right-body>

@@ -10,6 +10,7 @@ import DevelopRouter from "@develop/router"
 import AdminRouter from "@admin/router"
 import BlogSettingRouter from "@setting/router"
 import GroupAdminRouter from "@group/router"
+import SystemDetail from "@system/router"
 
 import ElementUI from 'element-ui'  
 
@@ -25,7 +26,8 @@ const router = new VueRouter({
     ...DevelopRouter,
     ...AdminRouter, 
     ...BlogSettingRouter,
-    ...GroupAdminRouter
+    ...GroupAdminRouter,
+    ...SystemDetail
   ],
   mode: "history"
 })  
