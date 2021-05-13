@@ -1,9 +1,9 @@
 const routes = [ 
   {
-    path: "/setting/home",
+    path: "/setting",
     name: "HomeSetting",
-    component: () => import("@setting/views/HomeSetting")
+    component: () => import("@setting/views/Homepage")
   }
 ]
 
-export default routes;
+export default routes

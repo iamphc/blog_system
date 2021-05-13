@@ -8,6 +8,7 @@ export default {
     admin: 'Statistic',
     blogSetting: 'ThemeSetting',
     groupAdmin: 'SEOSetting',
-    develop: 'PluginsMarket'
+    develop: 'PluginsMarket',
+    systemDetail: 'CollectionList'
   }
 }

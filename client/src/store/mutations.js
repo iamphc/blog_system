@@ -15,7 +15,7 @@ export default {
       ? state.headerType.groupAdmin = groupAdmin
       : ''
   },
-  [types.SIDE_MENU_TYPE](state, { admin, blogSetting, groupAdmin, develop } = {}) {
+  [types.SIDE_MENU_TYPE](state, { admin, blogSetting, groupAdmin, develop, systemDetail } = {}) {
     // admin sideMenuType
     admin
       ? state.sideMenuType.admin = admin
@@ -28,9 +28,13 @@ export default {
     groupAdmin 
       ? state.sideMenuType.groupAdmin = groupAdmin
       : ''
-    // develop sidenMenuType
+    // develop sideMenuType
     develop
       ? state.sideMenuType.develop = develop
+      : ''
+    // systemDeatil sideMenuType
+    systemDetail
+      ? state.sideMenuType.systemDetail = systemDetail
       : ''
   }
 }

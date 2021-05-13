@@ -1,3 +1,4 @@
+const { util } = require("echarts")
 const utils = require("./config-utils") 
 
 module.exports = {
@@ -18,6 +19,7 @@ module.exports = {
       .set("@utils", utils.resolve("src/utils"))
       .set("@plugins", utils.resolve("src/plugins"))
       .set("public", utils.resolve("public"))
+      .set("@system", utils.resolve("src/system-detail"))
   },
   // 配置代理服务器（端口）
   devServer: {
