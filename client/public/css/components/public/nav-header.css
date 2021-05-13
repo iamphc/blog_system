@@ -86,3 +86,11 @@
 .dropdown-item {
   color-interpolation-filters: #000;
 }
+
+.login-reigster-btn {
+  color: #fff;
+  line-height: 35px;
+  margin: 0 10px;
+  font-size: 1.7rem;
+  cursor: pointer;
+}

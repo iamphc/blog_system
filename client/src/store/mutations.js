@@ -36,5 +36,11 @@ export default {
     systemDetail
       ? state.sideMenuType.systemDetail = systemDetail
       : ''
+  },
+  [types.USER_OPERATION](state, payload) {
+    console.log(payload)
+    state.userOperation = payload.userOperation
+    console.log(state.userOperation)
+    localStorage.setItem('userOperation', payload)
   }
 }

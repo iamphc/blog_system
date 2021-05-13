@@ -3,7 +3,7 @@
     <div class="placeholder">
       <span class="articles-type-title">
         {{articleType}}
-        <router-link class="article-create" to="/article/create">写文章</router-link>
+        <router-link class="article-create" :to="{ name: 'createArticle', params: { userName: currentUserName } }">写文章</router-link>
       </span>
     </div>
     <div class="bottom-line"></div>
@@ -30,7 +30,8 @@ import { Api } from "@api"
 export default {
   data() {
     return {
-      articlesList: []
+      articlesList: [],
+      currentUserName: ''
     }
   },
   props: {
@@ -44,6 +45,7 @@ export default {
     this.articlesList = []
     await this.getArticlesList()  
     console.log(this.articlesList)
+    this.currentUserName = this.$route.params.userName
   },
   methods: {
     async getArticlesList() {

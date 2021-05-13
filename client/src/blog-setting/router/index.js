@@ -1,7 +1,7 @@
 const routes = [ 
   {
-    path: "/setting",
-    name: "HomeSetting",
+    path: "/userName/:userName/setting",
+    name: "settingHome",
     component: () => import("@setting/views/Homepage")
   }
 ]
