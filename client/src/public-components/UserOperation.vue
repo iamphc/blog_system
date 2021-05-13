@@ -4,8 +4,9 @@
         class="user-operation-dialog"
         :title="getUserOperation"
         width="30%"
-        :visible.sync="showDialog"
+        :visible="dialogVisible"
         :before-close="handleBeforeCloseDialog"
+        @close="closeDialog" 
         center>
       <el-form 
         ref="ruleForm"
@@ -43,7 +44,7 @@
         operationText: ['去注册', '登录'],
         operationType: 'login',
         registerMsg: '',
-        showDialog: true,
+        showDialog: false,
         ruleForm: {
           userName: '',
           userPwd: '',
@@ -77,19 +78,13 @@
         }
       }
     },
-    created() { 
-      // 如果token过期前登录，则跳过登录
-      // 问题：过期时间内保存的 token 一定有效吗？需要做校验？
-      if(this.getToken().token) {
-        this.showDialog = false
-      } else {
-        // token不存在，或过期时，清空 userName 
-        this.userName(null)
-      }
+    mounted() {
+      this.showDialog = this.$store.state.userOperation
     },
     methods: {
       ...mapMutations({
-        userName: types.USER_NAME
+        userName: types.USER_NAME,
+        changeOperation: types.USER_OPERATION
       }),
       getToken() {
         const cookie = document.cookie
@@ -198,9 +193,17 @@
               : ('去' + ele)
           }
         )
-      },
+      }, 
+      closeDialog() {
+        this.showDialog = false 
+        this.changeOperation({ userOperation: false })
+      }
     }, 
     computed: {
+      // 监听用户是否点击了登录、注册的操作 
+      dialogVisible() {   
+        return this.showDialog || this.$store.state.userOperation
+      },
       // 用户操作表单标题文案
       getUserOperation() {
         return this.operationType === 'register' 

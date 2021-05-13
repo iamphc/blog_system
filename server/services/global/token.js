@@ -3,6 +3,7 @@ const jwt = require('jsonwebtoken')
 const secret = 'b2z1_thb#'
 const maxAge = 24 * 3600 * 1000 // token 24小时后过期
 const bcryptjs = require('bcryptjs')
+const isURLVisits = require('../../util/judgeVisits')
 
 // 【注册】颁发token
 exports.publish = async (req, res) => {
@@ -26,8 +27,8 @@ exports.verify = async (req, res, next) => {
 
   let userName, userPwd, loginTime
   const path = req.path
-  // TODO:登录、注册操作，以及其他游客级操作
-  if(path === "/api/global/user/login" || path === "/api/global/user/register") {
+  // TODO:游客级操作
+  if(isURLVisits(path)) {
     next()
   } else {
     // 从 cookie 获取 token

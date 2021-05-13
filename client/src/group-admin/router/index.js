@@ -1,7 +1,7 @@
 const routes = [
   {
-    path: "/group-admin",
-    name: "groupAdmin",
+    path: "/userName/:userName/group-admin",
+    name: "groupAdminHome",
     component: () => import("@group/views/HomepageSetting")
   }
 ]
